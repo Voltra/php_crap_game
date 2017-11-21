@@ -1,0 +1,25 @@
+{
+  "name": "miniprojet",
+  "version": "0.0.0",
+  "description": "",
+  "main": "null",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Voltra/php_crap_game.git"
+  },
+  "keywords": [
+    "php"
+  ],
+  "author": "iut",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Voltra/php_crap_game/issues"
+  },
+  "homepage": "https://github.com/Voltra/php_crap_game#readme",
+  "dependencies": {
+    "fetch_json": "^1.0.5"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "name": "info2/miniprojet",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {}
+}
