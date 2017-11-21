@@ -1,0 +1,23 @@
+/**@@ <TEMPLATE> @@**/
+/*@font-face{
+    font-family: ;
+    src: url("");
+*/
+/**@@ </TEMPLATE> @@**/
+
+/*///////////////////////////////////////////////////////////////*/
+
+@font-face{
+    font-family: r;
+    src: url("/assets/fonts/RobotoLight.ttf");
+}
+
+@font-face {
+    font-family: AmericanCaptain;
+    src: url("/assets/fonts/AmericanCaptain.ttf");
+}
+
+@font-face{
+    font-family: FontAwesome;
+    src: url("/assets/fonts/FontAwesome.ttf");
+}
