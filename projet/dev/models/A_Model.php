@@ -5,6 +5,7 @@ use Project\Helpers\DBConnection;
 
 /**An abstract class representing the shared behavior of any Model
  * Class A_Model
+ * @package Projet\Models
  * @author Ludwig GUERIN
  */
 abstract class A_Model {

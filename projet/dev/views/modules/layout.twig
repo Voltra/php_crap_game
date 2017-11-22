@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <!--@@ PAGE INFO @@-->
+        <meta charset="utf-8" data-whatIdo="Adapter le jeu de caractère au maximum"/>
+        <meta lang="fr"/>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="icon" href="" data-whatIdo="Icône de la page"/>
+        <meta name="keywords" content="{% block keywords %}{% endblock %}" data-whatIdo="Mots-clés"/>
+
+        <!--@@ IMPORTANT META @@-->
+        <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, shrink-to-fit=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" data-whatIdo="Adaptation à tous les supports"/>
+
+        <!--@@ STYLESHEETS @@-->
+        <link rel="stylesheet" href="/assets/css/global/reset.css" data-whatIdo="Élimination des styles par défaut du navigateur"/>
+        <link rel="stylesheet" href="/assets/css/global/clear_float.css" data-whatIdo="Styles pour élément rétablissant le flot"/>
+        <link rel="stylesheet" href="/assets/css/global/font-loader.css" data-whatIdo="Préparation des polices de caractères"/>
+
+        <link rel="stylesheet" href="/assets/css/global/main.css" media="all and (min-width: 768px)" data-whatIdo="Styles par défaut"/>
+        <link rel="stylesheet" href="/assets/css/global/mobile.css" media="all and (max-width: 768px)" data-whatIdo="Styles pour les petits écrans"/>
+        <link rel="stylesheet" href="/assets/css/global/mobile.css" media="all and (orientation:portrait)" data-whatIdo="Styles pour l'orientation portrait"/>
+
+        {% if debug %}
+            <link rel="stylesheet" href="/assets/css/global/debug.css" data-whatIdo="Styles de debug pour développeurs"/>
+        {% else %}
+            <link rel="stylesheet" href="/assets/css/global/definitive_colors.css" data-whatIdo="Styles de debug pour développeurs"/>
+        {% endif %}
+
+        {% block css %}
+        {% endblock %}
+
+        {% if pageName %}
+            <link rel="stylesheet" href="/assets/css/{{ pageName }}/main.css" media="all and (min-width: 768px)" data-whatIdo="Styles par défaut"/>
+            <link rel="stylesheet" href="/assets/css/{{ pageName }}/mobile.css" media="all and (max-width: 768px)" data-whatIdo="Styles pour les petits écrans"/>
+            <link rel="stylesheet" href="/assets/css/{{ pageName }}/mobile.css" media="(orientation:portrait)" data-whatIdo="Styles pour l'orientation portrait"/>
+
+            {% if debug %}
+                <link rel="stylesheet" href="/assets/css/{{ pageName }}/debug.css" data-whatIdo="Styles de debug pour développeurs"/>
+            {% else %}
+                <link rel="stylesheet" href="/assets/css/{{ pageName }}/definitive_colors.css" data-whatIdo="Styles de debug pour développeurs"/>
+            {% endif %}
+        {% endif %}
+
+        <!--@@ REGULAR SCRIPTS @@-->
+
+        <!--@@ CUSTOM SCRIPTS @@-->
+        {% block scripts %}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

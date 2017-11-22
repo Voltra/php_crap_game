@@ -3,9 +3,10 @@ namespace Project\Helpers\Database;
 
 use PDO;
 
-/**Creates a connection to a database
+/**Creates a connection to a MySQL database
  * Class DBConnection
- * @package Project\Helpers
+ * @package Project\Helpers\Database
+ * @author Ludwig GUERIN
  */
 class DBConnection {
     /**The connection to the database
