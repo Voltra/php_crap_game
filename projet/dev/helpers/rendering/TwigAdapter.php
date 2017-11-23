@@ -3,13 +3,14 @@ namespace Project\Helpers\Rendering;
 
 use Twig_Environment;
 use Twig_Loader_Filesystem;
+use Project\Helpers\Rendering\I_ViewRenderEngine;
 
 /**A quick adapter to use Twig with anything
  * Class TwigAdapter
  * @package Project\Helpers\Rendering
  * @author Ludwig GUERIN
  */
-class TwigAdapter {
+class TwigAdapter implements I_ViewRenderEngine{
     /**The loader used
      * @var Twig_Loader_Filesystem
      */
@@ -35,7 +36,7 @@ class TwigAdapter {
         return $this->env->render($path, $data);
     }
 
-    /**Processes a view and prints it onto the out stream
+    /**Processes a view and prints it onto the output stream
      * @param string $path being the path to the view (absolute or relative to the path given in the constructor)
      * @param array $data being the view's data (default: [])
      * @return $this
