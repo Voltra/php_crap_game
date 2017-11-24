@@ -4,3 +4,5 @@
  */
 
 require_once("../dev/bootstrap.php");
+
+$router->run();

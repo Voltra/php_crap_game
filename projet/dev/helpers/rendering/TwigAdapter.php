@@ -45,4 +45,13 @@ class TwigAdapter implements I_ViewRenderEngine{
         echo $this->render($path, $data);
         return $this;
     }
+
+    /**Register data as part of the global data accessible to all views
+     * @param string $key being the key/name of the data
+     * @param mixed $value being the data itself
+     * @return $this
+     */
+    public function addGlobal(string $key, $value) {
+        $this->env->addGlobal($key, $value);
+    }
 }

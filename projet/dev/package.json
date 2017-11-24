@@ -4,6 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
+    "bulk": "npm update && clear && npm run build",
     "build": "webpack && npm run postbuild",
     "moveFlashCSS": "cp node_modules/jq-flash/dist/flash.css ../public_html/assets/css/globals/flash.css",
     "moveSpinnerLordCSS": "cp -R node_modules/spinner-lord/css/* ../public_html/assets/css/globals/spinner-lord/",

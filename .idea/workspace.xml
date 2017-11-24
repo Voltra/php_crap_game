@@ -2,33 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51dd3f47-ff82-4990-87c9-7413bd5bc8dd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/config/development_config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/config/production_config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/collections/DotNotationArray.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/collections/T_DotNotationCollection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/js/globals/flash.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/js/globals/global-includes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/js/globals/jquery-loader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/js/globals/removeSpinnerLord.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/flash.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord-css.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/projet/dev/js/error_404.js" afterPath="$PROJECT_DIR$/projet/dev/js/error/404/error_404.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/controllers/A_Controller.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/controllers/A_ErrorController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/controllers/AuthController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/controllers/PageNotFoundController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/controllers/RootController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/http/Request.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/interactions/Cookies.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/interactions/I_Cookies.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/interactions/I_Session.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/interactions/Session.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/routing/Router.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/routing/UriParams.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/views/auth/login.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/common.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/debug.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/definitive_colors.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/mobile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/miniproj.iml" afterPath="$PROJECT_DIR$/.idea/miniproj.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/bootstrap.php" afterPath="$PROJECT_DIR$/projet/dev/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/config.php" afterPath="$PROJECT_DIR$/projet/dev/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/db_init.php" afterPath="$PROJECT_DIR$/projet/dev/db_init.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/helpers/rendering/I_ViewRenderEngine.php" afterPath="$PROJECT_DIR$/projet/dev/helpers/rendering/I_ViewRenderEngine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php" afterPath="$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/package.json" afterPath="$PROJECT_DIR$/projet/dev/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/views/404.twig" afterPath="$PROJECT_DIR$/projet/dev/views/404.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/views/modules/global_components/global_stylesheets.twig" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/global_stylesheets.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/views/modules/global_components/page_specific_stylesheets.twig" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/page_specific_stylesheets.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/views/modules/layout.twig" afterPath="$PROJECT_DIR$/projet/dev/views/modules/layout.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/debug.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/debug.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/main.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/mobile.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/mobile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/globals/common.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/globals/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/index.php" afterPath="$PROJECT_DIR$/projet/public_html/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,43 +48,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bootstrap.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projet/dev/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-390">
+              <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projet/dev/bootstrap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="392">
+              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
               <folding>
-                <element signature="e#7#56#0#PHP" expanded="true" />
+                <element signature="e#7#54#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="error_404.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet/dev/js/error/404/error_404.js">
+      <file leaf-file-name="Router.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projet/dev/helpers/routing/Router.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="300">
+              <caret line="50" column="22" lean-forward="false" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+              <folding>
+                <element signature="e#42#71#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet/dev/config.php">
+      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projet/dev/controllers/AuthController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="322">
+              <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+              <folding>
+                <element signature="e#38#71#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="404.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet/dev/views/404.twig">
+      <file leaf-file-name="login.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projet/dev/views/auth/login.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="391">
+              <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -98,9 +111,9 @@
       <list>
         <option value="deny all HTACCESS" />
         <option value="cleanURL HTACCESS" />
-        <option value="CSS File" />
-        <option value="Twig File" />
         <option value="JavaScript File" />
+        <option value="Twig File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -120,44 +133,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/projet/config.php" />
-        <option value="$PROJECT_DIR$/projet/public_html/index.php" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/font-loader.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/definitive_colorrs.css" />
-        <option value="$PROJECT_DIR$/projet/dev/views/404.php" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/debug.css" />
-        <option value="$PROJECT_DIR$/projet/dev/models/I_Model.php" />
-        <option value="$PROJECT_DIR$/projet/dev/models/T_Model.php" />
-        <option value="$PROJECT_DIR$/projet/dev/helpers/DBConnection.php" />
-        <option value="$PROJECT_DIR$/projet/phpunit.xml" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/reset.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/clear_float.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/main.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/mobile.css" />
-        <option value="$PROJECT_DIR$/projet/dev/helpers/database/DBConnection.php" />
-        <option value="$PROJECT_DIR$/projet/dev/models/A_Model.php" />
-        <option value="$PROJECT_DIR$/projet/composer.json" />
-        <option value="$PROJECT_DIR$/projet/dev/views/modules/global_stylesheets.twig" />
-        <option value="$PROJECT_DIR$/projet/dev/helpers/rendering/I_ViewRenderEngine.php" />
-        <option value="$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php" />
-        <option value="$PROJECT_DIR$/projet/dev/.babelrc" />
-        <option value="$PROJECT_DIR$/projet/dev/js/404.js" />
-        <option value="$PROJECT_DIR$/projet/dev/js/error_404.js" />
-        <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/flash.twig" />
-        <option value="$PROJECT_DIR$/projet/dev/js/globals/jquery-loader.js" />
-        <option value="$PROJECT_DIR$/projet/dev/webpack.config.js" />
         <option value="$PROJECT_DIR$/projet/dev/js/globals/flash.js" />
         <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord-css.twig" />
         <option value="$PROJECT_DIR$/projet/dev/views/modules/layout.twig" />
         <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/global_stylesheets.twig" />
         <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/page_specific_stylesheets.twig" />
         <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord.twig" />
-        <option value="$PROJECT_DIR$/projet/dev/package.json" />
         <option value="$PROJECT_DIR$/projet/dev/production_config.php" />
         <option value="$PROJECT_DIR$/projet/dev/config.php" />
         <option value="$PROJECT_DIR$/projet/dev/js/globals/global-includes.js" />
         <option value="$PROJECT_DIR$/projet/dev/helpers/collections/DotNotationCollection.php" />
-        <option value="$PROJECT_DIR$/projet/dev/bootstrap.php" />
         <option value="$PROJECT_DIR$/projet/dev/db_init.php" />
         <option value="$PROJECT_DIR$/projet/dev/helpers/collections/T_DotNotationCollection.php" />
         <option value="$PROJECT_DIR$/projet/dev/helpers/collections/DotNotationArray.php" />
@@ -171,6 +156,34 @@
         <option value="$PROJECT_DIR$/projet/dev/js/error/404/error_404.js" />
         <option value="$PROJECT_DIR$/projet/dev/views/404.twig" />
         <option value="$PROJECT_DIR$/projet/dev/config/development_config.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/sessions/Session.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/interactions/I_Session.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/interactions/I_Cookies.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/interactions/Cookies.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/interactions/Session.php" />
+        <option value="$PROJECT_DIR$/projet/dev/controllers/I_Controller.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/rendering/I_ViewRenderEngine.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php" />
+        <option value="$PROJECT_DIR$/projet/dev/controllers/T_ErrorController.php" />
+        <option value="$PROJECT_DIR$/projet/dev/controllers/PageNotFoundController.php" />
+        <option value="$PROJECT_DIR$/projet/dev/controllers/A_ErrorController.php" />
+        <option value="$PROJECT_DIR$/projet/dev/controllers/RootController.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/http/Request.php" />
+        <option value="$PROJECT_DIR$/projet/dev/bootstrap.php" />
+        <option value="$PROJECT_DIR$/projet/public_html/index.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/routing/UriParams.php" />
+        <option value="$PROJECT_DIR$/projet/dev/controllers/A_Controller.php" />
+        <option value="$PROJECT_DIR$/projet/dev/controllers/AuthController.php" />
+        <option value="$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js" />
+        <option value="$PROJECT_DIR$/projet/dev/webpack.config.js" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/routing/Router.php" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/common.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/main.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/mobile.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/debug.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/definitive_colors.css" />
+        <option value="$PROJECT_DIR$/projet/dev/views/auth/login.twig" />
+        <option value="$PROJECT_DIR$/projet/dev/package.json" />
       </list>
     </option>
   </component>
@@ -243,6 +256,19 @@
               <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -259,11 +285,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\info2s3\webserver\miniproj\projet\public_html\assets\css\auth\login" />
       <recent name="C:\wamp64\www\info2s3\webserver\miniproj\projet\dev\config" />
       <recent name="C:\wamp64\www\info2s3\webserver\miniproj\projet\dev\js\error\404" />
       <recent name="C:\wamp64\www\info2s3\webserver\miniproj\projet\dev\views\modules\global_components\" />
       <recent name="C:\wamp64\www\info2s3\webserver\miniproj\projet\dev\helpers\database" />
-      <recent name="C:\wamp64\www\info2s3\webserver\miniproj\projet\dev" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -294,7 +320,7 @@
       <workItem from="1511438826571" duration="7703000" />
       <workItem from="1511507509954" duration="5069000" />
       <workItem from="1511517634694" duration="4893000" />
-      <workItem from="1511523861574" duration="7960000" />
+      <workItem from="1511523861574" duration="23683000" />
     </task>
     <task id="LOCAL-00001" summary="Setup of phpunit's config, setup of authors in composer.json, creation of TwigAdapter to be able to use Twig easily, creation of base view templates, bits of refactoring here and there">
       <created>1511387520105</created>
@@ -310,11 +336,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511450602535</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Setup of the development environment, everything ready to develop, edited the 404 page">
+      <created>1511535642647</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1511535642647</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36846000" />
+    <option name="totallyTimeSpent" value="52569000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -348,167 +381,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setup of phpunit's config, setup of authors in composer.json, creation of TwigAdapter to be able to use Twig easily, creation of base view templates, bits of refactoring here and there" />
     <MESSAGE value="Setup of the build system for JS files, refactored layout.twig into smaller chunks, few additional additions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup of the build system for JS files, refactored layout.twig into smaller chunks, few additional additions" />
+    <MESSAGE value="Setup of the development environment, everything ready to develop, edited the 404 page" />
+    <MESSAGE value="Updated several parts, started working on the login page, added Controller support, added Router support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated several parts, started working on the login page, added Controller support, added Router support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projet/dev/db_init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/.htaccess" />
-    <entry file="file://$PROJECT_DIR$/projet/public_html/.htaccess." />
-    <entry file="file://$PROJECT_DIR$/projet/public_html/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="46">
-            <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding>
-            <element signature="e#6#79#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/definitive_colors.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/404.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="88" lean-forward="false" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/phpunit.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/reset.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="101" column="1" lean-forward="false" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/mobile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/debug.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/font-loader.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/database/DBConnection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/models/A_Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/clear_float.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-482">
-          <caret line="5" column="49" lean-forward="false" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/rendering/I_ViewRenderEngine.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="62" lean-forward="true" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/.babelrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/js/error_404.bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="95" column="55" lean-forward="true" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -521,6 +402,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -535,6 +417,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="81" lean-forward="false" selection-start-line="2" selection-start-column="81" selection-end-line="2" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -549,6 +432,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -556,6 +440,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" column="123" lean-forward="false" selection-start-line="1" selection-start-column="123" selection-end-line="1" selection-end-column="123" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -563,6 +448,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="60" lean-forward="false" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -570,6 +456,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -577,6 +464,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -584,22 +472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -654,14 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/globals/removeSpinnerLord.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -697,23 +561,7 @@
     <entry file="file://$PROJECT_DIR$/projet/dev/views/404.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/error/404/error_404.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -726,13 +574,241 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/bootstrap.php">
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/interactions/Cookies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/interactions/I_Cookies.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/interactions/Session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/interactions/I_Session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-804">
+          <caret line="1" column="38" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/js/error/404/error_404.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/rendering/I_ViewRenderEngine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="23" column="4" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="27" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="52" column="7" lean-forward="false" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/controllers/PageNotFoundController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
           <folding>
-            <element signature="e#7#56#0#PHP" expanded="true" />
+            <element signature="e#39#72#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/controllers/A_ErrorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/routing/UriParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="23" column="51" lean-forward="false" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+          <folding>
+            <element signature="e#42#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/controllers/A_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="32" column="35" lean-forward="false" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding>
+            <element signature="e#39#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding>
+            <element signature="e#38#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/js/globals/removeSpinnerLord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/controllers/RootController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+          <folding>
+            <element signature="e#39#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="e#7#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/definitive_colors.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/debug.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/mobile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/routing/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="50" column="22" lean-forward="false" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+          <folding>
+            <element signature="e#42#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/auth/login.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

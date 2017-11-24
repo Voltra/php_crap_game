@@ -1,0 +1,27 @@
+{% extends "modules/layout.twig" %}
+
+{% block keywords %}{% endblock %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <form action="" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username"/>
+        <p class="error"></p>
+        <br/>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password"/>
+        <p class="error"></p>
+        <br/>
+
+        <label for="remember">Stay connected:</label>
+        <input type="checkbox" name="remember" id="remember"/>
+        <p class="error"></p>
+        <br/>
+
+        <button type="submit">Login</button>
+    </form>
+    <a href="/auth/register">Want an account ? Register here</a>
+{% endblock %}
