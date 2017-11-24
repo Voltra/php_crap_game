@@ -16,6 +16,8 @@
 
         {% block css %}
             {% include "modules/global_components/page_specific_stylesheets.twig" %}
+            <link rel="stylesheet" href="/assets/css/globals/flash.css" data-whatIdo="Styles pour les messages flash"/>
+            {% include "modules/global_components/spinner-lord-css.twig" %}
         {% endblock %}
         <!--@@ REGULAR SCRIPTS @@-->
 
@@ -26,6 +28,9 @@
     </head>
 
     <body>
+        {% include "modules/global_components/spinner-lord.twig" %}
+        {% include "modules/global_components/flash.twig" %}
+
         {% block body %}
         {% endblock %}
     </body>

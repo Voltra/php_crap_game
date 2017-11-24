@@ -5,5 +5,8 @@
 {% block title %}Error 404 : Page Not Found{% endblock %}
 
 {% block body %}
-    <h1>Error 404 : Page Not Found</h1>
+    <div id="content" onclick="history.back()">
+        <h1 id="error404">Error 404</h1>
+        <a href="javascript:history.back()">Click to go back to the previous page</a>
+    </div>
 {% endblock %}

@@ -2,11 +2,14 @@ body{
     width: 100vw;
     min-height: 100vh;
     height: auto;
+
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 body, body *{
     padding: 0;
     margin: 0;
 
-    font-family: FontAwesome, consolas, sans-serif;
+    font-family: roboto, consolas, sans-serif;
 }

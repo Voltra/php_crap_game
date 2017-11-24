@@ -2,16 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51dd3f47-ff82-4990-87c9-7413bd5bc8dd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/rendering/I_ViewRenderEngine.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/js/error_404.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/global_stylesheets.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/page_specific_stylesheets.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/config/development_config.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/config/production_config.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/collections/DotNotationArray.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/helpers/collections/T_DotNotationCollection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/js/globals/flash.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/js/globals/global-includes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/js/globals/jquery-loader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/js/globals/removeSpinnerLord.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/flash.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord-css.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord.twig" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/projet/dev/js/error_404.js" afterPath="$PROJECT_DIR$/projet/dev/js/error/404/error_404.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/bootstrap.php" afterPath="$PROJECT_DIR$/projet/dev/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php" afterPath="$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/package-lock.json" afterPath="$PROJECT_DIR$/projet/dev/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/config.php" afterPath="$PROJECT_DIR$/projet/dev/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/db_init.php" afterPath="$PROJECT_DIR$/projet/dev/db_init.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/package.json" afterPath="$PROJECT_DIR$/projet/dev/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/views/404.twig" afterPath="$PROJECT_DIR$/projet/dev/views/404.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/views/modules/global_components/global_stylesheets.twig" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/global_stylesheets.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/views/modules/global_components/page_specific_stylesheets.twig" afterPath="$PROJECT_DIR$/projet/dev/views/modules/global_components/page_specific_stylesheets.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/views/modules/layout.twig" afterPath="$PROJECT_DIR$/projet/dev/views/modules/layout.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/debug.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/debug.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/main.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/mobile.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/mobile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/css/globals/common.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/globals/common.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,8 +52,40 @@
       <file leaf-file-name="bootstrap.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projet/dev/bootstrap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state relative-caret-position="391">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="e#7#56#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error_404.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projet/dev/js/error/404/error_404.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projet/dev/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="404.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projet/dev/views/404.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -72,11 +121,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/projet/config.php" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/main.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/mobile.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/debug.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css" />
         <option value="$PROJECT_DIR$/projet/public_html/index.php" />
         <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/font-loader.css" />
         <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/definitive_colorrs.css" />
@@ -85,30 +129,48 @@
         <option value="$PROJECT_DIR$/projet/dev/models/I_Model.php" />
         <option value="$PROJECT_DIR$/projet/dev/models/T_Model.php" />
         <option value="$PROJECT_DIR$/projet/dev/helpers/DBConnection.php" />
-        <option value="$PROJECT_DIR$/projet/dev/config.php" />
-        <option value="$PROJECT_DIR$/projet/dev/db_init.php" />
         <option value="$PROJECT_DIR$/projet/phpunit.xml" />
         <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/reset.css" />
         <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/clear_float.css" />
         <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/main.css" />
         <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/mobile.css" />
-        <option value="$PROJECT_DIR$/projet/dev/views/404.twig" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/common.css" />
         <option value="$PROJECT_DIR$/projet/dev/helpers/database/DBConnection.php" />
         <option value="$PROJECT_DIR$/projet/dev/models/A_Model.php" />
         <option value="$PROJECT_DIR$/projet/composer.json" />
-        <option value="$PROJECT_DIR$/projet/dev/bootstrap.php" />
         <option value="$PROJECT_DIR$/projet/dev/views/modules/global_stylesheets.twig" />
-        <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/page_specific_stylesheets.twig" />
-        <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/global_stylesheets.twig" />
         <option value="$PROJECT_DIR$/projet/dev/helpers/rendering/I_ViewRenderEngine.php" />
         <option value="$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php" />
         <option value="$PROJECT_DIR$/projet/dev/.babelrc" />
-        <option value="$PROJECT_DIR$/projet/dev/views/modules/layout.twig" />
         <option value="$PROJECT_DIR$/projet/dev/js/404.js" />
-        <option value="$PROJECT_DIR$/projet/dev/package.json" />
         <option value="$PROJECT_DIR$/projet/dev/js/error_404.js" />
+        <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/flash.twig" />
+        <option value="$PROJECT_DIR$/projet/dev/js/globals/jquery-loader.js" />
         <option value="$PROJECT_DIR$/projet/dev/webpack.config.js" />
+        <option value="$PROJECT_DIR$/projet/dev/js/globals/flash.js" />
+        <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord-css.twig" />
+        <option value="$PROJECT_DIR$/projet/dev/views/modules/layout.twig" />
+        <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/global_stylesheets.twig" />
+        <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/page_specific_stylesheets.twig" />
+        <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord.twig" />
+        <option value="$PROJECT_DIR$/projet/dev/package.json" />
+        <option value="$PROJECT_DIR$/projet/dev/production_config.php" />
+        <option value="$PROJECT_DIR$/projet/dev/config.php" />
+        <option value="$PROJECT_DIR$/projet/dev/js/globals/global-includes.js" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/collections/DotNotationCollection.php" />
+        <option value="$PROJECT_DIR$/projet/dev/bootstrap.php" />
+        <option value="$PROJECT_DIR$/projet/dev/db_init.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/collections/T_DotNotationCollection.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/collections/DotNotationArray.php" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/common.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/debug.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/mobile.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/main.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css" />
+        <option value="$PROJECT_DIR$/projet/dev/js/globals/removeSpinnerLord.js" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css" />
+        <option value="$PROJECT_DIR$/projet/dev/js/error/404/error_404.js" />
+        <option value="$PROJECT_DIR$/projet/dev/views/404.twig" />
+        <option value="$PROJECT_DIR$/projet/dev/config/development_config.php" />
       </list>
     </option>
   </component>
@@ -168,7 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -186,6 +247,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -197,6 +259,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\info2s3\webserver\miniproj\projet\dev\config" />
+      <recent name="C:\wamp64\www\info2s3\webserver\miniproj\projet\dev\js\error\404" />
       <recent name="C:\wamp64\www\info2s3\webserver\miniproj\projet\dev\views\modules\global_components\" />
       <recent name="C:\wamp64\www\info2s3\webserver\miniproj\projet\dev\helpers\database" />
       <recent name="C:\wamp64\www\info2s3\webserver\miniproj\projet\dev" />
@@ -227,7 +291,10 @@
       <workItem from="1511265756502" duration="983000" />
       <workItem from="1511288898725" duration="6067000" />
       <workItem from="1511383431550" duration="4171000" />
-      <workItem from="1511438826571" duration="7656000" />
+      <workItem from="1511438826571" duration="7703000" />
+      <workItem from="1511507509954" duration="5069000" />
+      <workItem from="1511517634694" duration="4893000" />
+      <workItem from="1511523861574" duration="7960000" />
     </task>
     <task id="LOCAL-00001" summary="Setup of phpunit's config, setup of authors in composer.json, creation of TwigAdapter to be able to use Twig easily, creation of base view templates, bits of refactoring here and there">
       <created>1511387520105</created>
@@ -236,19 +303,28 @@
       <option name="project" value="LOCAL" />
       <updated>1511387520105</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Setup of the build system for JS files, refactored layout.twig into smaller chunks, few additional additions">
+      <created>1511450602535</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1511450602535</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18877000" />
+    <option name="totallyTimeSpent" value="36846000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -260,7 +336,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -280,73 +355,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projet/dev/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/database/DBConnection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/models/A_Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/404.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="88" lean-forward="false" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/font-loader.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/debug.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/db_init.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -355,16 +363,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/.htaccess." />
+    <entry file="file://$PROJECT_DIR$/projet/dev/.htaccess" />
     <entry file="file://$PROJECT_DIR$/projet/public_html/.htaccess." />
-    <entry file="file://$PROJECT_DIR$/projet/dev/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projet/public_html/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -375,27 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/mobile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projet/public_html/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -403,20 +382,6 @@
           <folding>
             <element signature="e#6#79#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/debug.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -431,7 +396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="88" lean-forward="false" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -464,13 +428,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/debug.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -492,26 +449,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/404.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/models/A_Model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/db_init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -522,19 +463,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/clear_float.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -542,23 +474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/global_stylesheets.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/page_specific_stylesheets.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -566,9 +481,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-482">
           <caret line="5" column="49" lean-forward="false" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-          <folding>
-            <element signature="e#44#65#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -576,7 +489,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="21" column="62" lean-forward="true" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -584,23 +496,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -609,32 +504,235 @@
         <state relative-caret-position="47">
           <caret line="95" column="55" lean-forward="true" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/error_404.js">
+    <entry file="file://$PROJECT_DIR$/projet/dev/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/js/globals/jquery-loader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/js/globals/flash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord-css.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="81" lean-forward="false" selection-start-line="2" selection-start-column="81" selection-end-line="2" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/spinner-lord/variants/voltra.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/flash.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/page_specific_stylesheets.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="123" lean-forward="false" selection-start-line="1" selection-start-column="123" selection-end-line="1" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/global_stylesheets.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="60" lean-forward="false" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/layout.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="23" column="64" lean-forward="false" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
+        <state relative-caret-position="240">
+          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/config/production_config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/js/globals/global-includes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="true" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/db_init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/collections/T_DotNotationCollection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="46" column="48" lean-forward="false" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/collections/DotNotationArray.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="152" column="48" lean-forward="false" selection-start-line="152" selection-start-column="48" selection-end-line="152" selection-end-column="48" />
+          <folding>
+            <element signature="e#47#63#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/debug.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/js/globals/removeSpinnerLord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/mobile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/404.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/js/error/404/error_404.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/config/development_config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="391">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#56#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

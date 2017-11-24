@@ -1,11 +1,13 @@
 <?php
+
+use Project\Helpers\Collections\DotNotationArray;
 use Project\Helpers\Rendering\TwigAdapter;
 
 require_once("../vendor/autoload.php");
-$config = require_once("config.php");
+$config = DotNotationArray::makeFrom( require_once("config.php") );
 //$db = require_once("db_init.php");
 
-$twig = new TwigAdapter($config["app"]["views_path"], [
+$twig = new TwigAdapter($config["app.views_path"], [
     "debug" => $config["debug"]
 ]);
 
