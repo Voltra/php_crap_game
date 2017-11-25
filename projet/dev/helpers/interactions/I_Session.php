@@ -2,6 +2,11 @@
 namespace Project\Helpers\Interactions;
 
 
+/**An interface representing the shared behavior of classes that represent a php session
+ * Interface I_Session
+ * @package Project\Helpers\Interactions
+ * @author Ludwig GUERIN
+ */
 interface I_Session {
     /**Determines whether or not the session has data associated to the given key
      * @param string $key being the key to the data being looked at

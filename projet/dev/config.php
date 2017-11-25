@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Ludwig GUERIN
+ */
+
 $development = true;
 
 if($development)

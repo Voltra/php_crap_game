@@ -1,3 +1,7 @@
+/**
+ * @author Ludwig GUERIN
+ */
+
 var webpack = require("webpack");
 
 module.exports = {

@@ -1,0 +1,10 @@
+{
+  "NaN": "There has been an error while interpreting the input : evaluated to NaN",
+  "required": "This field is required, please fill it in order to continue",
+  "min": "Must be &ge; %value%",
+  "max": "Must be &le; %value%",
+  "nomatch_regex": "Invalid format, please respect the following regex : %value%",
+  "minLength": "A minimum of %value% characters is expected",
+  "maxLength": "A maximum of %value% characters is expected",
+  "notEqual": "Passwords don't match"
+}

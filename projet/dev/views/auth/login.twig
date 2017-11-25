@@ -1,3 +1,4 @@
+{# Author : Ludwig GUERIN #}
 {% extends "modules/layout.twig" %}
 
 {% block keywords %}{% endblock %}
@@ -5,7 +6,7 @@
 {% block title %}Login{% endblock %}
 
 {% block body %}
-    <form action="" method="POST">
+    <form id="loginForm" action="" method="POST">
         <label for="username">Username:</label>
         <input type="text" name="username" id="username"/>
         <p class="error"></p>

@@ -4,22 +4,41 @@ namespace Project\Helpers\Http;
 
 use Exception;
 
+/**A class that represent an HTTP request as an object
+ * Class Request
+ * @package Project\Helpers\Http
+ * @author Ludwig GUERIN
+ */
 class Request {
     const BAD_REQUEST_METHOD = "Bad request method";
     const BAD_INDEX = "No such index";
 
+    /**Retrieve the request's method
+     * @return string
+     */
     public function getMethod() : string{
         return $_SERVER["REQUEST_METHOD"];
     }
 
+    /**Determine whether or not this is a POST request
+     * @return bool
+     */
     public function isPost() : bool{
         return $this->getMethod() === "POST";
     }
 
+    /**Determine whether or not this is a GET request
+     * @return bool
+     */
     public function isGet() : bool{
         return $this->getMethod() === "GET";
     }
 
+    /**Retrieve a parameter from the GET request
+     * @param string $key being the key to the desired data
+     * @return string
+     * @throws Exception
+     */
     public function get(string $key) : string{
         if(!$this->isGet())
             throw new Exception(self::BAD_REQUEST_METHOD);
@@ -30,6 +49,11 @@ class Request {
         return $_GET[$key];
     }
 
+    /**Retrieve data from the POST request
+     * @param string $key being the key to the desired data
+     * @return string
+     * @throws Exception
+     */
     public function post(string $key) : string{
         if(!$this->isPost())
             throw new Exception(self::BAD_REQUEST_METHOD);
@@ -40,6 +64,9 @@ class Request {
         return $_POST[$key];
     }
 
+    /**Retrieve the request's URI / requested URI
+     * @return string
+     */
     public function uri() : string{
         return $_SERVER["REQUEST_URI"];
     }

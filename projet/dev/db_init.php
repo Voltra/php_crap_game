@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Ludwig GUERIN
+ */
 
 use Project\Helpers\Database\DBConnection;
 

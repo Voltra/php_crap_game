@@ -28,7 +28,8 @@
     "fetch_json": "^1.0.5",
     "jq-flash": "^1.0.2",
     "jquery": "^3.2.1",
-    "spinner-lord": "^0.2.0"
+    "spinner-lord": "^0.2.0",
+    "yavljs": "^1.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

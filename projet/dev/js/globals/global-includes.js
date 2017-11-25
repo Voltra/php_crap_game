@@ -1,3 +1,7 @@
+/**
+ * @author Ludwig GUERIN
+ */
+
 import flash from "./flash"
 import {removeSpinnerLord} from "./removeSpinnerLord"
 

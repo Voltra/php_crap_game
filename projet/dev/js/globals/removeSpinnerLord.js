@@ -1,3 +1,8 @@
+/**
+ * @author Ludwig GUERIN
+ */
+
+
 /**A jQuery based function that removes spinner-lord
  * @param {function} functor - The function to execute before removing the spinner-lord DOM element
  * @param {number} waitAfterDomLoad - A number representing the amount of time (in ms) to wait before setting the spinner-lord to inactive

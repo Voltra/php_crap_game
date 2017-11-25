@@ -1,3 +1,7 @@
+/**
+ * @author Ludwig GUERIN
+ */
+
 import $ from "jquery";
 window.$ = $;
 window.jQuery = $;

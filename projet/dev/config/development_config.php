@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Ludwig GUERIN
+ */
+
 
 $ROOT = dirname(dirname(__DIR__));
 $DEV_ROOT = $ROOT . "/dev/";

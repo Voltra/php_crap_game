@@ -6,9 +6,25 @@ use Project\controllers\A_Controller;
 use Project\helpers\http\Request;
 use Project\Helpers\Rendering\I_ViewRenderEngine;
 
+/**A helper class that splits a URI into different parameters, CodeIgniter style (which is bad but ykwim)
+ * Class UriParams
+ * @package Project\Helpers\Routing
+ * @author Ludwig GUERIN
+ */
 class UriParams {
+    /**The controller's class name
+     * @var string
+     */
     protected $_class;
+
+    /**The method to call
+     * @var string
+     */
     protected $_method;
+
+    /**The arguments to pass
+     * @var array
+     */
     protected $_arguments;
 
     public function __construct(string $class, string $method, array $args = []) {
@@ -20,11 +36,17 @@ class UriParams {
         $this->_arguments = $args;
     }
 
+    /**Invokes the function with the given parameters
+     * @param I_ViewRenderEngine $renderEngine
+     */
     public function invoke(I_ViewRenderEngine $renderEngine){
         $instance = new $this->_class($renderEngine);
         call_user_func_array([$instance, $this->_method], $this->_arguments);
     }
 
+    /**Checks if the class is valid (throws errors if not)
+     * @param string $class being the controller's class name
+     */
     public static function checkClass(string $class){
         if(!class_exists($class))
             throw new InvalidArgumentException("'{$class}' is currently undefined");
@@ -35,6 +57,10 @@ class UriParams {
         }
     }
 
+    /**Determines whether or not the class is correct
+     * @param string $class being the controller's class name
+     * @return bool
+     */
     public static function classIsCorrect(string $class) : bool{
         try{
             self::checkClass($class);
@@ -46,6 +72,10 @@ class UriParams {
         return true;
     }
 
+    /**Checks if the method is valid for the given controller's class name (throws error if not)
+     * @param string $class being the controller's class name
+     * @param string $method being the method's name
+     */
     public static function checkMethod(string $class, string $method){
         if(!in_array($method, get_class_methods($class)))
             throw new InvalidArgumentException("'{$class}' has no method '{$method}'");
@@ -54,6 +84,11 @@ class UriParams {
             throw new InvalidArgumentException("{$class}'s method '{$method}' cannot be invoked");
     }
 
+    /**Determines whether or not the method is correct
+     * @param string $class being the controller's class name
+     * @param string $method being the method's name
+     * @return bool
+     */
     public static function methodIsCorrect(string $class, string $method) : bool{
         try{
             self::checkMethod($class, $method);
@@ -64,6 +99,11 @@ class UriParams {
         return true;
     }
 
+    /**Build a UriParams from a request and the router
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @return UriParams
+     */
     public static function fromRequest(Request $rq, Router $router) : UriParams{
         $uri = $rq->uri();
         $uri_parts = explode("/", $uri);

@@ -97,6 +97,10 @@ module.exports = g;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__flash__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__removeSpinnerLord__ = __webpack_require__(7);
+/**
+ * @author Ludwig GUERIN
+ */
+
 
 
 
@@ -109,6 +113,10 @@ module.exports = g;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jq_flash__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jq_flash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jq_flash__);
+/**
+ * @author Ludwig GUERIN
+ */
+
 
 
 /***/ }),
@@ -10469,6 +10477,11 @@ return jQuery;
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = removeSpinnerLord;
+/**
+ * @author Ludwig GUERIN
+ */
+
+
 /**A jQuery based function that removes spinner-lord
  * @param {function} functor - The function to execute before removing the spinner-lord DOM element
  * @param {number} waitAfterDomLoad - A number representing the amount of time (in ms) to wait before setting the spinner-lord to inactive
@@ -10491,6 +10504,10 @@ function removeSpinnerLord(functor, waitAfterDomLoad = 100, waitAfterInactive = 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__globals_global_includes__ = __webpack_require__(1);
+/**
+ * @author Ludwig GUERIN
+ */
+
 
 
 const spinnerRemover = ()=>{

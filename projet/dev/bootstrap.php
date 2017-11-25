@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author Ludwig GUERIN
+ */
+
 use Project\controllers\PageNotFoundController;
 use Project\controllers\RootController;
 use Project\Helpers\Collections\DotNotationArray;

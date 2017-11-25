@@ -1,0 +1,23 @@
+{
+  "form": "#loginForm",
+  "fields": {
+    "username": {
+      "required": true,
+      "selector": "#username",
+      "error_selector": "#username + p.error",
+      "rules": {
+        "regex": "^(\\w|-)+$",
+        "minLength": 6,
+        "maxLength": 20
+      }
+    },
+    "password": {
+      "required": true,
+      "selector": "#password",
+      "error_selector": "#password + p.error",
+      "rules": {
+        "minLength": 8
+      }
+    }
+  }
+}

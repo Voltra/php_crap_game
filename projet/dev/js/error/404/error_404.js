@@ -1,3 +1,7 @@
+/**
+ * @author Ludwig GUERIN
+ */
+
 import removeSpinnerLord from "../../globals/global-includes"
 
 const spinnerRemover = ()=>{
