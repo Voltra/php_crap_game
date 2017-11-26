@@ -2,7 +2,7 @@
  * @author Ludwig GUERIN
  */
 
-import removeSpinnerLord from "../../globals/global-includes"
+import {removeSpinnerLord} from "../../globals/global-includes"
 
 const spinnerRemover = ()=>{
     $("#error404, a").css("opacity", "1");
@@ -11,5 +11,10 @@ const spinnerRemover = ()=>{
 
 $(document).ready(()=>{
     removeSpinnerLord(spinnerRemover, 100, 500);
+    $("#content").click(event=>{
+        event.preventDefault();
+        event.stopPropagation();
+        history.back();
+    });
 });
 

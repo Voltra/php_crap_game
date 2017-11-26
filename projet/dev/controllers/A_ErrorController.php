@@ -2,6 +2,8 @@
 namespace Project\controllers;
 
 use Exception;
+use Project\Helpers\Rendering\I_ViewRenderEngine;
+use Project\Models\A_Model;
 
 /**
  * Class A_ErrorController
@@ -9,6 +11,7 @@ use Exception;
  * @author Ludwig GUERIN
  */
 abstract class A_ErrorController extends A_Controller{
+
     /**The HTTP response status
      * @var null|int
      */

@@ -4,6 +4,9 @@
  */
 
 
+use Project\Controllers\AuthController;
+use Project\models\UserModel;
+
 $ROOT = dirname(dirname(__DIR__));
 $DEV_ROOT = $ROOT . "/dev/";
 define("ROOT", $ROOT);
@@ -22,7 +25,7 @@ define("DB_USER", $DB_USER);
 define("DB_PASSWORD", $DB_PASSWORD);
 
 return [
-    "debug" => true,
+    "debug" => false,
     "db" => [
         "user" => DB_USER,
         "password" => DB_PASSWORD,
@@ -38,5 +41,15 @@ return [
         "views_path" => VIEWS,
         "models_path" => MODELS,
         "controllers_path" => CONTROLLERS
+    ],
+    "dbTables" => [
+        "users" => "joueurs",
+        "games" => "parties"
+    ],
+    "hash" => [
+        "algorithm" => PASSWORD_BCRYPT,
+        "options" => [
+            "cost" => PASSWORD_BCRYPT_DEFAULT_COST
+        ]
     ]
 ];

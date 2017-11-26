@@ -1,4 +1,10 @@
 /**
 @author Ludwig GUERIN
  */
+body{
+    background-color: #e9ebee;
+}
 
+input{
+    border: none;
+}

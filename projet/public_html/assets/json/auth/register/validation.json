@@ -1,5 +1,5 @@
 {
-  "form": "#loginForm",
+  "form": "#registerForm",
   "fields": {
     "username": {
       "required": true,
@@ -17,6 +17,15 @@
       "error_selector": "#password + p.error",
       "rules": {
         "minLength": 4
+      }
+    },
+    "confirm password": {
+      "required": true,
+      "selector": "#c_password",
+      "error_selector": "#c_password + p.error",
+      "rules": {
+        "minLength": 4,
+        "match": "password"
       }
     }
   }

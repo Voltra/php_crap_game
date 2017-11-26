@@ -2,10 +2,13 @@
 namespace Project\controllers;
 
 
+use InvalidArgumentException;
+use Project\Helpers\Database\DBConnection;
 use Project\helpers\http\Request;
 use Project\Helpers\Rendering\I_ViewRenderEngine;
 use Project\helpers\routing\Router;
 use Project\helpers\routing\UriParams;
+use Project\Models\A_Model;
 use Throwable;
 
 /**An abstract class that factorizes the common behavior of controllers
@@ -19,12 +22,25 @@ abstract class A_Controller {
      */
     protected $view;
 
+    /**The model that this controller has access to
+     * @var A_Model
+     */
+    protected $model;
+
+    /**The database connection
+     * @var DBConnection
+     */
+    private $db;
+
     /**
      * A_Controller constructor.
      * @param I_ViewRenderEngine $renderEngine
+     * @param DBConnection $db
      */
-    public function __construct(I_ViewRenderEngine $renderEngine) {
+    public function __construct(I_ViewRenderEngine $renderEngine, DBConnection $db) {
         $this->view = $renderEngine;
+        $this->db = $db;
+        $this->model = null;
     }
 
 
@@ -51,7 +67,7 @@ abstract class A_Controller {
         }catch(Throwable $t){
             return $router->getError404Controller()->renderView();
         }
-        $caller->invoke($this->view);
+        $caller->invoke($this->view, $this->db);
     }
 
     /**Handles POST requests
@@ -64,6 +80,6 @@ abstract class A_Controller {
         }catch(Throwable $t){
             return $router->getError404Controller()->renderView();
         }
-        $caller->invoke($this->view);
+        $caller->invoke($this->view, $this->db);
     }
 }

@@ -3,8 +3,10 @@ namespace Project\Helpers\Routing;
 
 use InvalidArgumentException;
 use Project\controllers\A_Controller;
+use Project\Helpers\Database\DBConnection;
 use Project\helpers\http\Request;
 use Project\Helpers\Rendering\I_ViewRenderEngine;
+use Project\Models\A_Model;
 
 /**A helper class that splits a URI into different parameters, CodeIgniter style (which is bad but ykwim)
  * Class UriParams
@@ -38,9 +40,10 @@ class UriParams {
 
     /**Invokes the function with the given parameters
      * @param I_ViewRenderEngine $renderEngine
+     * @param DBConnection $db
      */
-    public function invoke(I_ViewRenderEngine $renderEngine){
-        $instance = new $this->_class($renderEngine);
+    public function invoke(I_ViewRenderEngine $renderEngine, DBConnection $db){
+        $instance = new $this->_class($renderEngine, $db);
         call_user_func_array([$instance, $this->_method], $this->_arguments);
     }
 

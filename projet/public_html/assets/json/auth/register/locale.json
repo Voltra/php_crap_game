@@ -1,0 +1,7 @@
+{
+  "required": "This field is required",
+  "nomatch_regex": "Invalid format, please consider : %value%",
+  "minLength": "A minimum of %value% characters is required",
+  "maxLength": "A maximum of %value% characters is required",
+  "notEqual": "Passwords don't match"
+}

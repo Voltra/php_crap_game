@@ -3,14 +3,14 @@
 
 {% block keywords %}{% endblock %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Register{% endblock %}
 
 {% if not error %}
     {% set error=[] %}
 {% endif %}
 
 {% block body %}
-    <form id="loginForm" action="" method="POST">
+    <form id="registerForm" action="" method="POST">
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" {% if username %}value="{{ username }}"{% else %}value=""{% endif %}/>
         <p class="error">{% if error.username %}{{ error.username }}{% endif %}</p>
@@ -21,12 +21,11 @@
         <p class="error">{% if error.password %}{{ error.password }}{% endif %}</p>
         <br/>
 
-        <label for="remember">Stay connected:</label>
-        <input type="checkbox" name="remember" id="remember" value="" {% if checked %}checked="checked"{% endif %}/>
-        <p class="error"></p>
+        <label for="c_password">Confirm password:</label>
+        <input type="password" name="c_password" id="c_password" value=""/>
+        <p class="error">{% if attribute(error, "c_password") %}{{ attribute(error, "c_password") }}{% endif %}</p>
         <br/>
 
-        <button type="submit">Login</button>
+        <button type="submit" disabled="disabled">Register</button>
     </form>
-    <a href="/auth/register">Want an account ? Register here</a>
 {% endblock %}

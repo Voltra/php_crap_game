@@ -8,7 +8,8 @@ module.exports = {
     "context": __dirname + "/js",
     "entry": {
         "error_404": "./error/404/error_404",
-        "auth_login": "./auth/login/auth_login"
+        "auth_login": "./auth/login/auth_login",
+        "auth_register": "./auth/register/auth_register"
     },
     "output": {
         "filename": "[name].bundle.js",

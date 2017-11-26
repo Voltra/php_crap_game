@@ -36,30 +36,30 @@ class Request {
 
     /**Retrieve a parameter from the GET request
      * @param string $key being the key to the desired data
-     * @return string
+     * @return null|string ?string
      * @throws Exception
      */
-    public function get(string $key) : string{
+    public function get(string $key) : ?string{
         if(!$this->isGet())
             throw new Exception(self::BAD_REQUEST_METHOD);
 
         if(!isset($_GET[$key]))
-            throw new Exception(self::BAD_INDEX);
+            return null;
 
         return $_GET[$key];
     }
 
     /**Retrieve data from the POST request
      * @param string $key being the key to the desired data
-     * @return string
+     * @return ?string
      * @throws Exception
      */
-    public function post(string $key) : string{
+    public function post(string $key) : ?string{
         if(!$this->isPost())
             throw new Exception(self::BAD_REQUEST_METHOD);
 
         if(!isset($_POST[$key]))
-            throw new Exception(self::BAD_INDEX);
+            return null;
 
         return $_POST[$key];
     }

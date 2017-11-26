@@ -4,6 +4,7 @@ namespace Project\Controllers;
 
 use Project\helpers\http\Request;
 use Project\Helpers\Interactions\Session;
+use Project\Helpers\Rendering\I_ViewRenderEngine;
 use Project\helpers\routing\Router;
 
 /**Render the root ("/") view
@@ -11,7 +12,6 @@ use Project\helpers\routing\Router;
  * @package Project\Controllers
  */
 class RootController extends A_Controller{
-
     /**Handles requests
      * @param Request $rq being the current HTTP request
      * @param Router $router being the application's router

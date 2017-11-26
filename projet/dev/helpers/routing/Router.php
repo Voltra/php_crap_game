@@ -4,6 +4,7 @@ namespace Project\Helpers\Routing;
 use InvalidArgumentException;
 use Project\controllers\A_Controller;
 use Project\controllers\A_ErrorController;
+use Project\Helpers\Database\DBConnection;
 use Project\helpers\http\Request;
 use Project\Helpers\Interactions\Session;
 use Project\Helpers\Rendering\I_ViewRenderEngine;
@@ -29,11 +30,16 @@ class Router {
      */
     protected $renderEngine;
 
-    public function __construct(I_ViewRenderEngine $renderEngine, A_ErrorController $controller404 ,A_Controller $rootController) {
+    /**
+     * @var DBConnection
+     */
+    protected $db;
 
+    public function __construct(I_ViewRenderEngine $renderEngine, A_ErrorController $controller404, A_Controller $rootController, DBConnection $db) {
         $this->renderEngine = $renderEngine;
         $this->controller404 = $controller404;
         $this->rootController = $rootController;
+        $this->db = $db;
     }
 
     /**Dispatches the request to the corresponding controller
@@ -54,7 +60,7 @@ class Router {
             //"auth" => Project\Controllers\AuthController
 
             if(UriParams::classIsCorrect($class) && !is_subclass_of($class, get_class($this->rootController))){
-                $controller = new $class($this->renderEngine);
+                $controller = new $class($this->renderEngine, $this->db);
                 $controller->handleRequest($rq, $this);
                 die();
             }

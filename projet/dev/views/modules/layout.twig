@@ -32,7 +32,9 @@
         {% include "modules/global_components/spinner-lord.twig" %}
         {% include "modules/global_components/flash.twig" %}
 
-        {% block body %}
-        {% endblock %}
+        <div id="content">
+            {% block body %}
+            {% endblock %}
+        </div>
     </body>
 </html>

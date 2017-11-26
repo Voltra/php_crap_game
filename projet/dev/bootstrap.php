@@ -22,11 +22,12 @@ $twig->addGlobal("debug", $config["debug"]);
 
 $session = new Session();
 $session->start();
+$session->set("dbTables", $config["dbTables"]);
+$session->set("hash", $config["hash"]);
 
-$error404Controller = new PageNotFoundController($twig);
-$rootController = new RootController($twig);
-$router = new Router($twig, $error404Controller, $rootController);
-$session->set("router", $router);
+$error404Controller = new PageNotFoundController($twig, $db);
+$rootController = new RootController($twig, $db);
+$router = new Router($twig, $error404Controller, $rootController, $db);
 
 /*$users = $db->query("SELECT pseudo from joueurs")
 ->fetchAll(PDO::FETCH_ASSOC);

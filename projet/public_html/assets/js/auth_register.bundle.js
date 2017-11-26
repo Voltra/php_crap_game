@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10875,12 +10875,20 @@ module.exports=function(a){return a.webpackPolyfill||(a.deprecate=function(){},a
 });
 
 /***/ }),
-/* 14 */,
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var _globalIncludes=__webpack_require__(1),spinnerRemover=function spinnerRemover(){$("#error404, a").css("opacity","1"),$.flash("The page you were looking for does not exist","failure")};$(document).ready(function(){(0,_globalIncludes.removeSpinnerLord)(spinnerRemover,100,500),$("#content").click(function(a){a.preventDefault(),a.stopPropagation(),history.back()})});
+Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=setupValidation;var _globalIncludes=__webpack_require__(1);function setupValidation(a,b,c,d){$(document).ready(function(){(0,_globalIncludes.removeSpinnerLord)(function(){},a,b),(0,_globalIncludes.setupFormValidation)(c,d)})}
+
+/***/ }),
+/* 15 */,
+/* 16 */,
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var _setupValidation=__webpack_require__(14),_setupValidation2=_interopRequireDefault(_setupValidation);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}(0,_setupValidation2.default)(100,500,"/assets/json/auth/register/validation.json","/assets/json/auth/register/locale.json");
 
 /***/ })
 /******/ ]);
