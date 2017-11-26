@@ -13,7 +13,7 @@ use Project\helpers\routing\Router;
 
 require_once("../vendor/autoload.php");
 $config = DotNotationArray::makeFrom( require_once("config.php") );
-//$db = require_once("db_init.php");
+$db = require_once("db_init.php");
 
 $twig = new TwigAdapter($config["app.views_path"], [
     "debug" => $config["debug"]
@@ -28,8 +28,10 @@ $rootController = new RootController($twig);
 $router = new Router($twig, $error404Controller, $rootController);
 $session->set("router", $router);
 
-/*$twig->renderView("404.twig", [
-    "pageName" => "error/404"
-]);*/
+/*$users = $db->query("SELECT pseudo from joueurs")
+->fetchAll(PDO::FETCH_ASSOC);
 
-//require_once( "views/404.php");
+var_dump($users);
+die();*/
+
+//Following is in public_html/index.php

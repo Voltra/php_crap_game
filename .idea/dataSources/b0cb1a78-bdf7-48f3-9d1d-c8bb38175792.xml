@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="miniproj_guerin_jaouen@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="miniproj_guerin_jaouen">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <schema id="7" parent="1" name="td5mvc"/>
+    <schema id="8" parent="1" name="td6ci"/>
+    <schema id="9" parent="1" name="td_ajax"/>
+    <schema id="10" parent="1" name="test"/>
+    <schema id="11" parent="1" name="voltra"/>
+    <schema id="12" parent="1" name="ws_td4"/>
+    <table id="13" parent="2" name="joueurs"/>
+    <table id="14" parent="2" name="parties"/>
+    <column id="15" parent="13" name="pseudo">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="13" name="motDePasse">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="17" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pseudo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="18" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="19" parent="14" name="pseudo">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="14" name="partieGagnee">
+      <Position>3</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="21" parent="14" name="pseudo">
+      <ColNames>pseudo</ColNames>
+    </index>
+    <index id="22" parent="14" name="pseudo_2">
+      <ColNames>pseudo</ColNames>
+    </index>
+    <key id="23" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="24" parent="14" name="parties_ibfk_1">
+      <ColNames>pseudo</ColNames>
+      <RefSchemaName>miniproj_guerin_jaouen</RefSchemaName>
+      <RefTableName>joueurs</RefTableName>
+      <RefColNames>pseudo</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

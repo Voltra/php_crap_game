@@ -30,7 +30,7 @@ return [
         "collation" => "utf8_unicode_ci",
         "driver" => "mysql",
         "uri" => "localhost",
-        "name" => "miniproj"
+        "name" => "miniproj_guerin_jaouen"
     ],
     "app" => [
         "root_path" => ROOT,

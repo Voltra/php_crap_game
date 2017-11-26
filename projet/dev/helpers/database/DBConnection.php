@@ -29,4 +29,19 @@ class DBConnection {
         $this->pdo->setAttribute(PDO::ATTR_CASE, PDO::CASE_UPPER);
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
+
+    /**DBConnection destructor
+     */
+    public function __destruct() {
+        $this->pdo = null;
+    }
+
+    /**Magic method that allows the user to call the PDO's method on this DBConnection
+     * @param string $name being the name of the method to call
+     * @param array $arguments being the arguments to pass to this method
+     * @return mixed
+     */
+    public function __call(string $name, array $arguments = []) {
+        return call_user_func_array([$this->pdo, $name], $arguments);
+    }
 }

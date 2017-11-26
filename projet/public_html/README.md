@@ -26,6 +26,10 @@ De surcroit WAMP propose un utilitaire de création de VirtualHost afin de facil
 
 #### Mise à jour des dépendances de développement
 
+Cette étape est censée être optionnelle, les dépendanes étant mises à jour régulièrement, cependant cela peut être intéressant de les mettre à jour manuellement afin de s'assurer d'avoir les dernières versions des diverses bibliothèques utilisées.
+
+
+
 Afin de mettre à jour toutes les dépendances de développement (diverses bibliothèques) il faut :
 
 * Se munir d'un terminal compatible avec les commandes d'un bash linux classique
@@ -33,3 +37,15 @@ Afin de mettre à jour toutes les dépendances de développement (diverses bibli
 * Exécuter `npm run bulk`, cela mettra à jour les dépendances javascript et CSS
 * Une fois fini, exécuter `cd ..`
 * Enfin exécuter `composer update && composer dump-autoload` ce qui mettra à jour les dépendances PHP et regénérera l'autoloader
+
+
+
+#### Mise en place de la base de données
+
+Afin de bien mettre en place la base de données, il faut se reporter au fichier de configuration `dev/config/development_config.php` et apporter les modifications  souhaitées (nom de DB, nom d'hôte, nom d'utilisateur, mot de passe, etc ...) puis créer la base de donnée en conséquence.
+
+Un script SQL est à votre disposition pour la création de la base de données et l'insertion de tuples par défaut : `dev/exec.sql`.
+
+
+
+Des logiciels tels que [SQLyog](https://github.com/webyog/sqlyog-community/wiki/Downloads) propose une exécution de script afin de faciliter cette étape.
