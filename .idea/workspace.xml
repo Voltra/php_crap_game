@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51dd3f47-ff82-4990-87c9-7413bd5bc8dd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/bootstrap.php" afterPath="$PROJECT_DIR$/projet/dev/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/config/development_config.php" afterPath="$PROJECT_DIR$/projet/dev/config/development_config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/helpers/database/DBConnection.php" afterPath="$PROJECT_DIR$/projet/dev/helpers/database/DBConnection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/README.md" afterPath="$PROJECT_DIR$/projet/public_html/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ressources/joueurs.sql" afterPath="$PROJECT_DIR$/ressources/joueurs.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/.babelrc" afterPath="$PROJECT_DIR$/projet/dev/.babelrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js" afterPath="$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/package.json" afterPath="$PROJECT_DIR$/projet/dev/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/dev/webpack.config.js" afterPath="$PROJECT_DIR$/projet/dev/webpack.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/js/auth_login.bundle.js" afterPath="$PROJECT_DIR$/projet/public_html/assets/js/auth_login.bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projet/public_html/assets/js/error_404.bundle.js" afterPath="$PROJECT_DIR$/projet/public_html/assets/js/error_404.bundle.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,45 +53,13 @@
       <file leaf-file-name="bootstrap.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projet/dev/bootstrap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+            <state relative-caret-position="346">
+              <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
               <folding>
                 <element signature="e#7#39#0#PHP" expanded="true" />
                 <element signature="e#41#88#0#PHP" expanded="true" />
                 <marker date="1511701736037" expanded="true" signature="853:879" ph="SELECT pseud... joueurs" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBConnection.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet/dev/helpers/database/DBConnection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="40" column="73" lean-forward="false" selection-start-line="40" selection-start-column="73" selection-end-line="40" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db_init.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet/dev/db_init.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#6#38#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="development_config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet/dev/config/development_config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -125,8 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/projet/dev/models/A_Model.php" />
-        <option value="$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js" />
         <option value="$PROJECT_DIR$/projet/dev/views/auth/login.twig" />
         <option value="$PROJECT_DIR$/projet/dev/controllers/AuthController.php" />
         <option value="$PROJECT_DIR$/projet/dev/config/production_config.php" />
@@ -155,7 +121,6 @@
         <option value="$PROJECT_DIR$/projet/dev/views/404.php" />
         <option value="$PROJECT_DIR$/projet/dev/config.php" />
         <option value="$PROJECT_DIR$/projet/dev/db_init.php" />
-        <option value="$PROJECT_DIR$/projet/dev/webpack.config.js" />
         <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/common.css" />
         <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/debug.css" />
         <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/definitive_colors.css" />
@@ -176,6 +141,9 @@
         <option value="$PROJECT_DIR$/projet/dev/helpers/database/DBConnection.php" />
         <option value="$PROJECT_DIR$/projet/dev/config/development_config.php" />
         <option value="$PROJECT_DIR$/projet/dev/bootstrap.php" />
+        <option value="$PROJECT_DIR$/projet/dev/.babelrc" />
+        <option value="$PROJECT_DIR$/projet/dev/webpack.config.js" />
+        <option value="$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js" />
       </list>
     </option>
   </component>
@@ -257,7 +225,46 @@
               <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
               <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="auth" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="auth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public_html" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public_html" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public_html" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -314,7 +321,7 @@
       <workItem from="1511517634694" duration="4893000" />
       <workItem from="1511523861574" duration="23798000" />
       <workItem from="1511621459918" duration="5767000" />
-      <workItem from="1511698548779" duration="3156000" />
+      <workItem from="1511698548779" duration="4621000" />
     </task>
     <task id="LOCAL-00001" summary="Setup of phpunit's config, setup of authors in composer.json, creation of TwigAdapter to be able to use Twig easily, creation of base view templates, bits of refactoring here and there">
       <created>1511387520105</created>
@@ -348,7 +355,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61607000" />
+    <option name="totallyTimeSpent" value="63072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -391,20 +398,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/http/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="66" column="49" lean-forward="false" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/interactions/I_Session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-850">
-          <caret line="4" column="88" lean-forward="false" selection-start-line="4" selection-start-column="88" selection-end-line="4" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/helpers/interactions/Session.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="805">
@@ -447,7 +440,7 @@
         <state relative-caret-position="1932">
           <caret line="84" column="73" lean-forward="false" selection-start-line="84" selection-start-column="73" selection-end-line="84" selection-end-column="73" />
           <folding>
-            <element signature="e#42#71#0#PHP" expanded="true" />
+            <element signature="e#42#71#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -456,13 +449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="103" column="59" lean-forward="false" selection-start-line="103" selection-start-column="59" selection-end-line="103" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -484,6 +470,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#34#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -576,13 +566,6 @@
         <state relative-caret-position="46">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -758,10 +741,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#35#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/js/auth_login.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="264" column="434" lean-forward="true" selection-start-line="264" selection-start-column="434" selection-end-line="264" selection-end-column="434" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        <state relative-caret-position="346">
+          <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding>
             <element signature="e#7#39#0#PHP" expanded="true" />
             <element signature="e#41#88#0#PHP" expanded="true" />

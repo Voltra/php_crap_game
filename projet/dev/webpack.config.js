@@ -17,11 +17,6 @@ module.exports = {
     "target": "web",
     "module": {
         "loaders": [
-            {
-                "test": /\.js$/,
-                "exclude": /(node_modules)/,
-                "loader": "babel-loader"
-            }
         ],
         "rules": [
             {
@@ -36,6 +31,11 @@ module.exports = {
                         "options": "jQuery"
                     }
                 ]
+            },
+            {
+                "test": /\.js$/,
+                "exclude": /(node_modules|bower_components)/g,
+                "loader": "babel-loader"
             }
         ]
     },

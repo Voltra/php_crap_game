@@ -18,9 +18,6 @@ $(document).ready(()=>{
             localeObject
         );
 
-        console.log("validationSetup", validationSetup);
-        console.log("validator", validator);
-
         const validateFunc = (event)=>{
             validator.validateForm(event);
         };
