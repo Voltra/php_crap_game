@@ -2,6 +2,8 @@
 namespace Project\Helpers\Rendering;
 
 use Twig_Environment;
+use Twig_Extension;
+use Twig_ExtensionInterface;
 use Twig_Loader_Filesystem;
 use Project\Helpers\Rendering\I_ViewRenderEngine;
 
@@ -53,5 +55,14 @@ class TwigAdapter implements I_ViewRenderEngine{
      */
     public function addGlobal(string $key, $value) {
         $this->env->addGlobal($key, $value);
+    }
+
+    /**
+     * @param Twig_ExtensionInterface $extension
+     * @return $this
+     */
+    public function addExtension(Twig_ExtensionInterface $extension){
+        $this->env->addExtension($extension);
+        return $this;
     }
 }

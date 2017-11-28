@@ -6,6 +6,7 @@ use InvalidArgumentException;
 use Project\Helpers\Collections\DotNotationArray;
 use Project\Helpers\Database\DBConnection;
 use Project\Helpers\Http\Request;
+use Project\helpers\interactions\FlashService;
 use Project\Helpers\Interactions\Session;
 use Project\helpers\JsonRead;
 use Project\Helpers\Rendering\I_ViewRenderEngine;
@@ -18,9 +19,15 @@ use Project\models\UserModel;
  * @author Ludwig GUERIN
  */
 class AuthController extends A_Controller {
+    /**
+     * @var FlashService
+     */
+    protected $flash;
+
     public function __construct(I_ViewRenderEngine $renderEngine, DBConnection $db) {
         parent::__construct($renderEngine, $db);
         $this->model = new UserModel($db);
+        $this->flash = (new Session())->get("sharedFlashService");
     }
 
     /**
@@ -158,7 +165,7 @@ class AuthController extends A_Controller {
     public function logout(Request $rq, Router $router){
         if($this->userIsConnected() && $rq->isGet()) {
             $this->disconnectUser();
-            //TODO: flash message for correct disconnection
+            $this->flash->success("You have successfully been logged out.");
             $router->redirect("/auth/login");
             die();
         }

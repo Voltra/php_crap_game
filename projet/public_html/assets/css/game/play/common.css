@@ -1,0 +1,16 @@
+#game{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    -moz-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    -ms-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    -o-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    transform: rotateZ(0) translateX(-50%) translateY(-50%);
+}
+
+td p{
+    text-align: center;
+    vertical-align: center;
+}

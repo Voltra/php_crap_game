@@ -28,7 +28,7 @@ a:visited{
     color: #544398;
 }
 
-input, button{
+input, button:not(.flash-close){
     -webkit-box-shadow: 0 0 0.4vh 0.2vh rgba(0,0,0, 0.15);
     box-shadow:  0 0 0.4vh 0.2vh rgba(0,0,0, 0.15);
 
@@ -38,7 +38,7 @@ input, button{
 }
 
 input:not([type="checkbox"]):hover, input:not([type="checkbox"]):focus,
-button:hover, button:focus{
+button:not(.flash-close):hover, button:not(.flash-close):focus{
     transform: rotateZ(0) scale(1.2);
 }
 

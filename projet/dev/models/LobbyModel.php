@@ -29,4 +29,11 @@ class LobbyModel extends A_Model {
 
         return $rq->fetch(PDO::FETCH_ASSOC)["AMOUNT"];
     }
+
+    public function insert(string $username, bool $won){
+        $rq = $this->db->prepare("INSERT INTO ".$this->tableName." VALUES (:pseudo, :won)");
+        $rq->bindParam(":pseudo", $username);
+        $rq->bindParam(":won", $won);
+        $rq->execute();
+    }
 }

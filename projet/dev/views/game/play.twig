@@ -10,34 +10,51 @@
 {% endif %}
 
 {% block body %}
-    {# Do the board rendering here #}
+    <div id="welcome">
+        <p>Welcome, {{ username }}</p>
+    </div>
 
+    <div id="actions">
+        <form action="/game/reset" method="POST">
+            <button type="submit" class="fa">Reset &#xf021;</button>
+        </form>
 
-    <div id="board">
-        <table>
+        <form action="/auth/logout" method="GET">
+            <button type="submit" class="fa">Logout &#xf08b;</button>
+        </form>
+    </div>
+
+    <div id="game">
+        <table id="boardTable">
             <thead></thead>
             <tbody>
-                {% for idx, x in board %}
+                {% for idy, y in board %}
                     <tr>
-                        {% for idy, y in x %}
-                            <td>{% if board[idx][idy] %}O{% endif %}</td>
+                        {% for idx, x in y %}
+                            {% if invalids[idy][idx] %}
+                                {# &Cross; #}
+                                <td><p class="empty">&#x25A0;</p></td>
+                            {% else %}
+                                {# &smashp; #}
+                                <td>{% if board[idy][idx] %} <p class="pawn">&ofcir;</p> {% else %} <p class="empty">&target;</p> {% endif %}</td>
+                            {% endif %}
                         {% endfor %}
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-    </div>
-    <div id="play">
+
         <form id="playForm" action="/game/processAction" method="POST">
-            <label for="curx">Current X: </label>
-            <input name="curx" id="curx" type="text" placeholder="[0-6]" {% if curx %}value="{{ curx }}"{% endif %}/>
-            <p class="error">{% if error.curx %}{{ error.curx }}{% endif %}</p>
+            <div>
+                <label for="curx">Current X: </label>
+                <input name="curx" id="curx" type="text" placeholder="[0-6]" {% if curx %}value="{{ curx }}"{% endif %}/>
+                <p class="error">{% if error.curx %}{{ error.curx }}{% endif %}</p>
 
-            <label for="cury">Current Y:</label>
-            <input name="cury" id="cury" type="text" placeholder="[0-6]" {% if cury %}value="{{ cury }}"{% endif %}/>
-            <p class="error">{% if error.cury %}{{ error.cury }}{% endif %}</p>
-
-            <br/>
+                <label for="cury">Current Y:</label>
+                <input name="cury" id="cury" type="text" placeholder="[0-6]" {% if cury %}value="{{ cury }}"{% endif %}/>
+                <p class="error">{% if error.cury %}{{ error.cury }}{% endif %}</p>
+                <br/>
+            </div>
 
             <label for="nextx">To X:</label>
             <input name="nextx" id="nextx" type="text" placeholder="[0-6]" {% if nextx %}value="{{ nextx }}"{% endif %}/>

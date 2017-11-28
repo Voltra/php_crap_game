@@ -2,6 +2,10 @@
 @author Ludwig GUERIN
  */
 
+*{
+    color: #3c3f41;
+}
+
 p.error{
     color: #d80500;
     transition: all 0.3s ease-in-out;
@@ -9,4 +13,16 @@ p.error{
 
 label.valid{
     color: #2ca02c;
+}
+
+p.pawn{
+    opacity: 1;
+}
+
+p.empty{
+    opacity: 0.3;
+}
+
+.fa{
+    font-family: FontAwesome, roboto;
 }

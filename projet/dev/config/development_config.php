@@ -56,6 +56,9 @@ return [
         "auth" => [
             "login" => ROOT . "/public_html/assets/json/auth/login/validation.json",
             "register" => ROOT . "/public_html/assets/json/auth/register/validation.json"
+        ],
+        "game" => [
+            "play" => ROOT . "/public_html/assets/json/game/play/validation.json"
         ]
     ]
 ];
