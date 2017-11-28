@@ -3,7 +3,7 @@
  */
 
 import fetchJSON from "fetch_json"
-import yavl from "yavljs"
+import {yavl} from "./yavl-username"
 import {getStyles} from "./getStyles";
 
 export default function setupFormValidation(validation_settings_path, locale_settings_path){
@@ -64,7 +64,9 @@ export default function setupFormValidation(validation_settings_path, locale_set
             preventDefault: ()=>{}
         });*/
         $(validationSetup.form).on("submit", validateFunc);
-        $(`${validationSetup.form} *`).on("change keyup", validateFunc);
+        $(`${validationSetup.form} *`)
+        .on("change", validateFunc)
+        /*.on("keyup", validateFunc);*/
     }))
     .catch(error => {
         console.log("There has been an error while setting up front-end form validation, falling back to back-end validation.");

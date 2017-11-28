@@ -9,7 +9,8 @@ module.exports = {
     "entry": {
         "error_404": "./error/404/error_404",
         "auth_login": "./auth/login/auth_login",
-        "auth_register": "./auth/register/auth_register"
+        "auth_register": "./auth/register/auth_register",
+        "game_play" : "./game/play/game_play"
     },
     "output": {
         "filename": "[name].bundle.js",
@@ -20,8 +21,8 @@ module.exports = {
         "loaders": [
         ],
         "rules": [
-            {
-                "test": require.resolve("jquery"),
+            /*{
+                "test": require.resolve("jquery"), //  /dist/jquery.min.js
                 "use": [
                     {
                         "loader": "expose-loader",
@@ -32,7 +33,7 @@ module.exports = {
                         "options": "jQuery"
                     }
                 ]
-            },
+            },*/
             {
                 "test": /\.js$/,
                 "exclude": /(node_modules|bower_components)/g,
@@ -40,6 +41,12 @@ module.exports = {
             }
         ]
     },
+	"plugins": [
+		new webpack.ProvidePlugin({
+			"$": "jquery/dist/jquery.min.js",
+			"jQuery": "jquery/dist/jquery.min.js"
+		})
+	],
     "stats": {
         "colors": true
     }

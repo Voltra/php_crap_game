@@ -1,3 +1,60 @@
 /**
 @author Ludwig GUERIN
  */
+
+label.valid{
+    color: #2ca02c;
+}
+
+p.error{
+    color: #d80500;
+    transition: all 0.3s ease-in-out;
+}
+
+[type="submit"]{
+    text-transform: uppercase;
+}
+
+*{
+    color: #3c3f41;
+    border: none;
+}
+
+a{
+    color: #3b5998;
+}
+
+a:visited{
+    color: #544398;
+}
+
+input, button{
+    -webkit-box-shadow: 0 0 0.4vh 0.2vh rgba(0,0,0, 0.15);
+    box-shadow:  0 0 0.4vh 0.2vh rgba(0,0,0, 0.15);
+
+    transition-property: box-shadow, transform, border, opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+input:not([type="checkbox"]):hover, input:not([type="checkbox"]):focus,
+button:hover, button:focus{
+    transform: rotateZ(0) scale(1.2);
+}
+
+[disabled]{
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+
+    opacity: 0.5;
+}
+
+[disabled]:hover{
+    transform: rotateZ(0);
+}
+
+#loginForm{
+    transition-property: top, right, bottom, left, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}

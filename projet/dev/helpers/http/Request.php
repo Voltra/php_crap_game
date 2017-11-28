@@ -51,7 +51,7 @@ class Request {
 
     /**Retrieve data from the POST request
      * @param string $key being the key to the desired data
-     * @return ?string
+     * @return null|string
      * @throws Exception
      */
     public function post(string $key) : ?string{

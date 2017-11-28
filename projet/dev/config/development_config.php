@@ -51,5 +51,11 @@ return [
         "options" => [
             "cost" => PASSWORD_BCRYPT_DEFAULT_COST
         ]
+    ],
+    "form" => [
+        "auth" => [
+            "login" => ROOT . "/public_html/assets/json/auth/login/validation.json",
+            "register" => ROOT . "/public_html/assets/json/auth/register/validation.json"
+        ]
     ]
 ];

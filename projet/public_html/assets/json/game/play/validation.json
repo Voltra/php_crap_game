@@ -1,0 +1,45 @@
+{
+  "form": "#playForm",
+  "fields": {
+    "curx": {
+      "selector": "#curx",
+      "error_selector": "#curx + p.error",
+      "required": true,
+      "rules": {
+        "regex": "^\\d+$",
+        "min": 0,
+        "max": 6
+      }
+    },
+    "cury": {
+      "selector": "#cury",
+      "error_selector": "#cury + p.error",
+      "required": true,
+      "rules": {
+        "regex": "^\\d+$",
+        "min": 0,
+        "max": 6
+      }
+    },
+    "nextx": {
+      "selector": "#nextx",
+      "error_selector": "#nextx + p.error",
+      "required": true,
+      "rules": {
+        "regex": "^\\d+$",
+        "min": 0,
+        "max": 6
+      }
+    },
+    "nexty": {
+      "selector": "#nexty",
+      "error_selector": "#nexty + p.error",
+      "required": true,
+      "rules": {
+        "regex": "^\\d+$",
+        "min": 0,
+        "max": 6
+      }
+    }
+  }
+}

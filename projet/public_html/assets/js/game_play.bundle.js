@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -345,11 +345,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ }),
 /* 17 */,
 /* 18 */,
-/* 19 */
+/* 19 */,
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var _setupValidation=__webpack_require__(16),_setupValidation2=_interopRequireDefault(_setupValidation);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}(0,_setupValidation2.default)(100,500,"/assets/json/auth/register/validation.json","/assets/json/auth/register/locale.json");
+var _setupValidation=__webpack_require__(16),_setupValidation2=_interopRequireDefault(_setupValidation);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var basePath="/assets/json/game/play";(0,_setupValidation2.default)(100,500,basePath+"/validation.json",basePath+"/locale.json");
 
 /***/ })
 /******/ ]);

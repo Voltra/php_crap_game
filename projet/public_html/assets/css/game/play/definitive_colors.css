@@ -1,0 +1,12 @@
+/**
+@author Ludwig GUERIN
+ */
+
+p.error{
+    color: #d80500;
+    transition: all 0.3s ease-in-out;
+}
+
+label.valid{
+    color: #2ca02c;
+}

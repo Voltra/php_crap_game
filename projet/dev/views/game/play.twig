@@ -1,0 +1,55 @@
+{# Author : Ludwig GUERIN #}
+{% extends "modules/layout.twig" %}
+
+{% block keywords %}{% endblock %}
+
+{% block title %}Play{% endblock %}
+
+{% if not error %}
+    {% set error=[] %}
+{% endif %}
+
+{% block body %}
+    {# Do the board rendering here #}
+
+
+    <div id="board">
+        <table>
+            <thead></thead>
+            <tbody>
+                {% for idx, x in board %}
+                    <tr>
+                        {% for idy, y in x %}
+                            <td>{% if board[idx][idy] %}O{% endif %}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div id="play">
+        <form id="playForm" action="/game/processAction" method="POST">
+            <label for="curx">Current X: </label>
+            <input name="curx" id="curx" type="text" placeholder="[0-6]" {% if curx %}value="{{ curx }}"{% endif %}/>
+            <p class="error">{% if error.curx %}{{ error.curx }}{% endif %}</p>
+
+            <label for="cury">Current Y:</label>
+            <input name="cury" id="cury" type="text" placeholder="[0-6]" {% if cury %}value="{{ cury }}"{% endif %}/>
+            <p class="error">{% if error.cury %}{{ error.cury }}{% endif %}</p>
+
+            <br/>
+
+            <label for="nextx">To X:</label>
+            <input name="nextx" id="nextx" type="text" placeholder="[0-6]" {% if nextx %}value="{{ nextx }}"{% endif %}/>
+            <p class="error">{% if error.nextx %}{{ error.nextx }}{% endif %}</p>
+
+            <label for="nexty">To Y:</label>
+            <input name="nexty" id="nexty" type="text" placeholder="[0-6]" {% if nexty %}value="{{ nexty }}"{% endif %}/>
+            <p class="error">{% if error.nexty %}{{ error.nexty }}{% endif %}</p>
+
+            <br/>
+
+            <button type="submit">PLAY</button>
+        </form>
+    </div>
+{% endblock %}

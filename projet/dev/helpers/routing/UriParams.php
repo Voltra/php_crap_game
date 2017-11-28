@@ -117,10 +117,10 @@ class UriParams {
             $args = array_filter($uri_parts, function($index){
                 return ($index >= 2);
             }, ARRAY_FILTER_USE_KEY);
-            $args = array_merge($args, [
+            $args = array_merge([
                 $rq,
                 $router
-            ]);
+            ], $args);
 
             return new UriParams($class, $method, $args);
         }

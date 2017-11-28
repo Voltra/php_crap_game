@@ -24,6 +24,7 @@ $session = new Session();
 $session->start();
 $session->set("dbTables", $config["dbTables"]);
 $session->set("hash", $config["hash"]);
+$session->set("validate", DotNotationArray::makeFrom( $config["form"] ));
 
 $error404Controller = new PageNotFoundController($twig, $db);
 $rootController = new RootController($twig, $db);

@@ -45,6 +45,12 @@ label.valid{
 #registerForm [type="submit"]{
     border: none;
     background-color: lightgray;
+    text-transform: uppercase;
+}
+
+#registerForm [type="submit"]{
+    -webkit-box-shadow: 0 0 0.4vh 0.3vh rgba(0,0,0, 0.2);
+    box-shadow:  0 0 0.4vh 0.3vh rgba(0,0,0, 0.2);
 }
 
 #registerForm [type="submit"][disabled]{

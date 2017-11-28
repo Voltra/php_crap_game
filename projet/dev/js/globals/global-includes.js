@@ -5,6 +5,7 @@
 import flash from "./flash"
 import {removeSpinnerLord} from "./removeSpinnerLord"
 import setupFormValidation from "./setupFormValidation"
-import getStyles from "./getStyles"
+import {getStyles} from "./getStyles"
+import {yavl} from "./yavl-username"
 
-export {removeSpinnerLord, setupFormValidation, getStyles};
+export {removeSpinnerLord, setupFormValidation, getStyles, yavl};
