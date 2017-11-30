@@ -17,10 +17,9 @@
 
         {% block css %}
             {% include "modules/global_components/page_specific_stylesheets.twig" %}
-            <link rel="stylesheet" href="/assets/css/globals/flash.css" data-whatIdo="Styles pour les messages flash"/>
+            {% include "modules/global_components/flash-css.twig" %}
             {% include "modules/global_components/spinner-lord-css.twig" %}
         {% endblock %}
-        <!--@@ REGULAR SCRIPTS @@-->
 
         <!--@@ CUSTOM SCRIPTS @@-->
         {% block scripts %}

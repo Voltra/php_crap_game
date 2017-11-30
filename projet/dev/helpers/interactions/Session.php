@@ -82,7 +82,7 @@ class Session implements I_Session {
      */
     public function stop(){
         if($this->isActive())
-            session_abort();
+            session_destroy();
 
         return $this;
     }

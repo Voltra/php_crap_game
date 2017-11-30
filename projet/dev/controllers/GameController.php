@@ -20,8 +20,15 @@ use Project\Helpers\Rendering\I_ViewRenderEngine;
 use Project\Helpers\Routing\Router;
 use Project\models\LobbyModel;
 
+/**A controller that handles the game's logic
+ * Class GameController
+ * @package Project\controllers
+ * @author Ludwig GUERIN
+ */
 class GameController extends A_Controller {
     const BOARD_SESSION_KEY = "board";
+    const PREV_BOARD_SESSION_KEY = "prevboard";
+
     /**
      * @var Session
      */
@@ -65,7 +72,8 @@ class GameController extends A_Controller {
             "pageName" => "game/play",
             "username" => $this->getUsername(),
             "board" => $this->getBoard(),
-            "invalids" => $this->getInvalidStates()
+            "invalids" => $this->getInvalidStates(),
+            "canUndo" => $this->canUndo()
         ]);
     }
 
@@ -101,7 +109,8 @@ class GameController extends A_Controller {
         if(!$rq->isPost())
             throw new Error("Tried to access via GET a feature that can only be accessed via POST");
 
-        $this->session->unset("board");
+        $this->session->unset(self::PREV_BOARD_SESSION_KEY);
+        $this->session->unset(self::BOARD_SESSION_KEY);
         $this->redirectToBoard($router);
     }
 
@@ -113,6 +122,69 @@ class GameController extends A_Controller {
             $this->redirectToBoard($router);
 
         //TODO: Afficher vue de victoire
+    }
+
+    public function undo(Request $rq, Router $router){
+        if(!$rq->isPost())
+            throw new Error("Tried to access via GET a feature that can only be accessed via POST");
+
+        if(!$this->session->has(self::PREV_BOARD_SESSION_KEY))
+            throw new Error("The undo feature is unavailable");
+
+
+        if($this->canUndo()) {
+            $prevBoard = $this->getLastBackup();
+            $this->setBoard($prevBoard)->removeLastBackup();
+        }
+
+        $this->redirectToBoard($router);
+    }
+
+    protected function canUndo(){
+        $prev_board = $this->getLastBackup();
+        $initBoard = $this->getInitBoard();
+        $board = $this->getBoard();
+
+        /*var_dump($prev_board, $initBoard, $board);
+        die();*/
+        return !(is_null($prev_board) || $board==$initBoard);
+    }
+
+    protected function addBackup(?array $board = null) : self{
+        if(is_null($board))
+            $this->session->set(self::PREV_BOARD_SESSION_KEY, []);
+        else{
+            $bkp = $this->session->get(self::PREV_BOARD_SESSION_KEY);
+
+            $bkp[] = $board;
+            $this->setBackups($bkp);
+        }
+        return $this;
+    }
+
+    protected function getLastBackup() : ?array{
+        $bkp = $this->getBackups();
+        $length = count($bkp);
+        return $length==0 ? null : $bkp[$length - 1];
+    }
+
+    protected function setBackups(?array $bkp){
+        $this->session->set(self::PREV_BOARD_SESSION_KEY, $bkp);
+        return $this;
+    }
+
+    protected function getBackups() : array {
+        if(!$this->session->has(self::PREV_BOARD_SESSION_KEY))
+            $this->setBackups([]);
+
+        return $this->session->get(self::PREV_BOARD_SESSION_KEY);
+    }
+
+    protected function removeLastBackup() : self{
+        $bkp = $this->getBackups();
+        array_pop($bkp);
+        $this->setBackups($bkp);
+        return $this;
     }
 
     protected function userWon() : bool{
@@ -216,6 +288,7 @@ class GameController extends A_Controller {
         $iy = $cy + ($signedDeltaY / 2);
 
         $board = $this->getBoard();
+        $this->addBackup($board);
         $board[$cy][$cx] = false;
         $board[$iy][$ix] = false;
         $board[$ny][$nx] = true;
@@ -228,7 +301,7 @@ class GameController extends A_Controller {
 
         $valids = [
             [2,0],
-            [2,2],
+            /*[2,2],*/
             [0,2]
         ];
         return !in_array([$unsignedDeltaX, $unsignedDeltaY], $valids);
@@ -315,13 +388,16 @@ class GameController extends A_Controller {
     }
 
     protected function getBoard() : array{
-        if(!$this->session->has(self::BOARD_SESSION_KEY))
+        if(!$this->session->has(self::BOARD_SESSION_KEY)) {
+            $this->setBackups([]);
             $this->setBoard($this->getInitBoard());
+        }
         return $this->session->get(self::BOARD_SESSION_KEY);
     }
 
-    protected function setBoard(array $board){
+    protected function setBoard(array $board) : self{
         $this->session->set(self::BOARD_SESSION_KEY, $board);
+        return $this;
     }
 
     /**Retrieve the initial board

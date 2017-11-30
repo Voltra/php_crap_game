@@ -1,6 +1,6 @@
 {
   "min": "Minimum value is %value%",
   "max": "Maximum value is %value%",
-  "NaN": "Please, enter a number",
-  "nomatch_regex": "Please, enter a number"
+  "NaN": "Please, enter a number between 0 and 6",
+  "nomatch_regex": "Please, enter a number between 0 and 6"
 }

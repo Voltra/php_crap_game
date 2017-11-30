@@ -3,7 +3,8 @@
  */
 
 
-import {removeSpinnerLord, setupFormValidation} from "../globals/global-includes";
+import {removeSpinnerLord} from "../globals/removeSpinnerLord";
+import setupFormValidation from "../globals/setupFormValidation";
 
 export default function setupValidation(postDomDelay, postRemoveDelay, formSettingsPath, formLocalePath){
     $(document).ready(()=>{

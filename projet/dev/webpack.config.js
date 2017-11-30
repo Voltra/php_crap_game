@@ -18,37 +18,32 @@ module.exports = {
     },
     "target": "web",
     "module": {
-        "loaders": [
-        ],
         "rules": [
-            /*{
-                "test": require.resolve("jquery"), //  /dist/jquery.min.js
-                "use": [
-                    {
-                        "loader": "expose-loader",
-                        "options": "$"
-                    },
-                    {
-                        "loader": "expose-loader",
-                        "options": "jQuery"
-                    }
-                ]
-            },*/
             {
                 "test": /\.js$/,
                 "exclude": /(node_modules|bower_components)/g,
                 "loader": "babel-loader"
-            }
+            }/*,
+            {
+                "test": /\.js$/,
+                "loader": "uglify-loader"
+            }*/
         ]
     },
 	"plugins": [
 		new webpack.ProvidePlugin({
 			"$": "jquery/dist/jquery.min.js",
 			"jQuery": "jquery/dist/jquery.min.js"
-		})
+		}),
+        new webpack.LoaderOptionsPlugin({
+            "options": {
+                "uglify-loader": {
+                    "mangle": true
+                }
+            }
+        })
 	],
     "stats": {
         "colors": true
     }
-
 };

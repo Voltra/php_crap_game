@@ -2,7 +2,7 @@
  * @author Ludwig GUERIN
  */
 
-import {removeSpinnerLord} from "../../globals/global-includes"
+import {removeSpinnerLord} from "../../globals/removeSpinnerLord"
 
 const spinnerRemover = ()=>{
     $("#error404, a").css("opacity", "1");

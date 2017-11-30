@@ -12,7 +12,7 @@ export default function setupFormValidation(validation_settings_path, locale_set
         const validateInput = (error_selector)=>{
             const p_tag = document.querySelector(error_selector);
             p_tag.innerHTML = "";
-            p_tag.style.height = "0";
+            p_tag.style.height = "0vh";
 
             const $relatedInput = $(p_tag.previousElementSibling);
             const $relatedLabel = $relatedInput.prev("label");
@@ -55,9 +55,9 @@ export default function setupFormValidation(validation_settings_path, locale_set
                 .length === 0;
 
             if(isValid)
-                $("[type='submit']").removeAttr("disabled");
+                $(event.target).parents("form").children("[type='submit']").removeAttr("disabled");
             else
-                $("[type='submit']").attr("disabled", "disabled");
+                $(event.target).parents("form").children("[type='submit']").attr("disabled", "disabled");
         };
 
         /*validateFunc({

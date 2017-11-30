@@ -318,7 +318,7 @@ class AuthController extends A_Controller {
         if(!is_array($validationScheme))
             throw new Exception("Invalid json validation scheme");
 
-        return DotNotationArray::makeFrom($validationScheme)["fields"];
+        return DotNotationArray::makeFrom($validationScheme["fields"]);
     }
 
     /**Checks if the string follows the format enunciated in the rules
