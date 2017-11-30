@@ -23,27 +23,29 @@ module.exports = {
                 "test": /\.js$/,
                 "exclude": /(node_modules|bower_components)/g,
                 "loader": "babel-loader"
-            }/*,
+            }
+        ],
+        "loaders": [
+            {
+                "test": require.resolve("jquery"),
+                "loader": "expose?$!expose?jQuery"
+            },
             {
                 "test": /\.js$/,
-                "loader": "uglify-loader"
-            }*/
+                "loader": "uglify"
+            }
         ]
     },
 	"plugins": [
 		new webpack.ProvidePlugin({
 			"$": "jquery/dist/jquery.min.js",
-			"jQuery": "jquery/dist/jquery.min.js"
-		}),
-        new webpack.LoaderOptionsPlugin({
-            "options": {
-                "uglify-loader": {
-                    "mangle": true
-                }
-            }
-        })
+            "jQuery": "jquery/dist/jquery.min.js"
+		})
 	],
     "stats": {
         "colors": true
-    }
+    },
+    "externals": [
+        "window"
+    ]
 };

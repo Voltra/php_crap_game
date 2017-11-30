@@ -3,6 +3,7 @@
  */
 
 import {removeSpinnerLord} from "../../globals/removeSpinnerLord"
+import flash from "../../globals/flash"
 
 const spinnerRemover = ()=>{
     $("#error404, a").css("opacity", "1");

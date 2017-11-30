@@ -2,7 +2,6 @@
  * @author Ludwig GUERIN
  */
 
-
 import setupValidation from "../setupValidation"
 
 

@@ -144,7 +144,7 @@ p.error{
     padding: 1vh 2vh;
     
     position: absolute;
-    bottom: 0;
+    bottom: 15%;
     left: 50%;
     transform: rotateZ(0) translateX(-50%);
 }
@@ -155,5 +155,9 @@ p.error{
 }
 
 #actions button{
-    font-size: 2vh;
+    font-size: 3vw;
+}
+
+#actions form{
+    width: 6vw;
 }

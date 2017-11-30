@@ -19,6 +19,7 @@ use Project\Helpers\JsonRead;
 use Project\Helpers\Rendering\I_ViewRenderEngine;
 use Project\Helpers\Routing\Router;
 use Project\models\LobbyModel;
+use Project\Models\SolitaireModel;
 
 /**A controller that handles the game's logic
  * Class GameController
@@ -39,11 +40,14 @@ class GameController extends A_Controller {
      */
     protected $flash;
 
+    protected $solitaireModel;
+
     public function __construct(I_ViewRenderEngine $renderEngine, DBConnection $db) {
         parent::__construct($renderEngine, $db);
         $this->model = new LobbyModel($db);
         $this->session = new Session();
         $this->flash = $this->session->get("sharedFlashService");
+        $this->solitaireModel = new SolitaireModel($db);
     }
 
     /**Handles request for /game/play
@@ -77,6 +81,12 @@ class GameController extends A_Controller {
         ]);
     }
 
+    /**
+     * @param Request $rq
+     * @param Router $router
+     * @throws Error
+     * @throws \Exception
+     */
     public function processAction(Request $rq, Router $router){
         if(!$rq->isPost())
             throw new Error("Tried to access via GET a feature that can only be accessed via POST");
@@ -105,6 +115,11 @@ class GameController extends A_Controller {
         $this->redirectToBoard($router);
     }
 
+    /**
+     * @param Request $rq
+     * @param Router $router
+     * @throws Error
+     */
     public function reset(Request $rq, Router $router){
         if(!$rq->isPost())
             throw new Error("Tried to access via GET a feature that can only be accessed via POST");
@@ -114,6 +129,11 @@ class GameController extends A_Controller {
         $this->redirectToBoard($router);
     }
 
+    /**
+     * @param Request $rq
+     * @param Router $router
+     * @throws Error
+     */
     public function victory(Request $rq, Router $router){
         if(!$rq->isGet())
             throw new Error("GET instead of POST");
@@ -121,9 +141,16 @@ class GameController extends A_Controller {
         if(!$this->session->has("victory"))
             $this->redirectToBoard($router);
 
+
+        $this->session->unset("victory");
         //TODO: Afficher vue de victoire
     }
 
+    /**
+     * @param Request $rq
+     * @param Router $router
+     * @throws Error
+     */
     public function undo(Request $rq, Router $router){
         if(!$rq->isPost())
             throw new Error("Tried to access via GET a feature that can only be accessed via POST");
@@ -150,55 +177,22 @@ class GameController extends A_Controller {
         return !(is_null($prev_board) || $board==$initBoard);
     }
 
-    protected function addBackup(?array $board = null) : self{
-        if(is_null($board))
-            $this->session->set(self::PREV_BOARD_SESSION_KEY, []);
-        else{
-            $bkp = $this->session->get(self::PREV_BOARD_SESSION_KEY);
-
-            $bkp[] = $board;
-            $this->setBackups($bkp);
-        }
+    protected function addBackup(array $board) : self{
+        $this->solitaireModel->addBackup($board);
         return $this;
     }
 
     protected function getLastBackup() : ?array{
-        $bkp = $this->getBackups();
-        $length = count($bkp);
-        return $length==0 ? null : $bkp[$length - 1];
-    }
-
-    protected function setBackups(?array $bkp){
-        $this->session->set(self::PREV_BOARD_SESSION_KEY, $bkp);
-        return $this;
-    }
-
-    protected function getBackups() : array {
-        if(!$this->session->has(self::PREV_BOARD_SESSION_KEY))
-            $this->setBackups([]);
-
-        return $this->session->get(self::PREV_BOARD_SESSION_KEY);
+        return $this->solitaireModel->getLastBackup();
     }
 
     protected function removeLastBackup() : self{
-        $bkp = $this->getBackups();
-        array_pop($bkp);
-        $this->setBackups($bkp);
+        $this->solitaireModel->deleteLastBackup();
         return $this;
     }
 
     protected function userWon() : bool{
-        $board = $this->getBoard();
-        $pawn_count = 0;
-
-        for($x=0 ; $x < 7 ; $x+=1){
-            for($y=0 ; $y < 7 ; $y+=1){
-                if($board[$x][$y])
-                    $pawn_count += 1;
-            }
-        }
-
-        return $pawn_count === 1;
+        return $this->solitaireModel->won();
     }
 
     protected function addLobbyToDb(){
@@ -208,9 +202,77 @@ class GameController extends A_Controller {
         $this->model->insert($username, $won);
     }
 
+    /**Determines whether or not the user is connected
+     * @return bool
+     */
+    protected function userIsConnected() : bool{
+        return $this->session->has("connected");
+    }
+
+    /**Retrieve the user's username
+     * @return null|string
+     */
+    protected function getUsername() : ?string{
+        if($this->userIsConnected())
+            return $this->session->get("connected");
+        else
+            return null;
+    }
+
+    protected function getBoard() : array{
+        return $this->solitaireModel->getBoard();
+    }
+
+    protected function setBoard(array $board) : self{
+        $this->solitaireModel->setBoard($board);
+        return $this;
+    }
+
+    protected function getInitBoard() : array{
+        return $this->solitaireModel->getInitBoard();
+    }
+
+    protected function getInvalidStates() : array{
+        return $this->solitaireModel->getInvalidStates();
+    }
+
+    protected function isInvalidPawn(int $x, int $y) : bool{
+        return $this->solitaireModel->isInvalidPosition($x, $y);
+    }
+
+    protected function canGo(int $cx, int $cy, int $nx, int $ny) : bool{
+        return $this->solitaireModel->canGo($cx, $cy, $nx, $ny);
+    }
+
+    protected function move(int $cx, int $cy, int $nx, int $ny){
+        $this->solitaireModel->move($cx, $cy, $nx, $ny);
+    }
+
+    protected function redirectToLogin(Router $router){
+        $router->redirect("/auth/login");
+        die();
+    }
+
+    protected function redirectToBoard(Router $router){
+        $router->redirect("/game/play");
+        die();
+    }
+
+    /**
+     * @return DotNotationArray
+     * @throws Error
+     * @throws \Exception
+     */
+    protected function getValidationScheme() : DotNotationArray{
+        if(!$this->session->has("validate"))
+            throw new Error("No validation scheme available");
+        $uri = $this->session->get("validate")["game.play"];
+        return DotNotationArray::makeFrom( JsonRead::from($uri)["fields"] );
+    }
+
     protected function validateCurX(Request $rq, Router $router){
         $curX_str = $rq->post("curx");
-        
+
         if(is_null($curX_str) || strlen($curX_str)===0){
             $this->flash->failure("The current X field is required");
             $this->redirectToBoard($router);
@@ -261,69 +323,6 @@ class GameController extends A_Controller {
         }
     }
 
-    protected function isInvalidPawn(int $x, int $y) : bool{
-        return $this->getInvalidStates()[$y][$x];
-    }
-
-    protected function canGo(int $cx, int $cy, int $nx, int $ny) : bool{
-        $deltaX = abs($nx - $cx);
-        $deltaY = abs($ny - $cy);
-        if($this->invalidDeltas($deltaX, $deltaY))
-            return false;
-
-        if(!$this->intermediateIsPawn($cx, $cy, $nx, $ny))
-            return false;
-
-
-        /*echo "goes up to final return<br/>";
-        die();*/
-        return !$this->getBoard()[$ny][$nx];//There must not be a pawn on the next position
-    }
-
-    protected function move(int $cx, int $cy, int $nx, int $ny){
-        $signedDeltaX = $nx - $cx;
-        $signedDeltaY = $ny - $cy;
-
-        $ix = $cx + ($signedDeltaX / 2);
-        $iy = $cy + ($signedDeltaY / 2);
-
-        $board = $this->getBoard();
-        $this->addBackup($board);
-        $board[$cy][$cx] = false;
-        $board[$iy][$ix] = false;
-        $board[$ny][$nx] = true;
-        $this->setBoard($board);
-    }
-
-    protected function invalidDeltas(int $unsignedDeltaX, int $unsignedDeltaY) : bool{
-        if(!($unsignedDeltaX%2==0 && $unsignedDeltaY%2==0))
-            return false;
-
-        $valids = [
-            [2,0],
-            /*[2,2],*/
-            [0,2]
-        ];
-        return !in_array([$unsignedDeltaX, $unsignedDeltaY], $valids);
-    }
-
-    protected function intermediateIsPawn(int $cx, int $cy, int $nx, int $ny){
-        $signedDeltaX = $nx - $cx;
-        $signedDeltaY = $ny - $cy;
-
-        $ix = $cx + ($signedDeltaX / 2);
-        $iy = $cy + ($signedDeltaY / 2);
-
-        return $this->getBoard()[$iy][$ix];
-    }
-
-    protected function getValidationScheme() : DotNotationArray{
-        if(!$this->session->has("validate"))
-            throw new Error("No validation scheme available");
-        $uri = $this->session->get("validate")["game.play"];
-        return DotNotationArray::makeFrom( JsonRead::from($uri)["fields"] );
-    }
-
     protected function followsPattern(string $str, array $rules) : bool{
         $re = $rules["regex"];
         $regex = "/" . $re . "/";
@@ -368,73 +367,5 @@ class GameController extends A_Controller {
         return $this->followsPattern($nexty, $rules)
             && $this->min($nexty, $rules)
             && $this->max($nexty, $rules);
-    }
-
-    /**Determines whether or not the user is connected
-     * @return bool
-     */
-    protected function userIsConnected() : bool{
-        return $this->session->has("connected");
-    }
-
-    /**Retrieve the user's username
-     * @return null|string
-     */
-    protected function getUsername() : ?string{
-        if($this->userIsConnected())
-            return $this->session->get("connected");
-        else
-            return null;
-    }
-
-    protected function getBoard() : array{
-        if(!$this->session->has(self::BOARD_SESSION_KEY)) {
-            $this->setBackups([]);
-            $this->setBoard($this->getInitBoard());
-        }
-        return $this->session->get(self::BOARD_SESSION_KEY);
-    }
-
-    protected function setBoard(array $board) : self{
-        $this->session->set(self::BOARD_SESSION_KEY, $board);
-        return $this;
-    }
-
-    /**Retrieve the initial board
-     * @return array
-     */
-    protected function getInitBoard() : array{
-        return [
-            [false, false, true, true, true, false, false],
-            [false, true, true, true, true, true, false],
-            [true, true, true, true, true, true, true],
-            [true, true, true, false, true, true, true],
-            [true, true, true, true, true, true, true],
-            [false, true, true, true, true, true, false],
-            [false, false, true, true, true, false, false]
-        ];
-    }
-
-    protected function getInvalidStates() : array{
-        return [
-            /*y\x*/
-            /*0*/[true, true, false, false, false, true, true],
-            /*1*/[true, false, false, false, false, false, true],
-            /*2*/[false, false, false, false, false, false, false],
-            /*3*/[false, false, false, false, false, false, false],
-            /*4*/[false, false, false, false, false, false, false],
-            /*5*/[true, false, false, false, false, false, true],
-            /*6*/[true, true, false, false, false, true, true]
-        ];
-    }
-
-    protected function redirectToLogin(Router $router){
-        $router->redirect("/auth/login");
-        die();
-    }
-
-    protected function redirectToBoard(Router $router){
-        $router->redirect("/game/play");
-        die();
     }
 }

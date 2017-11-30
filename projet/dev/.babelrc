@@ -4,7 +4,8 @@
     [
       "minify",
       {
-        "keepFnName": true
+        "keepFnName": true,
+        "keepClassName": true
       }
     ]
   ]
