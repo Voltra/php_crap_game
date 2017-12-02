@@ -2,44 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51dd3f47-ff82-4990-87c9-7413bd5bc8dd" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/projet/dev/models/SolitaireModel.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/projet/dev/js/game/end/game_end.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/projet/dev/views/game/end.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/game/end/common.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/game/end/debug.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/game/end/definitive_colors.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/game/end/main.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/game/end/mobile.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/projet/dev/.babelrc" afterPath="$PROJECT_DIR$/projet/dev/.babelrc" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/bootstrap.php" afterPath="$PROJECT_DIR$/projet/dev/bootstrap.php" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/config/development_config.php" afterPath="$PROJECT_DIR$/projet/dev/config/development_config.php" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/controllers/ApiController.php" afterPath="$PROJECT_DIR$/projet/dev/controllers/ApiController.php" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/controllers/AuthController.php" afterPath="$PROJECT_DIR$/projet/dev/controllers/AuthController.php" />
       <change beforePath="$PROJECT_DIR$/projet/dev/controllers/GameController.php" afterPath="$PROJECT_DIR$/projet/dev/controllers/GameController.php" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/helpers/interactions/FlashService.php" afterPath="$PROJECT_DIR$/projet/dev/helpers/interactions/FlashService.php" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/helpers/rendering/I_ViewRenderEngine.php" afterPath="$PROJECT_DIR$/projet/dev/helpers/rendering/I_ViewRenderEngine.php" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/helpers/rendering/JsonRenderEngine.php" afterPath="$PROJECT_DIR$/projet/dev/helpers/rendering/JsonRenderEngine.php" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php" afterPath="$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/helpers/routing/Router.php" afterPath="$PROJECT_DIR$/projet/dev/helpers/routing/Router.php" />
       <change beforePath="$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js" afterPath="$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/js/auth/setupValidation.js" afterPath="$PROJECT_DIR$/projet/dev/js/auth/setupValidation.js" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/js/error/404/error_404.js" afterPath="$PROJECT_DIR$/projet/dev/js/error/404/error_404.js" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/js/auth/register/auth_register.js" afterPath="$PROJECT_DIR$/projet/dev/js/auth/register/auth_register.js" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/js/game/play/game_play.js" afterPath="$PROJECT_DIR$/projet/dev/js/game/play/game_play.js" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/js/globals/setupFormValidation.js" afterPath="$PROJECT_DIR$/projet/dev/js/globals/setupFormValidation.js" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/models/LobbyModel.php" afterPath="$PROJECT_DIR$/projet/dev/models/LobbyModel.php" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/models/SolitaireModel.php" afterPath="$PROJECT_DIR$/projet/dev/models/SolitaireModel.php" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/models/UserModel.php" afterPath="$PROJECT_DIR$/projet/dev/models/UserModel.php" />
       <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/.bin/uglifyjs" afterPath="$PROJECT_DIR$/projet/dev/node_modules/.bin/uglifyjs" />
       <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/.bin/uglifyjs.cmd" afterPath="$PROJECT_DIR$/projet/dev/node_modules/.bin/uglifyjs.cmd" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/.bin/uglifyjs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/.bin/uglifyjs.cmd" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/bin/uglifyjs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/lib/ast.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/lib/compress.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/lib/minify.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/lib/mozilla-ast.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/lib/output.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/lib/parse.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/lib/propmangle.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/lib/scope.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/lib/sourcemap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/lib/transform.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/lib/utils.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/tools/domprops.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/tools/exports.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/tools/node.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/tools/props.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/package.json" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglifyjs-webpack-plugin/package.json" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/webpack/package.json" afterPath="$PROJECT_DIR$/projet/dev/node_modules/webpack/package.json" />
-      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/webpack/schemas/webpackOptionsSchema.json" afterPath="$PROJECT_DIR$/projet/dev/node_modules/webpack/schemas/webpackOptionsSchema.json" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/fetch_json/README.md" afterPath="$PROJECT_DIR$/projet/dev/node_modules/fetch_json/README.md" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/fetch_json/fetchJSON.js" afterPath="$PROJECT_DIR$/projet/dev/node_modules/fetch_json/fetchJSON.js" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/fetch_json/package.json" afterPath="$PROJECT_DIR$/projet/dev/node_modules/fetch_json/package.json" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/LICENSE" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/LICENSE" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/README.md" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/README.md" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/bin/uglifyjs" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/bin/uglifyjs" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/lib/ast.js" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/lib/ast.js" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/lib/compress.js" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/lib/compress.js" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/lib/minify.js" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/lib/minify.js" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/lib/output.js" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/lib/output.js" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/lib/scope.js" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/lib/scope.js" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/package.json" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/package.json" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/tools/domprops.json" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/tools/domprops.json" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/tools/props.html" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-es/tools/props.html" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/node_modules/uglify-js/package.json" afterPath="$PROJECT_DIR$/projet/dev/node_modules/uglify-js/package.json" />
       <change beforePath="$PROJECT_DIR$/projet/dev/package.json" afterPath="$PROJECT_DIR$/projet/dev/package.json" />
+      <change beforePath="$PROJECT_DIR$/projet/dev/views/game/play.twig" afterPath="$PROJECT_DIR$/projet/dev/views/game/play.twig" />
       <change beforePath="$PROJECT_DIR$/projet/dev/webpack.config.js" afterPath="$PROJECT_DIR$/projet/dev/webpack.config.js" />
+      <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/common.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/common.css" />
+      <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/definitive_colors.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/definitive_colors.css" />
+      <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/auth/register/debug.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/auth/register/debug.css" />
+      <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/auth/register/definitive_colors.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/auth/register/definitive_colors.css" />
+      <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css" />
+      <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css" />
       <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/game/play/common.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/game/play/common.css" />
+      <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/game/play/debug.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/game/play/debug.css" />
       <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/game/play/main.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/game/play/main.css" />
       <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/game/play/mobile.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/game/play/mobile.css" />
+      <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/globals/debug.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/globals/debug.css" />
+      <change beforePath="$PROJECT_DIR$/projet/public_html/assets/css/globals/definitive_colors.css" afterPath="$PROJECT_DIR$/projet/public_html/assets/css/globals/definitive_colors.css" />
       <change beforePath="$PROJECT_DIR$/projet/public_html/assets/js/auth_login.bundle.js" afterPath="$PROJECT_DIR$/projet/public_html/assets/js/auth_login.bundle.js" />
       <change beforePath="$PROJECT_DIR$/projet/public_html/assets/js/auth_register.bundle.js" afterPath="$PROJECT_DIR$/projet/public_html/assets/js/auth_register.bundle.js" />
       <change beforePath="$PROJECT_DIR$/projet/public_html/assets/js/error_404.bundle.js" afterPath="$PROJECT_DIR$/projet/public_html/assets/js/error_404.bundle.js" />
@@ -75,31 +95,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet/dev/controllers/AuthController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="168" column="36" lean-forward="false" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setupValidation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet/dev/js/auth/setupValidation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SolitaireModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projet/dev/models/SolitaireModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2009">
-              <caret line="92" column="12" lean-forward="false" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
+            <state relative-caret-position="193">
+              <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
               <folding>
                 <element signature="e#33#62#0#PHP" expanded="true" />
               </folding>
@@ -107,23 +107,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projet/dev/controllers/GameController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="141" column="43" lean-forward="false" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
+            <state relative-caret-position="483">
+              <caret line="162" column="30" lean-forward="false" selection-start-line="162" selection-start-column="30" selection-end-line="162" selection-end-column="30" />
               <folding>
-                <element signature="e#123#133#0#PHP" expanded="true" />
+                <element signature="e#39#49#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet/dev/bootstrap.php">
+      <file leaf-file-name="development_config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projet/dev/config/development_config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="35" column="51" lean-forward="false" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+            <state relative-caret-position="138">
+              <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -132,38 +132,8 @@
       <file leaf-file-name="play.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projet/dev/views/game/play.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/projet/dev/webpack.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".babelrc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet/dev/.babelrc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projet/dev/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-391">
-              <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+            <state relative-caret-position="423">
+              <caret line="47" column="75" lean-forward="false" selection-start-line="47" selection-start-column="75" selection-end-line="47" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -175,9 +145,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="cleanURL HTACCESS" />
+        <option value="deny all HTACCESS" />
         <option value="JavaScript File" />
         <option value="CSS File" />
-        <option value="deny all HTACCESS" />
         <option value="Twig File" />
       </list>
     </option>
@@ -204,6 +174,11 @@
       <find>getBackups</find>
       <find>public function</find>
       <find>logout</find>
+      <find>addLo</find>
+      <find>$rout</find>
+      <find>canGo</find>
+      <find>isValidCoordinate</find>
+      <find>userLost</find>
     </findStrings>
     <replaceStrings>
       <replace>$1 type=&quot;text/css&quot; $2</replace>
@@ -219,57 +194,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/projet/dev/models/UserModel.php" />
-        <option value="$PROJECT_DIR$/projet/dev/views/auth/register.twig" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/common.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/register/mobile.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/register/definitive_colors.css" />
-        <option value="$PROJECT_DIR$/projet/dev/helpers/routing/UriParams.php" />
-        <option value="$PROJECT_DIR$/projet/dev/helpers/rendering/JsonRenderEngine.php" />
-        <option value="$PROJECT_DIR$/projet/dev/js/globals/global-includes.js" />
-        <option value="$PROJECT_DIR$/projet/dev/js/globals/yavl-username.js" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/json/auth/login/validation.json" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/json/auth/register/validation.json" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/main.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/common.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/mobile.css" />
-        <option value="$PROJECT_DIR$/projet/dev/helpers/JsonReader.php" />
-        <option value="$PROJECT_DIR$/projet/dev/helpers/JsonRead.php" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/play/debug.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/play/main.css" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/play/mobile.css" />
-        <option value="$PROJECT_DIR$/projet/dev/controllers/ApiController.php" />
-        <option value="$PROJECT_DIR$/projet/dev/helpers/http/Request.php" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/json/game/play/validation.json" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/json/game/play/locale.json" />
-        <option value="$PROJECT_DIR$/projet/dev/views/auth/login.twig" />
         <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/font-loader.css" />
         <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/play/definitive_colors.css" />
-        <option value="$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php" />
         <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/flash.twig" />
         <option value="$PROJECT_DIR$/projet/dev/helpers/TwigExtensions/FlashExtension.php" />
-        <option value="$PROJECT_DIR$/projet/dev/helpers/interactions/FlashService.php" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/definitive_colors.css" />
-        <option value="$PROJECT_DIR$/projet/dev/config/development_config.php" />
-        <option value="$PROJECT_DIR$/projet/dev/models/LobbyModel.php" />
-        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/play/common.css" />
         <option value="$PROJECT_DIR$/projet/dev/helpers/interactions/Session.php" />
-        <option value="$PROJECT_DIR$/projet/dev/bootstrap.php" />
         <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/flash-css.twig" />
         <option value="$PROJECT_DIR$/projet/dev/views/modules/layout.twig" />
         <option value="$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord-css.twig" />
-        <option value="$PROJECT_DIR$/projet/dev/views/game/play.twig" />
-        <option value="$PROJECT_DIR$/projet/dev/js/globals/setupFormValidation.js" />
-        <option value="$PROJECT_DIR$/projet/dev/controllers/AuthController.php" />
-        <option value="$PROJECT_DIR$/projet/dev/controllers/GameController.php" />
-        <option value="$PROJECT_DIR$/projet/dev/js/game/play/game_play.js" />
-        <option value="$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js" />
         <option value="$PROJECT_DIR$/projet/dev/js/error/404/error_404.js" />
         <option value="$PROJECT_DIR$/projet/dev/js/auth/setupValidation.js" />
+        <option value="$PROJECT_DIR$/projet/dev/controllers/ApiController.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/rendering/I_ViewRenderEngine.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/rendering/JsonRenderEngine.php" />
+        <option value="$PROJECT_DIR$/projet/dev/js/globals/setupFormValidation.js" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/routing/Router.php" />
+        <option value="$PROJECT_DIR$/projet/dev/js/game/end/end.js" />
+        <option value="$PROJECT_DIR$/projet/dev/js/game/end/game_end.js" />
+        <option value="$PROJECT_DIR$/projet/dev/webpack.config.js" />
+        <option value="$PROJECT_DIR$/projet/dev/js/game/play/game_play.js" />
+        <option value="$PROJECT_DIR$/projet/dev/models/LobbyModel.php" />
+        <option value="$PROJECT_DIR$/projet/dev/models/UserModel.php" />
+        <option value="$PROJECT_DIR$/projet/dev/helpers/interactions/FlashService.php" />
+        <option value="$PROJECT_DIR$/projet/dev/bootstrap.php" />
+        <option value="$PROJECT_DIR$/projet/dev/controllers/GameController.php" />
+        <option value="$PROJECT_DIR$/projet/dev/views/game/end.twig" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/play/debug.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/definitive_colors.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/play/common.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/play/main.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/play/mobile.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/end/common.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/end/debug.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/end/definitive_colors.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/end/main.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/game/end/mobile.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/common.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/login/definitive_colors.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/register/definitive_colors.css" />
+        <option value="$PROJECT_DIR$/projet/dev/controllers/AuthController.php" />
+        <option value="$PROJECT_DIR$/projet/dev/views/game/play.twig" />
         <option value="$PROJECT_DIR$/projet/dev/models/SolitaireModel.php" />
+        <option value="$PROJECT_DIR$/projet/dev/config/development_config.php" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/globals/debug.css" />
+        <option value="$PROJECT_DIR$/projet/public_html/assets/css/auth/register/debug.css" />
+        <option value="$PROJECT_DIR$/projet/dev/js/auth/register/auth_register.js" />
+        <option value="$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js" />
         <option value="$PROJECT_DIR$/projet/dev/package.json" />
         <option value="$PROJECT_DIR$/projet/dev/.babelrc" />
-        <option value="$PROJECT_DIR$/projet/dev/webpack.config.js" />
       </list>
     </option>
   </component>
@@ -343,57 +318,6 @@
               <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="auth" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="dev" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="auth" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public_html" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public_html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="miniproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miniproj" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="projet" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public_html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -465,7 +389,10 @@
       <workItem from="1512036519496" duration="274000" />
       <workItem from="1512037124339" duration="89000" />
       <workItem from="1512037271851" duration="7311000" />
-      <workItem from="1512046226811" duration="22530000" />
+      <workItem from="1512046226811" duration="22769000" />
+      <workItem from="1512129322545" duration="562000" />
+      <workItem from="1512142084769" duration="2209000" />
+      <workItem from="1512227545087" duration="15491000" />
     </task>
     <task id="LOCAL-00001" summary="Setup of phpunit's config, setup of authors in composer.json, creation of TwigAdapter to be able to use Twig easily, creation of base view templates, bits of refactoring here and there">
       <created>1511387520105</created>
@@ -499,13 +426,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147976000" />
+    <option name="totallyTimeSpent" value="166477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21669106" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21669106" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -545,207 +471,40 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projet/dev/controllers/A_Controller.php">
+    <entry file="file://$PROJECT_DIR$/projet/dev/models/A_Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/globals/removeSpinnerLord.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/play/debug.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/play/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/play/mobile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="575">
+          <caret line="25" column="68" lean-forward="false" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/models/UserModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/controllers/ApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1450">
-          <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/json/auth/login/locale.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="60" lean-forward="false" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/json/auth/login/validation.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/register/definitive_colors.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="42" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/json/game/play/locale.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/auth/login.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" column="82" lean-forward="false" selection-start-line="14" selection-start-column="82" selection-end-line="14" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/font-loader.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/flash.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/TwigExtensions/FlashExtension.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/rendering/TwigAdapter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/interactions/FlashService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="68" column="9" lean-forward="false" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/definitive_colors.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/play/definitive_colors.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="25" column="3" lean-forward="false" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/json/game/play/validation.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/play/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        <state relative-caret-position="377">
+          <caret line="61" column="60" lean-forward="false" selection-start-line="61" selection-start-column="60" selection-end-line="61" selection-end-column="60" />
+          <folding>
+            <marker date="1512241890443" expanded="true" signature="685:704" ph="SELECT pseud... ${$this-&gt;tableName}" />
+            <marker date="1512241890443" expanded="true" signature="1468:1537" ph="SELECT motDe... ${$this-&gt;tableName}" />
+            <marker date="1512241890443" expanded="true" signature="2358:2420" ph="INSERT INTO ${$this-&gt;tableName}... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/models/LobbyModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="36" column="23" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+        <state relative-caret-position="-1279">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding>
-            <marker date="1511905273686" expanded="true" signature="617:708" ph="SELECT count... ${$this-&gt;tableName}" />
-            <marker date="1511905273686" expanded="true" signature="936:948" ph="INSERT INTO ${$this}... " />
-            <marker date="1511905273686" expanded="true" signature="936:991" ph="INSERT INTO ${$this-&gt;tableName}... " />
-            <marker date="1511905273686" expanded="true" signature="936:992" ph="INSERT INTO ${$this-&gt;tableName}... " />
+            <marker date="1512241719534" expanded="true" signature="752:843" ph="SELECT count... ${$this-&gt;tableName}" />
+            <marker date="1512241719534" expanded="true" signature="1219:1310" ph="SELECT count... ${$this-&gt;tableName}" />
+            <marker date="1512241719534" expanded="true" signature="1674:1746" ph="SELECT count... ${$this-&gt;tableName}" />
+            <marker date="1512241719534" expanded="true" signature="2619:2696" ph="INSERT INTO ${$this-&gt;tableName}... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/config/development_config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="60" column="80" lean-forward="false" selection-start-line="60" selection-start-column="80" selection-end-line="60" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/interactions/Session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1932">
-          <caret line="84" column="30" lean-forward="false" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/routing/UriParams.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
-          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/routing/Router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/config.php">
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/global_stylesheets.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -753,7 +512,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/flash-css.">
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/page_specific_stylesheets.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -761,63 +520,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord-css.twig">
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/spinner-lord.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/game/play.twig">
+    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/interactions/FlashService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/globals/setupFormValidation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="56" column="23" lean-forward="false" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
+        <state relative-caret-position="32">
+          <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="35" column="51" lean-forward="false" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+        <state relative-caret-position="353">
+          <caret line="36" column="43" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/helpers/http/Request.php">
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/definitive_colors.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        <state relative-caret-position="92">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/models/A_Model.php">
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/play/debug.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="25" column="68" lean-forward="false" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/global_components/flash-css.twig">
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/play/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="111" lean-forward="false" selection-start-line="2" selection-start-column="111" selection-end-line="2" selection-end-column="111" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/auth/register/auth_register.js">
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/play/definitive_colors.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/play/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/play/mobile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/end/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/end/debug.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/end/definitive_colors.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/end/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/game/end/mobile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="40" column="32" lean-forward="false" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/debug.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -825,58 +648,167 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/views/modules/layout.twig">
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/definitive_colors.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state relative-caret-position="46">
+          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/error/404/mobile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/debug.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/definitive_colors.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-681">
+          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/login/mobile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/register/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/register/definitive_colors.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="33" column="1" lean-forward="false" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/register/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/controllers/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="168" column="36" lean-forward="false" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
+        <state relative-caret-position="6532">
+          <caret line="294" column="42" lean-forward="true" selection-start-line="294" selection-start-column="42" selection-end-line="294" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/globals/flash.js">
+    <entry file="file://$PROJECT_DIR$/projet/dev/config/development_config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/globals/debug.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/css/auth/register/debug.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/json/auth/register/validation.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/globals/global-includes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#34#61#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/error/404/error_404.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-          <folding>
-            <element signature="e#34#99#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/game/play/game_play.js">
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/json/auth/login/locale.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="57" lean-forward="false" selection-start-line="0" selection-start-column="57" selection-end-line="0" selection-end-column="57" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/public_html/assets/json/auth/register/locale.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/js/auth/register/auth_register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="84" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -888,37 +820,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/models/SolitaireModel.php">
+    <entry file="file://$PROJECT_DIR$/projet/dev/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2009">
-          <caret line="92" column="12" lean-forward="false" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
-          <folding>
-            <element signature="e#33#62#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="345">
+          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/controllers/GameController.php">
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/game/play.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="141" column="43" lean-forward="false" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
-          <folding>
-            <element signature="e#123#133#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="423">
+          <caret line="47" column="75" lean-forward="false" selection-start-line="47" selection-start-column="75" selection-end-line="47" selection-end-column="75" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/js/auth/login/auth_login.js">
+    <entry file="file://$PROJECT_DIR$/projet/dev/node_modules/.bin/uglify-inplace">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" column="75" lean-forward="false" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projet/public_html/assets/js/auth_login.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-278110">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
@@ -928,25 +856,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/.babelrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        <state relative-caret-position="92">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projet/dev/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        <state relative-caret-position="322">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projet/dev/webpack.config.js">
+    <entry file="file://$PROJECT_DIR$/projet/dev/models/SolitaireModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        <state relative-caret-position="193">
+          <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+          <folding>
+            <element signature="e#33#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/views/game/end.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projet/dev/controllers/GameController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="162" column="30" lean-forward="false" selection-start-line="162" selection-start-column="30" selection-end-line="162" selection-end-column="30" />
+          <folding>
+            <element signature="e#39#49#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

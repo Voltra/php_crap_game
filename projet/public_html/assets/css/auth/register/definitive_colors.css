@@ -1,11 +1,6 @@
 /**
 @author Ludwig GUERIN
  */
-p.error{
-    color: #d80500;
-    transition: all 0.3s ease-in-out;
-}
-
 #registerForm{
     transition-property: top, right, bottom, left, transform;
     transition-duration: 0.3s;
@@ -36,10 +31,6 @@ p.error{
 #registerForm [type="submit"]:hover,
 #registerForm [type="submit"]:focus{
     transform: rotateZ(0) scale(1.1);
-}
-
-label.valid{
-    color: #2ca02c;
 }
 
 #registerForm [type="submit"]{

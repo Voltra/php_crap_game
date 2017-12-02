@@ -5,7 +5,13 @@ use InvalidArgumentException;
 use Project\Helpers\Database\DBConnection;
 use Project\Helpers\Interactions\Session;
 use Project\Models\A_Model;
+use Throwable;
 
+/**
+ * Class SolitaireModel
+ * @package Project\Models
+ * @author Ludwig GUERIN
+ */
 class SolitaireModel extends A_Model{
     const X_LEN = 7;
     const Y_LEN = 7;
@@ -44,18 +50,18 @@ class SolitaireModel extends A_Model{
     public function getInitBoard() : array{
         return [
             [false, false, true, true, true, false, false],
-            [false, true, true, true, true, true, false],
+            [false, false, true, true, true, false, false],
             [true, true, true, true, true, true, true],
             [true, true, true, false, true, true, true],
             [true, true, true, true, true, true, true],
-            [false, true, true, true, true, true, false],
+            [false, false, true, true, true, false, false],
             [false, false, true, true, true, false, false]
         ];
     }
 
     /**Set the inner board's state
      * @param array $board being the new board
-     * @return SolitaireModel
+     * @return $this
      */
     public function setBoard(array $board) : self{
         if($this->isValidBoard($board))
@@ -69,6 +75,15 @@ class SolitaireModel extends A_Model{
         return $this;
     }
 
+    /**Unset the board and the backups
+     * @return $this
+     */
+    public function unsetBoard() : self{
+        $this->session->unset(self::BOARD_SESSION_KEY);
+        $this->session->unset(self::PREV_BOARD_SESSION_KEY);
+        return $this;
+    }
+
     /**Get the invalid states/positions
      * @return array
      */
@@ -76,11 +91,11 @@ class SolitaireModel extends A_Model{
         return [
             /*y\x*/
             /*0*/[true, true, false, false, false, true, true],
-            /*1*/[true, false, false, false, false, false, true],
+            /*1*/[true, true, false, false, false, true, true],
             /*2*/[false, false, false, false, false, false, false],
             /*3*/[false, false, false, false, false, false, false],
             /*4*/[false, false, false, false, false, false, false],
-            /*5*/[true, false, false, false, false, false, true],
+            /*5*/[true, true, false, false, false, true, true],
             /*6*/[true, true, false, false, false, true, true]
         ];
     }
@@ -106,6 +121,59 @@ class SolitaireModel extends A_Model{
                 return $count + ($col ? 1 : 0);
             }, $acc);
         }, 0) === 1;
+    }
+
+    /**Determine whether or not the current board state is a defeat state
+     * @return bool
+     */
+    public function lost() : bool{
+        if($this->won())
+            return false;
+
+        $board = $this->getBoard();
+        $pawns = [];
+        for($y=0, $row_amount=self::Y_LEN ; $y < $row_amount ; $y+=1){
+            for($x=0, $col_amount=self::X_LEN ; $x < $col_amount ; $x+=1){
+                $pawn_tmp = $board[$y][$x];
+                if($pawn_tmp)
+                    $pawns[] = [
+                        "x" => $x,
+                        "y" => $y
+                    ];
+            }
+        }
+
+        foreach($pawns as $pawn){
+            $x = $pawn["x"];
+            $y = $pawn["y"];
+
+            $up = ["x" => $x, "y" => $y-2];
+            $down = ["x" => $x, "y" => $y+2];
+            $left = ["x" => $x-2, "y" => $y];
+            $right = ["x" => $x+2, "y" => $y];
+            try{
+                if($this->canGo($x, $y, $right["x"], $right["y"]))
+                    return false;
+            }catch(Throwable $t){
+                try{
+                    if($this->canGo($x, $y, $down["x"], $down["y"]))
+                        return false;
+                }catch(Throwable $t){
+                    try{
+                        if($this->canGo($x, $y, $up["x"], $up["y"]))
+                            return false;
+                    }catch(Throwable $t){
+                        try{
+                            if($this->canGo($x, $y, $left["x"], $left["y"]))
+                                return false;
+                        }catch(Throwable $t){
+                            continue;
+                        }
+                    }
+                }
+            }
+        }
+        return true;
     }
 
     /**Determines whether or not a x-coordinate is valid
@@ -156,6 +224,9 @@ class SolitaireModel extends A_Model{
      */
     public function canGo(int $cx, int $cy, int $nx, int $ny) : bool{
         if(!($this->isValidCoordinate($cx, $cy) && $this->isValidCoordinate($nx, $ny)))
+            throw new InvalidArgumentException("Invalid coordinates");
+
+        if($this->isInvalidPosition($cx, $cy) || $this->isInvalidPosition($nx, $ny))
             throw new InvalidArgumentException("Invalid coordinates");
 
         $deltaX = abs($nx - $cx);
@@ -281,5 +352,57 @@ class SolitaireModel extends A_Model{
         array_pop($bkp);
         $this->setBackups($bkp);
         return $this;
+    }
+
+
+
+
+    //Cheats/debug zone
+    public function getInstantLosingBoard() : array{
+        return [
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false]
+        ];
+    }
+
+    public function getInstantWinBoard() : array{
+        return [
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, true, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false]
+        ];
+    }
+
+    public function getWinningBoard() : array{
+        return [
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, true, true, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false]
+        ];
+    }
+
+    public function getLosingBoard() : array{
+        return [
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, true, true, false, false, false, false],
+            [false, false, false, false, false, false, false],
+            [false, false, false, true, false, false, false],
+            [false, false, false, false, false, false, false]
+        ];
     }
 }

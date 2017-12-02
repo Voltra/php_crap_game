@@ -6,6 +6,19 @@ body{
     background-color: #9aee4d;
 }
 
-body, body *{
+p.error{
+    color: #d80500;
+    transition: height 0.3s ease-in-out;
+}
+
+label.valid{
+    color: #2ca02c;
+}
+
+*{
     color: #3c3f41;
+}
+
+.fa{
+    font-family: FontAwesome, roboto, sans-serif;
 }

@@ -30,14 +30,15 @@ class AuthController extends A_Controller {
         $this->flash = (new Session())->get("sharedFlashService");
     }
 
-    /**
-     * @param Request $rq
-     * @param Router $router
+    /**Handles requests from /auth/register
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
      * @return mixed
+     * @throws Exception
      */
     public function register(Request $rq, Router $router){
         if($this->userIsConnected())
-            $this->redirectToGame($router);
+            return $this->redirectToGame($router);
         else{
             if($rq->isGet())
                 return $this->view->renderView("auth/register.twig", [
@@ -48,6 +49,12 @@ class AuthController extends A_Controller {
         }
     }
 
+    /**Handles POST requests from /auth/register
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @return mixed
+     * @throws Exception
+     */
     protected function registerForm(Request $rq, Router $router){
         if(!$rq->isPost())
             throw new InvalidArgumentException("Tried to evaluate a POST request from a non-POST request");
@@ -144,10 +151,11 @@ class AuthController extends A_Controller {
      * @param Request $rq being the current HTTP request
      * @param Router $router being the application's router
      * @return mixed
+     * @throws Exception
      */
     public function login(Request $rq, Router $router){
         if($this->userIsConnected()){
-            $this->redirectToGame($router);
+            return $this->redirectToGame($router);
         }else{
             if($rq->isGet())
                 return $this->view->renderView("auth/login.twig", [
@@ -161,21 +169,24 @@ class AuthController extends A_Controller {
     /**Handle logout requests
      * @param Request $rq being the current HTTP request
      * @param Router $router being the application's router
+     * @return mixed
      */
     public function logout(Request $rq, Router $router){
         if($this->userIsConnected() && $rq->isGet()) {
             $this->disconnectUser();
             $this->flash->success("You have successfully been logged out.");
-            $router->redirect("/auth/login");
-            die();
+            return $router->redirect("/auth/login");
         }
-        //TODO: go back one page
+
+        echo "<script>history.back()</script>";
+        return "";
     }
 
     /**Handles POST request for the login form
      * @param Request $rq being the current HTTP request
      * @param Router $router being the application's router
      * @return mixed
+     * @throws Exception
      */
     protected function loginForm(Request $rq, Router $router){
         if(!$rq->isPost())
@@ -275,9 +286,10 @@ class AuthController extends A_Controller {
 
     /** Redirects to the game
      * @param Router $router being the application's router
+     * @return mixed
      */
     protected function redirectToGame(Router $router){
-        $router->redirect("/game/play");
+        return $router->redirect("/game/play");
     }
 
     /**Register a new user in the database
@@ -290,6 +302,7 @@ class AuthController extends A_Controller {
 
     /**Retrieves the validation scheme for the login form
      * @return DotNotationArray
+     * @throws Exception
      */
     protected function getLoginValidationScheme() : DotNotationArray{
         return $this->getValidationSchemeFor("login");
@@ -297,6 +310,7 @@ class AuthController extends A_Controller {
 
     /**Retrieves the validation scheme for the register form
      * @return DotNotationArray
+     * @throws Exception
      */
     protected function getRegisterValidationScheme() : DotNotationArray{
         return $this->getValidationSchemeFor("register");
@@ -364,6 +378,7 @@ class AuthController extends A_Controller {
     /**Validates the username field for the login form
      * @param string $username being the username to validate
      * @return bool
+     * @throws Exception
      */
     protected function loginUsernameValidated(string $username) : bool{
         $rules = $this->getLoginValidationScheme()["username.rules"];
@@ -375,6 +390,7 @@ class AuthController extends A_Controller {
     /**Validates the password field for the login form
      * @param string $password being the password to validate
      * @return bool
+     * @throws Exception
      */
     protected function loginPasswordValidated(string $password) : bool{
         $rules = $this->getLoginValidationScheme()["password.rules"];
@@ -384,6 +400,7 @@ class AuthController extends A_Controller {
     /**Validates the username field for the register form
      * @param string $username being the username to validate
      * @return bool
+     * @throws Exception
      */
     protected function registerUsernameValidated(string $username) : bool{
         $rules = $this->getRegisterValidationScheme()["username.rules"];
@@ -395,6 +412,7 @@ class AuthController extends A_Controller {
     /**Validates the password field for the register form
      * @param string $password being the password to validate
      * @return bool
+     * @throws Exception
      */
     protected function registerPasswordValidated(string $password) : bool{
         $rules = $this->getRegisterValidationScheme()["password.rules"];
@@ -405,6 +423,7 @@ class AuthController extends A_Controller {
      * @param string $c_password being the confirm password to validate
      * @param string $password being the correct password
      * @return bool
+     * @throws Exception
      */
     protected function registerConfirmPasswordValidated(string $c_password, string $password) : bool{
         $rules = $this->getRegisterValidationScheme()["confirm password"]["rules"];

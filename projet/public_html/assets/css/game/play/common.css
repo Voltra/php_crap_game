@@ -1,3 +1,7 @@
+/**
+@author Ludwig GUERIN
+ */
+
 *{
     box-sizing: border-box;
 }
@@ -61,4 +65,8 @@
     padding: 1vh 1.5vh;
     flex: 1;
     flex-grow: 1;
+}
+
+button{
+	cursor: pointer;
 }

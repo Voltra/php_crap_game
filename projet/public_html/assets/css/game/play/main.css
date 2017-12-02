@@ -1,3 +1,7 @@
+/**
+@author Ludwig GUERIN
+ */
+
 #game {
 	height: 80vh;
     width: 80vw;
@@ -30,7 +34,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    flex-shrink: auto;
 }
 
 #boardTable > tbody{

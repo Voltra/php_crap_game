@@ -25,7 +25,7 @@ define("DB_USER", $DB_USER);
 define("DB_PASSWORD", $DB_PASSWORD);
 
 return [
-    "debug" => false,
+    "debug" => true,
     "db" => [
         "user" => DB_USER,
         "password" => DB_PASSWORD,

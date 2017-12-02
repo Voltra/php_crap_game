@@ -7,8 +7,9 @@ import {yavl} from "./yavl-username"
 import {getStyles} from "./getStyles";
 
 export default function setupFormValidation(validation_settings_path, locale_settings_path){
-    fetchJSON(validation_settings_path, validationSetup => validationSetup)
-    .then(validationSetup=>fetchJSON(locale_settings_path, localeObject=>{
+    fetchJSON(validation_settings_path)
+    .then( validationSetup=>Promise.resolve({validationSetup, "localeObject": fetchJSON(locale_settings_path)}) )
+    .then(({validationSetup, localeObject})=>{
         const validateInput = (error_selector)=>{
             const p_tag = document.querySelector(error_selector);
             p_tag.innerHTML = "";
@@ -65,9 +66,9 @@ export default function setupFormValidation(validation_settings_path, locale_set
         });*/
         $(validationSetup.form).on("submit", validateFunc);
         $(`${validationSetup.form} *`)
-        .on("change", validateFunc)
+            .on("change", validateFunc)
         /*.on("keyup", validateFunc);*/
-    }))
+    })
     .catch(error => {
         console.log("There has been an error while setting up front-end form validation, falling back to back-end validation.");
         console.log(error);

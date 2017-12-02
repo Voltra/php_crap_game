@@ -4,5 +4,5 @@
 
 import setupValidation from "../setupValidation"
 
-
-setupValidation(100, 500, "/assets/json/auth/login/validation.json", "/assets/json/auth/login/locale.json");
+const basePath = "/assets/json/auth/login";
+setupValidation(100, 500, `${basePath}/validation.json`, `${basePath}/locale.json`);

@@ -33,6 +33,9 @@ class TwigAdapter implements I_ViewRenderEngine{
      * @param string $path being the path to the view (absolute or relative to the path given in the constructor)
      * @param array $data being the view's data (default: [])
      * @return string
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
      */
     public function render(string $path, array $data = []): string{
         return $this->env->render($path, $data);
@@ -41,11 +44,15 @@ class TwigAdapter implements I_ViewRenderEngine{
     /**Processes a view and prints it onto the output stream
      * @param string $path being the path to the view (absolute or relative to the path given in the constructor)
      * @param array $data being the view's data (default: [])
-     * @return $this
+     * @return string
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
      */
-    public function renderView(string $path, array $data = []) : self{
-        echo $this->render($path, $data);
-        return $this;
+    public function renderView(string $path, array $data = []) : string{
+        $view = $this->render($path, $data);
+        echo $view;
+        return $view;
     }
 
     /**Register data as part of the global data accessible to all views
@@ -55,6 +62,7 @@ class TwigAdapter implements I_ViewRenderEngine{
      */
     public function addGlobal(string $key, $value) {
         $this->env->addGlobal($key, $value);
+        return $this;
     }
 
     /**

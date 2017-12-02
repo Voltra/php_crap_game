@@ -34,6 +34,7 @@ $session->set("dbTables", $config["dbTables"]);
 $session->set("hash", $config["hash"]);
 $session->set("validate", DotNotationArray::makeFrom( $config["form"] ));
 $session->set("sharedFlashService", $flashService);
+$session->set("isDebug", $config["debug"]);
 
 //Controllers and Router setup
 $error404Controller = new PageNotFoundController($twig, $db);

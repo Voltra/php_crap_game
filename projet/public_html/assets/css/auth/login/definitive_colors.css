@@ -2,15 +2,6 @@
 @author Ludwig GUERIN
  */
 
-label.valid{
-    color: #2ca02c;
-}
-
-p.error{
-    color: #d80500;
-    transition: all 0.3s ease-in-out;
-}
-
 [type="submit"]{
     text-transform: uppercase;
 }

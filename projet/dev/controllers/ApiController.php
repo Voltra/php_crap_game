@@ -65,15 +65,11 @@ class ApiController extends A_Controller {
         }
     }
 
-    public function userAvailable(Request $rq, Router $router, ?string $username=null){
+    public function username_available(Request $rq, Router $router, ?string $username=null){
         if(is_null($username))
-            return $this->view->renderViewAsJson([
-                null
-            ]);
+            return $this->view->renderJsonView(null);
 
-        return $this->view->renderViewAsJson([
-            !in_array($username, $this->users($rq, $router))
-        ]);
+        return $this->view->renderJsonView(!in_array($username, $this->users($rq, $router)));
     }
 
     public function victories(Request $rq, Router $router, ?string $username=null){
@@ -81,26 +77,22 @@ class ApiController extends A_Controller {
             throw new Exception("No games table mapping available");
         else{
             if(is_null($username))
-                return $this->view->renderViewAsJson([
-                    null
-                ]);
+                return $this->view->renderJsonView(null);
 
             $lobbyTable = $this->dbTables["games"];
             $rq = $this->dbApi->prepare("SELECT count(*) as amount FROM {$lobbyTable} WHERE pseudo=:pseudo AND partieGagnee=1");
             $rq->bindParam(":pseudo", $username);
             $rq->execute();
 
-            $amount = $rq->fetch(PDO::FETCH_ASSOC)["AMOUNT"];
-            return $this->view->renderViewAsJson([
-                $amount
-            ]);
+            $amount = intval($rq->fetch(PDO::FETCH_ASSOC)["AMOUNT"]);
+            return $this->view->renderJsonView($amount);
         }
     }
 
     public function stats(Request $rq, Router $router, ?string $username=null){
         $amount = json_decode($this->victories($rq, $router, $username))[0];
         ob_get_clean();
-        return $this->view->renderViewAsJson([
+        return $this->view->renderJsonView([
             "victories" => $amount
         ]);
     }

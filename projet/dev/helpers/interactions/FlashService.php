@@ -37,7 +37,6 @@ class FlashService {
     }
 
     public function success(string $message) : self{
-        echo __FILE__ . "<br/>" . var_export($this->cache);
         $flash = $this->retrieveSessionValue();
         $this->nullifyCache();
         $flash["success"] = $message;
@@ -46,7 +45,6 @@ class FlashService {
     }
 
     public function failure(string $message) : self{
-        echo __FILE__ . "<br/>" . var_export($this->cache);
         $flash = $this->retrieveSessionValue();
         $this->nullifyCache();
         $flash["failure"] = $message;

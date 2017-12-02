@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ludwig
- * Date: 26/11/2017
- * Time: 16:31
- */
-
 namespace Project\models;
 
 
@@ -13,6 +6,11 @@ use PDO;
 use Project\Helpers\Database\DBConnection;
 use Project\Helpers\Interactions\Session;
 
+/**
+ * Class UserModel
+ * @package Project\models
+ * @author Ludwig GUERIN
+ */
 class UserModel extends A_Model{
     public function __construct(DBConnection $db) {
         $tmp_session = new Session();
@@ -22,16 +20,28 @@ class UserModel extends A_Model{
             parent::__construct($db, "users");
     }
 
+    /**Retrieves the list of username in use
+     * @return string[]
+     */
     public function getUsernames() : array{
         return $this->db
             ->query("SELECT pseudo FROM ".$this->tableName)
             ->fetchAll(PDO::FETCH_COLUMN, 0);
     }
 
+    /**Determines whether or not a username is already in use
+     * @param string $username being the username to test upon
+     * @return bool
+     */
     public function usernameAlreadyExists(string $username) : bool{
         return in_array($username, $this->getUsernames());
     }
 
+    /**Determines whether the given password matches the password in the database corresponding to the given username
+     * @param string $username being the username
+     * @param string $clear_password being the (non hashed) password input
+     * @return bool
+     */
     public function passwordMatches(string $username, string $clear_password) : bool{
         $rq = $this->db
             ->prepare("SELECT motDePasse FROM ".$this->tableName." WHERE pseudo like :pseudo");
@@ -47,6 +57,11 @@ class UserModel extends A_Model{
         return password_verify($clear_password, $db_hash);
     }
 
+    /**Insert a pair of username and password in the database
+     * @param string $username being the username
+     * @param string $password being the non-hashed password
+     * @return mixed
+     */
     public function insert(string $username, string $password){
         $session = new Session();
         if(!$session->has("hash"))

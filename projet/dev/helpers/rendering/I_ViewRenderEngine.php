@@ -17,9 +17,9 @@ interface I_ViewRenderEngine {
     /**Processes a view and prints it onto the output stream
      * @param string $path being the path to the view (absolute or relative to the path given in the constructor)
      * @param array $data being the view's data (default: [])
-     * @return $this
+     * @return string
      */
-    public function renderView(string $path, array $data = []);
+    public function renderView(string $path, array $data = []) : string;
 
     /**Register data as part of the global data accessible to all views
      * @param string $key being the key/name of the data

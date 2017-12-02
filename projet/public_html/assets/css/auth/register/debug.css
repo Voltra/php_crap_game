@@ -8,3 +8,11 @@ form#registerForm{
 input{
     background-color: #2ca02c;
 }
+
+*{
+    color: orchid;
+}
+
+button{
+    background-color: darkslategray;
+}

@@ -21,31 +21,36 @@ class JsonRenderEngine implements I_ViewRenderEngine{
     /**Processes a view and prints it onto the output stream
      * @param string $path being the path to the view (absolute or relative to the path given in the constructor)
      * @param array $data being the view's data (default: [])
-     * @return $this
-     */
-    public function renderView(string $path, array $data = []) {
-        echo $this->render($path, $data);
-    }
-
-    /**Processes a view and return it back as JSON
-     * @param array $data being the data to render
      * @return string
      */
-    public function renderAsJson(array $data = []) : string{
-        return $this->render("", $data);
+    public function renderView(string $path, array $data = []) : string{
+        $view = $this->render($path, $data);
+        echo $view;
+        return $view;
     }
 
-    /**Processes a view and prints it onto the output stream as JSON
-     * @param array $data
+    /**Renders JSON data
+     * @param mixed $data being the JSON data to render
+     * @return string
      */
-    public function renderViewAsJson(array $data = []){
-        echo $this->renderAsJson($data);
+    public function renderJson($data){
+        header("content-type: application/json; charset=utf-8");
+        return json_encode($data, JSON_PRETTY_PRINT | JSON_OBJECT_AS_ARRAY);
+    }
+
+    /**Processes JSON data and prints it onto the output stream
+     * @param mixed $data being the JSON data to render
+     * @return string
+     */
+    public function renderJsonView($data){
+        $view = $this->renderJson($data);
+        echo $view;
+        return $view;
     }
 
     /**Register data as part of the global data accessible to all views
      * @param string $key being the key/name of the data
      * @param mixed $value being the data itself
-     * @return $this
      * @throws Exception
      */
     public function addGlobal(string $key, $value) {

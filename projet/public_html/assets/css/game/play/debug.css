@@ -1,0 +1,34 @@
+/**
+@author Ludwig GUERIN
+ */
+
+form{
+    transition: height 0.3s ease-in-out;
+}
+
+td.pawn{
+    opacity: 1;
+    color: blue;
+}
+
+td.invalid{
+    opacity: 0.5;
+    color: red;
+}
+
+td.empty{
+    opacity: 0.8;
+    color: darkslategray;
+}
+
+[type='text'], [type='submit']{
+    transition-property: opacity, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    opacity: 1;
+}
+
+[disabled]{
+    opacity: 0.69;
+    box-shadow: unset;
+}

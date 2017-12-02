@@ -9,7 +9,8 @@
     "moveFlashCSS": "cp node_modules/jq-flash/dist/flash.css ../public_html/assets/css/globals/flash.css",
     "moveSpinnerLordCSS": "cp -R node_modules/spinner-lord/css/* ../public_html/assets/css/globals/spinner-lord/",
     "postinstall": "npm run moveFlashCSS && npm run moveSpinnerLordCSS",
-    "postbuild": "npm run postinstall"
+    "postbuild": "npm run postinstall",
+    "minifyjs": "node ./node_modules/babili-inplace/bin/babili-inplace ../public_html/assets/js/*"
   },
   "repository": {
     "type": "git",
@@ -34,10 +35,15 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-preset-babili": "^0.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-minify": "^0.2.0",
+    "babili-inplace": "^1.0.3",
     "expose-loader": "^0.7.4",
     "script-loader": "^0.7.2",
+    "uglify-es": "^3.2.0",
+    "uglify-inplace": "^1.0.2",
+    "uglify-js": "^3.2.0",
     "uglify-loader": "^2.0.0",
     "webpack": "^3.8.1"
   }

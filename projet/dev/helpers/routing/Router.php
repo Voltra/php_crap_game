@@ -89,8 +89,10 @@ class Router {
     /**Redirect to a certain path
      * @param string $path being the path to redirect to
      * @param int $status being the redirection status (defaulted to 301)
+     * @return $this
      */
     public function redirect(string $path, int $status=301){
         header("Location: {$path}", true, $status);
+        return $this;
     }
 }

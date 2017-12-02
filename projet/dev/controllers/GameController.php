@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ludwig
- * Date: 28/11/2017
- * Time: 14:15
- */
-
 namespace Project\controllers;
 
 
@@ -50,26 +43,36 @@ class GameController extends A_Controller {
         $this->solitaireModel = new SolitaireModel($db);
     }
 
-    /**Handles request for /game/play
+    /**Handles GET requests for /game/play
      * @param Request $rq being the current HTTP request
      * @param Router $router being the application's router
      * @return mixed
      * @throws Error
      */
     public function play(Request $rq, Router $router){
+        /*$this->solitaireModel->unsetBoard();
+        die();*/
+
         if(!$this->userIsConnected())
-            $router->redirect("/");
+            return $this->redirectToLogin($router);
 
         if(!$rq->isGet())
             throw new Error("This page can only be accessed via a GET HTTP request");
 
-        if($this->userWon()){
+        $this->getBoard(); //Create cache copy in case there's no board
+
+        /*echo "<br/><br/>Won:<br/>";
+        var_dump($this->userWon());
+        echo "<br/><br/>Lost:<br/>";
+        var_dump($this->userLost());
+        echo "<br/><br/>Board:<br/>";
+        var_dump($this->getBoard());
+        die();*/
+
+        if($this->userWon() || $this->userLost()){
             $this->addLobbyToDb();
-            $this->flash->success("You won ! We will take that into account !");
-            return $this->view->renderView("game/victory.twig", [
-                "pageName" => "game/victory",
-                "username" => $this->getUsername()
-            ]);
+            $this->session->set("end", true);
+            return $router->redirect("/game/end");
         }
 
         return $this->view->renderView("game/play.twig", [
@@ -81,9 +84,10 @@ class GameController extends A_Controller {
         ]);
     }
 
-    /**
-     * @param Request $rq
-     * @param Router $router
+    /**Handles POST requests for /game/processAction
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @return mixed
      * @throws Error
      * @throws \Exception
      */
@@ -103,21 +107,22 @@ class GameController extends A_Controller {
 
         if($this->isInvalidPawn($curX, $curY) || $this->isInvalidPawn($nextX, $nextY)){
             $this->flash->failure("Invalid position");
-            $this->redirectToBoard($router);
+            return $this->redirectToBoard($router);
         }
 
         if(!$this->canGo($curX, $curY, $nextX, $nextY)){
             $this->flash->failure("Invalid move");
-            $this->redirectToBoard($router);
+            return $this->redirectToBoard($router);
         }
         $this->move($curX, $curY, $nextX, $nextY);
 
-        $this->redirectToBoard($router);
+        return $this->redirectToBoard($router);
     }
 
-    /**
-     * @param Request $rq
-     * @param Router $router
+    /**Handles POST requests for /game/reset
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @return mixed
      * @throws Error
      */
     public function reset(Request $rq, Router $router){
@@ -126,29 +131,47 @@ class GameController extends A_Controller {
 
         $this->session->unset(self::PREV_BOARD_SESSION_KEY);
         $this->session->unset(self::BOARD_SESSION_KEY);
-        $this->redirectToBoard($router);
+        return $this->redirectToBoard($router);
     }
 
-    /**
-     * @param Request $rq
-     * @param Router $router
+    /**Handles GET requests
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @return mixed
      * @throws Error
      */
-    public function victory(Request $rq, Router $router){
+    public function end(Request $rq, Router $router){
         if(!$rq->isGet())
-            throw new Error("GET instead of POST");
+            throw new Error("POST instead of GET");
 
-        if(!$this->session->has("victory"))
-            $this->redirectToBoard($router);
+        if(!$this->session->has("end"))
+            return $this->redirectToBoard($router);
 
+        $userWon = $this->userWon();
 
-        $this->session->unset("victory");
-        //TODO: Afficher vue de victoire
+        if($userWon)
+            $this->flash->success("You won ! We will take that into account !");
+        else
+            $this->flash->failure("You lost ! You will do better next time !");
+
+        $this->session->unset("end");
+        $this->solitaireModel->unsetBoard();
+
+        return $this->view->renderView("game/end.twig", [
+            "pageName" => "game/end",
+            "username" => $this->getUsername(),
+            "won" => $userWon,
+            "winAmount" => $this->getWinAmount(),
+            "lossAmount" => $this->getLossAmount(),
+            "lobbiesAmount" => $this->getLobbiesAmount(),
+            "winRatio" => $this->getWinRatio()
+        ]);
     }
 
-    /**
-     * @param Request $rq
-     * @param Router $router
+    /**Handles POST requests to /game/undo
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @return mixed
      * @throws Error
      */
     public function undo(Request $rq, Router $router){
@@ -164,10 +187,70 @@ class GameController extends A_Controller {
             $this->setBoard($prevBoard)->removeLastBackup();
         }
 
-        $this->redirectToBoard($router);
+        return $this->redirectToBoard($router);
     }
 
-    protected function canUndo(){
+    /**Handles POST requests to /game/instant_lose if debug mode is on
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @return mixed
+     */
+    public function instant_lose(Request $rq, Router $router){
+        if($this->session->has("isDebug")) {
+            if ($rq->isPost() && $this->session->get("isDebug"))
+                $this->setBoard($this->solitaireModel->getInstantLosingBoard());
+        }
+
+        return $this->redirectToBoard($router);
+    }
+
+    /**Handles POST requests to /game/instant_win if debug mode is on
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @return mixed
+     */
+    public function instant_win(Request $rq, Router $router){
+        if($this->session->has("isDebug")) {
+            if ($rq->isPost() && $this->session->get("isDebug"))
+                $this->setBoard($this->solitaireModel->getInstantWinBoard());
+        }
+
+        return $this->redirectToBoard($router);
+    }
+
+    /**Handles POST requests to /game/get_win if debug mode is on
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @return mixed
+     */
+    public function get_win(Request $rq, Router $router){
+        if($this->session->has("isDebug")) {
+            if ($rq->isPost() && $this->session->get("isDebug"))
+                $this->setBoard($this->solitaireModel->getWinningBoard());
+        }
+
+        return $this->redirectToBoard($router);
+    }
+
+    /**Handles POST requests to /game/get_losing if debug mode is on
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @return mixed
+     */
+    public function get_losing(Request $rq, Router $router){
+        if($this->session->has("isDebug")) {
+            if ($rq->isPost() && $this->session->get("isDebug"))
+                $this->setBoard($this->solitaireModel->getLosingBoard());
+        }
+
+        return $this->redirectToBoard($router);
+    }
+
+
+    /**Determines whether or not the user can undo the last move
+     * @return bool
+     */
+    protected function canUndo() : bool{
         $prev_board = $this->getLastBackup();
         $initBoard = $this->getInitBoard();
         $board = $this->getBoard();
@@ -177,24 +260,46 @@ class GameController extends A_Controller {
         return !(is_null($prev_board) || $board==$initBoard);
     }
 
+    /**Makes a backup from the given board
+     * @param array $board being the board to make a backup from
+     * @return $this
+     */
     protected function addBackup(array $board) : self{
         $this->solitaireModel->addBackup($board);
         return $this;
     }
 
+    /**Retrieves the last backup
+     * @return array|null
+     */
     protected function getLastBackup() : ?array{
         return $this->solitaireModel->getLastBackup();
     }
 
+    /**Deletes the last backup
+     * @return $this
+     */
     protected function removeLastBackup() : self{
         $this->solitaireModel->deleteLastBackup();
         return $this;
     }
 
+    /**
+     * @see SolitaireModel::won
+     */
     protected function userWon() : bool{
         return $this->solitaireModel->won();
     }
 
+    /**
+     * @see SolitaireModel::lost
+     */
+    protected function userLost(){
+        return $this->solitaireModel->lost();
+    }
+
+    /**Adds the current lobby to the database
+     */
     protected function addLobbyToDb(){
         $username = $this->getUsername();
         $won = $this->userWon();
@@ -219,43 +324,98 @@ class GameController extends A_Controller {
             return null;
     }
 
+    /**
+     * @see SolitaireModel::getBoard
+     */
     protected function getBoard() : array{
         return $this->solitaireModel->getBoard();
     }
 
+    /**
+     * @see SolitaireModel::setBoard
+     */
     protected function setBoard(array $board) : self{
         $this->solitaireModel->setBoard($board);
         return $this;
     }
 
+    /**
+     * @see SolitaireModel::getInitBoard
+     */
     protected function getInitBoard() : array{
         return $this->solitaireModel->getInitBoard();
     }
 
+    /**
+     * @see SolitaireModel::getInvalidStates
+     */
     protected function getInvalidStates() : array{
         return $this->solitaireModel->getInvalidStates();
     }
 
+    /**
+     * @see SolitaireModel::isInvalidPosition
+     */
     protected function isInvalidPawn(int $x, int $y) : bool{
         return $this->solitaireModel->isInvalidPosition($x, $y);
     }
 
+    /**
+     * @see SolitaireModel::canGo
+     */
     protected function canGo(int $cx, int $cy, int $nx, int $ny) : bool{
         return $this->solitaireModel->canGo($cx, $cy, $nx, $ny);
     }
 
+    /**
+     * @see SolitaireModel::move
+     */
     protected function move(int $cx, int $cy, int $nx, int $ny){
         $this->solitaireModel->move($cx, $cy, $nx, $ny);
     }
 
-    protected function redirectToLogin(Router $router){
-        $router->redirect("/auth/login");
-        die();
+    /**
+     * @see LobbyModel::getAmountOfWinsFor
+     */
+    protected function getWinAmount() : int{
+        return $this->model->getAmountOfWinsFor($this->getUsername());
     }
 
+    /**
+     * @see LobbyModel::getAmountOfLossFor
+     */
+    protected function getLossAmount() : int{
+        return $this->model->getAmountOfLossFor($this->getUsername());
+    }
+
+    /**
+     * @see LobbyModel::getAmountOfLobbiesFor
+     */
+    protected function getLobbiesAmount() : int{
+        return $this->model->getAmountOfLobbiesFor($this->getUsername());
+    }
+
+    /**
+     * @see LobbyModel::getWinRatioFor
+     */
+    protected function getWinRatio() : int{
+        return $this->model->getWinRatioFor($this->getUsername());
+    }
+
+    /**Redirects to the login page
+     * @param Router $router being the application's router
+     * @return mixed
+     */
+    protected function redirectToLogin(Router $router){
+        return $router->redirect("/auth/login");
+    }
+
+    /**Redirects to the board's page
+     * @param Router $router being the application's router
+     * @return mixed
+     */
     protected function redirectToBoard(Router $router){
-        $router->redirect("/game/play");
-        die();
+        return $router->redirect("/game/play");
     }
 
     /**
@@ -270,6 +430,11 @@ class GameController extends A_Controller {
         return DotNotationArray::makeFrom( JsonRead::from($uri)["fields"] );
     }
 
+    /**Processes the validation of the current x-coordinate
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @throws \Exception
+     */
     protected function validateCurX(Request $rq, Router $router){
         $curX_str = $rq->post("curx");
 
@@ -284,6 +449,11 @@ class GameController extends A_Controller {
         }
     }
 
+    /**Processes the validation of the current y-coordinate
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @throws \Exception
+     */
     protected function validateCurY(Request $rq, Router $router){
         $curY_str = $rq->post("cury");
         if(is_null($curY_str) || strlen($curY_str)===0){
@@ -297,6 +467,11 @@ class GameController extends A_Controller {
         }
     }
 
+    /**Processes the validation of the next x-coordinate
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @throws \Exception
+     */
     protected function validateNextX(Request $rq, Router $router){
         $nextX_str = $rq->post("nextx");
         if(is_null($nextX_str) || strlen($nextX_str)===0){
@@ -310,6 +485,11 @@ class GameController extends A_Controller {
         }
     }
 
+    /**Processes the validation of the next y-coordinate
+     * @param Request $rq being the current HTTP request
+     * @param Router $router being the application's router
+     * @throws \Exception
+     */
     protected function validateNextY(Request $rq, Router $router){
         $nextY_str = $rq->post("nexty");
         if(is_null($nextY_str) || strlen($nextY_str)===0){
@@ -323,24 +503,45 @@ class GameController extends A_Controller {
         }
     }
 
+    /**Determines whether or not a string follows a certain pattern (regex)
+     * @param string $str being the string to test upon
+     * @param array $rules being the set of rules to get the regex from
+     * @return bool
+     */
     protected function followsPattern(string $str, array $rules) : bool{
         $re = $rules["regex"];
         $regex = "/" . $re . "/";
         return preg_match($regex, $str);
     }
 
+    /**Determines whether or not a value is greater than a certain value
+     * @param string $str being the string to test upon
+     * @param array $rules being the set of rules to get the minimum from
+     * @return bool
+     */
     protected function min(string $str, array $rules) : bool{
         $min = $rules["min"];
         $value = intval($str);
         return $min <= $value;
     }
 
+    /**Determines whether or not a value is less than a certain value
+     * @param string $str being the string to test upon
+     * @param array $rules being the set of rules to get the maximum from
+     * @return bool
+     */
     protected function max(string $str, array $rules) : bool{
         $max = $rules["max"];
         $value = intval($str);
         return $value <= $max;
     }
 
+    /**Determines whether or not the current x-coordinate is validated according to the rules defined in the JSON file
+     * @param string $curx being the current x-coordinate
+     * @return bool
+     * @throws Error
+     * @throws \Exception
+     */
     protected function curxValidated(string $curx) : bool{
         $rules = $this->getValidationScheme()["curx.rules"];
         return $this->followsPattern($curx, $rules)
@@ -348,6 +549,12 @@ class GameController extends A_Controller {
             && $this->max($curx, $rules);
     }
 
+    /**Determines whether or not the current y-coordinate is validated according to the rules defined in the JSON file
+     * @param string $cury being the current y-coordinate
+     * @return bool
+     * @throws Error
+     * @throws \Exception
+     */
     protected function curyValidated(string $cury) : bool{
         $rules = $this->getValidationScheme()["cury.rules"];
         return $this->followsPattern($cury, $rules)
@@ -355,6 +562,12 @@ class GameController extends A_Controller {
             && $this->max($cury, $rules);
     }
 
+    /**Determines whether or not the next x-coordinate is validated according to the rules defined in the JSON file
+     * @param string $nextx being the next x-coordinate
+     * @return bool
+     * @throws Error
+     * @throws \Exception
+     */
     protected function nextxValidated(string $nextx) : bool{
         $rules = $this->getValidationScheme()["nextx.rules"];
         return $this->followsPattern($nextx, $rules)
@@ -362,6 +575,13 @@ class GameController extends A_Controller {
             && $this->max($nextx, $rules);
     }
 
+
+    /**Determines whether or not the next y-coordinate is validated according to the rules defined in the JSON file
+     * @param string $nexty being the next y-coordinate
+     * @return bool
+     * @throws Error
+     * @throws \Exception
+     */
     protected function nextyValidated(string $nexty) : bool{
         $rules = $this->getValidationScheme()["nexty.rules"];
         return $this->followsPattern($nexty, $rules)

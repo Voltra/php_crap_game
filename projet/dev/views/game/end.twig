@@ -1,0 +1,15 @@
+{# Author : Ludwig GUERIN #}
+{% extends "modules/layout.twig" %}
+
+{% block keywords %}{% endblock %}
+
+{% block title %}End{% endblock %}
+
+{% if not error %}
+    {% set error=[] %}
+{% endif %}
+
+{% block body %}
+    {# TODO: create the view #}
+    <h1 id="title">{% if won %}You won !{% else %}You lost !{% endif %}</h1>
+{% endblock %}

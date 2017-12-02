@@ -27,7 +27,3 @@ form#loginForm label:not([for="remember"]){
 body{
     overflow: hidden;
 }
-
-#register{
-
-}
