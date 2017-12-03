@@ -157,6 +157,14 @@ class GameController extends A_Controller {
         $this->session->unset("end");
         $this->solitaireModel->unsetBoard();
 
+        $chartData = [
+            "title" => "Win/Loss",
+            "points" => [
+                ["name"=>"win", "y"=>$this->getWinAmount(), "sliced"=>true, "selected"=>true],
+                ["name"=>"loss", "y"=>$this->getLossAmount()],
+            ]
+        ];
+
         return $this->view->renderView("game/end.twig", [
             "pageName" => "game/end",
             "username" => $this->getUsername(),
@@ -164,7 +172,8 @@ class GameController extends A_Controller {
             "winAmount" => $this->getWinAmount(),
             "lossAmount" => $this->getLossAmount(),
             "lobbiesAmount" => $this->getLobbiesAmount(),
-            "winRatio" => $this->getWinRatio()
+            "winRatio" => $this->getWinRatio(),
+            "chartData" => json_encode($chartData)
         ]);
     }
 
@@ -398,7 +407,7 @@ class GameController extends A_Controller {
     /**
      * @see LobbyModel::getWinRatioFor
      */
-    protected function getWinRatio() : int{
+    protected function getWinRatio() : float{
         return $this->model->getWinRatioFor($this->getUsername());
     }
 

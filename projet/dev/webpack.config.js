@@ -24,13 +24,22 @@ module.exports = {
                 "test": /\.js$/,
                 "exclude": /(node_modules|bower_components)/g,
                 "loader": "babel-loader"
+            },
+            {
+                "test": require.resolve("jquery/dist/jquery.min.js"),
+                "use": [
+                    {
+                        "loader": "expose-loader",
+                        "options": "$"
+                    },
+                    {
+                        "loader": "expose-loader",
+                        "options": "jQuery"
+                    }
+                ]
             }
         ],
         "loaders": [
-            {
-                "test": require.resolve("jquery"),
-                "loader": "expose?$!expose?jQuery"
-            },
             {
                 "test": /\.js$/,
                 "loader": "uglify"
@@ -39,13 +48,14 @@ module.exports = {
     },
 	"plugins": [
 		new webpack.ProvidePlugin({
-			"$": "jquery/dist/jquery.min.js"
+			"$": require.resolve("jquery/dist/jquery.min.js")
 		})
 	],
     "stats": {
         "colors": true
     },
     "externals": [
-        "window"
+        "window",
+        "document"
     ]
 };

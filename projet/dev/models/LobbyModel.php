@@ -61,14 +61,14 @@ class LobbyModel extends A_Model {
      * @param string $username being the user's username
      * @return float|int
      */
-    public function getWinRatioFor(string $username) : int{
+    public function getWinRatioFor(string $username) : float{
         $win = $this->getAmountOfWinsFor($username);
         $total = $this->getAmountOfLobbiesFor($username);
 
         if($total === 0)
             return 0;
         else
-            return floatval($win)/floatval($total);
+            return ( ((float)$win) / ((float)$total) );
     }
 
     /**Insert a row into the table

@@ -10,10 +10,14 @@
  */
 export function removeSpinnerLord(functor, waitAfterDomLoad = 100, waitAfterInactive = 100){
     setTimeout(()=>{
-        $("#spinner-lord").removeClass("active").addClass("inactive");
+        const $spinnerLord = $("#spinner-lord");
+        if(!$spinnerLord)
+            return;
+
+        $spinnerLord.removeClass("active").addClass("inactive");
         setTimeout(()=>{
             functor();
-            $("#spinner-lord").remove();
+            $spinnerLord.remove();
         }, waitAfterInactive);
     }, waitAfterDomLoad);
 }
