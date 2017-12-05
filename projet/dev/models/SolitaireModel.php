@@ -147,29 +147,18 @@ class SolitaireModel extends A_Model{
             $x = $pawn["x"];
             $y = $pawn["y"];
 
-            $up = ["x" => $x, "y" => $y-2];
-            $down = ["x" => $x, "y" => $y+2];
-            $left = ["x" => $x-2, "y" => $y];
-            $right = ["x" => $x+2, "y" => $y];
-            try{
-                if($this->canGo($x, $y, $right["x"], $right["y"]))
-                    return false;
-            }catch(Throwable $t){
+            $possiblyAvailable = [];
+            $possiblyAvailable[] = ["x" => $x, "y" => $y-2];
+            $possiblyAvailable[] = ["x" => $x, "y" => $y+2];
+            $possiblyAvailable[] = ["x" => $x-2, "y" => $y];
+            $possiblyAvailable[] = ["x" => $x+2, "y" => $y];
+
+            foreach($possiblyAvailable as $possibility){
                 try{
-                    if($this->canGo($x, $y, $down["x"], $down["y"]))
+                    if($this->canGo($x, $y, $possibility["x"], $possibility["y"]))
                         return false;
                 }catch(Throwable $t){
-                    try{
-                        if($this->canGo($x, $y, $up["x"], $up["y"]))
-                            return false;
-                    }catch(Throwable $t){
-                        try{
-                            if($this->canGo($x, $y, $left["x"], $left["y"]))
-                                return false;
-                        }catch(Throwable $t){
-                            continue;
-                        }
-                    }
+                    continue;
                 }
             }
         }

@@ -2,3 +2,21 @@
 @author Ludwig GUERIN
  */
 
+thead td{
+    text-transform: uppercase;
+}
+
+
+#bests{
+    border: 1px solid #3c3f41;
+    
+    box-shadow: 0 0 0.4vh 0.3vh rgba(0,0,0, 0.15);
+}
+
+#bests caption{
+    border-bottom: 1px solid #3c3f41;
+}
+
+#bests thead td{
+    border-bottom: 2px solid #3c3f41;
+}

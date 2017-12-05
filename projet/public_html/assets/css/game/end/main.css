@@ -2,3 +2,67 @@
 @author Ludwig GUERIN
  */
 
+#title{
+    font-size: 4vh;
+    padding: 1vh;
+}
+
+#chart, #stats{
+    position: absolute;
+    top: 50%;
+    transform: rotateZ(0) translateY(-50%);
+    width: 50vw;
+    height: 80vh;
+}
+
+#chart{
+    left: 0;
+}
+
+#stats{
+    right: 0;
+    padding: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+    height: unset;
+}
+
+#stats > *{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#stats #player{
+    height: 10vh;
+    top: 0;
+    margin-bottom: 5vh;
+}
+
+#player *{
+    height: calc(100% / 3);
+    font-size: 1em;
+    text-align: center;
+}
+
+#stats #bests{
+	display: block;
+    width: auto;
+    position: relative;
+}
+
+#bests tr{
+    width:100%;
+}
+
+#bests tr td{
+    width: calc(100% / 5);
+}
+
+#bests tbody td{
+    padding-left: 2vh;
+}
+
+#bests td{
+    font-size: 2vh;
+}

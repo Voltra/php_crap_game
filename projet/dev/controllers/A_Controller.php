@@ -47,6 +47,7 @@ abstract class A_Controller {
     /**Handles a request right from the router
      * @param Request $rq being the current HTTP request
      * @param Router $router being the application's router
+     * @throws \Exception
      */
     public function handleRequest(Request $rq, Router $router){
         if($rq->isGet())
@@ -60,6 +61,7 @@ abstract class A_Controller {
     /**Handles GET requests
      * @param Request $rq being the current HTTP GET request
      * @param Router $router being the application's router
+     * @throws \Exception
      */
     protected function handleGetRequest(Request $rq, Router $router){
         try {
@@ -73,6 +75,7 @@ abstract class A_Controller {
     /**Handles POST requests
      * @param Request $rq being the current HTTP POST request
      * @param Router $router being the application's router
+     * @throws \Exception
      */
     protected function handlePostRequest(Request $rq, Router $router){
         try {

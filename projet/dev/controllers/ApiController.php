@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ludwig
- * Date: 27/11/2017
- * Time: 08:13
- */
-
 namespace Project\controllers;
 
 
@@ -37,6 +30,11 @@ class ApiController extends A_Controller {
      */
     protected $dbTables;
 
+    /**
+     * @var LobbyModel
+     */
+    protected $lobbyModel;
+
     public function __construct(I_ViewRenderEngine $renderEngine, DBConnection $db) {
         $render_engine = new JsonRenderEngine();
         parent::__construct($render_engine, $db);
@@ -46,6 +44,9 @@ class ApiController extends A_Controller {
             throw new Exception("No database table mapping available");
 
         $this->dbTables = $session->get("dbTables");
+
+        $this->lobbyModel = new LobbyModel($this->dbApi);
+        $this->userModel = new UserModel($this->dbApi);
     }
 
     protected function hasTable(string $name){
@@ -90,10 +91,35 @@ class ApiController extends A_Controller {
     }
 
     public function stats(Request $rq, Router $router, ?string $username=null){
-        $amount = json_decode($this->victories($rq, $router, $username))[0];
-        ob_get_clean();
-        return $this->view->renderJsonView([
-            "victories" => $amount
-        ]);
+        if(!($this->hasTable("users") && $this->hasTable("games")))
+            throw new Exception("No table mapping available");
+        else {
+            if (is_null($username))
+                return $this->view->renderJsonView(null);
+
+            if(!$this->userModel->usernameAlreadyExists($username))
+                return $this->view->renderJsonView(null);
+
+            return $this->view->renderJsonView(
+              $this->lobbyModel->getStatsFor($username)
+            );
+        }
+    }
+
+    public function bestStats(Request $rq, Router $router){
+        if(!($this->hasTable("users") && $this->hasTable("games")))
+            throw new Exception("No table mapping available");
+        else {
+            $keys = $this->lobbyModel->getStatsKeys();
+            $lastKey = $keys[ count($keys)-1 ];
+            return $this->view->renderJsonView(
+                array_map(function(array $stats) use($lastKey){
+                    $ratio = $stats[$lastKey];
+                    $ratio = floatval(rtrim($ratio, "%")) / 100.00;
+                    $stats[$lastKey] = $ratio;
+                    return $stats;
+                }, $this->lobbyModel->getStatsForTheThreeBest())
+            );
+        }
     }
 }

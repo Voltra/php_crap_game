@@ -25,3 +25,11 @@ label.valid{
 .fa{
     font-family: FontAwesome, roboto, sans-serif;
 }
+
+a{
+    color: #3b5998;
+}
+
+a:visited{
+    color: #486cba;
+}

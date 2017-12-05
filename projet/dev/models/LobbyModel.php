@@ -84,4 +84,66 @@ class LobbyModel extends A_Model {
         $rq->execute();
         return $this;
     }
+
+    /**Get statistics for a given player
+     * @param string $username being the user's username
+     * @return array
+     */
+    public function getStatsFor(string $username) : array{
+        return [
+            "pseudo" => $username,
+            "victories" => $this->getAmountOfWinsFor($username),
+            "defeats" => $this->getAmountOfLossFor($username),
+            "total" => $this->getAmountOfLobbiesFor($username),
+            "ratio" => number_format(100 * $this->getWinRatioFor($username), 2, ',', ' ') . '%'
+        ];
+    }
+
+    /**Retrieve the three best players (based on the amount of victory) -> might return from 0 to 3 best
+     * @return string[]
+     */
+    protected function getThreeBest() : array{
+        $sql = "SELECT c.pseudo FROM (SELECT COUNT(*) AS amount, p.pseudo FROM " . $this->tableName . " p WHERE p.partieGagnee=1 GROUP BY p.pseudo ORDER BY 1 DESC ) c LIMIT 0,3";
+        $rq = $this->db->query($sql);
+        return $rq->fetchAll(PDO::FETCH_COLUMN, 0);
+    }
+
+    /**Retrieve the stats for the three best players
+     * @return array
+     */
+    public function getStatsForTheThreeBest(){
+        $bests = $this->getThreeBest();
+        $stats = [];
+        for($i = 0 ; $i < 3 ; $i+=1){
+            $pseudo = $victories = $defeats = $total = $ratio = "NaN";
+            if(isset($bests[$i])){
+                $pseudo = $bests[$i];
+                $stats[] = $this->getStatsFor($pseudo);
+            }else {
+                $stats[] = [
+                    "pseudo" => $pseudo,
+                    "victories" => $victories,
+                    "defeats" => $defeats,
+                    "total" => $total,
+                    "ratio" => $ratio
+                ];
+            }
+            //TODO: Create stats array (with pseudo as one of the keys)
+        }
+
+        return $stats;
+    }
+
+    /**Retrieves the keys for the stats array (as an array)
+     * @return string[]
+     */
+    public function getStatsKeys() : array{
+        return [
+            "pseudo",
+            "victories",
+            "defeats",
+            "total",
+            "ratio"
+        ];
+    }
 }

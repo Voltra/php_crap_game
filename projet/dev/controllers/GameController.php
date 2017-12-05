@@ -158,10 +158,10 @@ class GameController extends A_Controller {
         $this->solitaireModel->unsetBoard();
 
         $chartData = [
-            "title" => "Win/Loss",
+            "title" => "Victories/Defeats",
             "points" => [
-                ["name"=>"win", "y"=>$this->getWinAmount(), "sliced"=>true, "selected"=>true],
-                ["name"=>"loss", "y"=>$this->getLossAmount()],
+                ["name"=>"victory", "y"=>$this->getWinAmount(), "sliced"=>true, "selected"=>true],
+                ["name"=>"defeat", "y"=>$this->getLossAmount()],
             ]
         ];
 
@@ -172,8 +172,10 @@ class GameController extends A_Controller {
             "winAmount" => $this->getWinAmount(),
             "lossAmount" => $this->getLossAmount(),
             "lobbiesAmount" => $this->getLobbiesAmount(),
-            "winRatio" => $this->getWinRatio(),
-            "chartData" => json_encode($chartData)
+            "winRatio" => 100*$this->getWinRatio(),
+            "chartData" => json_encode($chartData),
+            "statsForThreeBests" => $this->getStatsForTheThreeBest(),
+            "statsKeys" => $this->getStatsKeys()
         ]);
     }
 
@@ -409,6 +411,20 @@ class GameController extends A_Controller {
      */
     protected function getWinRatio() : float{
         return $this->model->getWinRatioFor($this->getUsername());
+    }
+
+    /**
+     * @see LobbyModel::getStatsForTheThreeBest
+     */
+    protected function getStatsForTheThreeBest() : array{
+        return $this->model->getStatsForTheThreeBest();
+    }
+
+    /**
+     * @see LobbyModel::getStatsKeys
+     */
+    protected function getStatsKeys() : array{
+        return $this->model->getStatsKeys();
     }
 
     /**Redirects to the login page

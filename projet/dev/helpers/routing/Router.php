@@ -8,6 +8,7 @@ use Project\Helpers\Database\DBConnection;
 use Project\helpers\http\Request;
 use Project\Helpers\Interactions\Session;
 use Project\Helpers\Rendering\I_ViewRenderEngine;
+use Throwable;
 
 /**A router that dispacthes a request to the corresponding A_Controller
  * Class Router
@@ -44,6 +45,7 @@ class Router {
 
     /**Dispatches the request to the corresponding controller
      * @param Request $rq being the current HTTP request
+     * @throws \Exception
      */
     protected function handleRequest(Request $rq){
         $uri = $rq->uri();
@@ -61,7 +63,11 @@ class Router {
 
             if(UriParams::classIsCorrect($class) && !is_subclass_of($class, get_class($this->rootController))){
                 $controller = new $class($this->renderEngine, $this->db);
-                $controller->handleRequest($rq, $this);
+                //try {
+                    $controller->handleRequest($rq, $this);
+                /*}catch(Throwable $t){
+                    $this->getError404Controller()->handleRequest($rq, $this);
+                }*/
                 die();
             }
         }
@@ -71,6 +77,7 @@ class Router {
 
     /**Starts the router
      * @param null|Request $rq being the current HTTP request (creates one if not given)
+     * @throws \Exception
      */
     public function run(?Request $rq = null){
         if(is_null($rq))

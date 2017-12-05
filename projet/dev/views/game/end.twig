@@ -11,10 +11,34 @@
 
 {% block body %}
     {# TODO: create the view #}
-    <h1 id="title">{% if won %}You won !{% else %}You lost !{% endif %}</h1>
+    <h1 id="title">{% if won %}You won !{% else %}You lost !{% endif %} <a href="/game/play">Play again</a>, <a href="/auth/logout">Quit</a> </h1>
 
-    <div id="chart" data-pie='{{ chartData | raw }}' style="width: 80vw; height: 80vh;">
+    <div id="chart" data-pie='{{ chartData | raw }}'> {# style="width: 80vw; height: 80vh;" #}
     </div>
 
-    <h2>Win/Loss ratio: {{ (winRatio * 100) | number_format(2, '.', ',') }}%</h2>
+    <div id="stats">
+        <div id="player">
+            <h2>Victory/Defeat ratio: {{ winRatio | number_format(1, '.', ',') }}%</h2>
+            <p>
+                Amount of victory: {{ winAmount | number_format(0, '.', ' ') }}
+            </p>
+            <p>
+                Amount of defeat: {{ lossAmount | number_format(0, '.', ' ') }}
+            </p>
+        </div>
+
+        <table id="bests">
+            <caption>Best three players</caption>
+            <thead>
+                <tr>
+                    {% for key in statsKeys %}<td>{{ key }}</td>{% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for statsPlayer in statsForThreeBests %}
+                    <tr>{% for key in statsKeys %}<td>{{ statsPlayer[key] }}</td>{% endfor %}</tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
