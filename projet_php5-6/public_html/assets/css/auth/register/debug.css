@@ -1,0 +1,18 @@
+/**
+@author Ludwig GUERIN
+ */
+form#registerForm{
+    background-color: #1b6d85;
+}
+
+input{
+    background-color: #2ca02c;
+}
+
+*{
+    color: orchid;
+}
+
+button{
+    background-color: darkslategray;
+}

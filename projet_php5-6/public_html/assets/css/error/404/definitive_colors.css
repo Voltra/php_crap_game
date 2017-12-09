@@ -1,0 +1,13 @@
+/**
+@author Ludwig GUERIN
+ */
+
+#error404{
+    color: inherit;
+    text-shadow: 0 0.3vh 0.4vh rgba(0,0,0, 0.4);
+}
+
+a{
+    color: #3b5998;
+    text-shadow: 0 0.1vh 0.2vh rgba(0,0,0, 0.4);
+}

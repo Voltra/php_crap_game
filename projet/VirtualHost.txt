@@ -1,0 +1,9 @@
+<VirtualHost *:80>
+	ServerName application
+	DocumentRoot "c:/wamp64/www/info2s3/webserver/miniproj/projet/public_html"
+	<Directory  "c:/wamp64/www/info2s3/webserver/miniproj/projet/public_html/">
+		Options +Indexes +Includes +FollowSymLinks +MultiViews
+		AllowOverride All
+		Require local
+	</Directory>
+</VirtualHost>

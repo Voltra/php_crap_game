@@ -1,0 +1,51 @@
+{
+  "name": "miniprojet",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "bulk": "npm update && clear && npm run build",
+    "build": "webpack && npm run postbuild",
+    "moveFlashCSS": "cp node_modules/jq-flash/dist/flash.css ../public_html/assets/css/globals/flash.css",
+    "moveSpinnerLordCSS": "cp -R node_modules/spinner-lord/css/* ../public_html/assets/css/globals/spinner-lord/",
+    "postinstall": "npm run moveFlashCSS && npm run moveSpinnerLordCSS",
+    "postbuild": "npm run postinstall",
+    "minifyjs": "node ./node_modules/babili-inplace/bin/babili-inplace ../public_html/assets/js/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Voltra/php_crap_game.git"
+  },
+  "keywords": [
+    "php"
+  ],
+  "author": "iut",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Voltra/php_crap_game/issues"
+  },
+  "homepage": "https://github.com/Voltra/php_crap_game#readme",
+  "dependencies": {
+    "fetch_json": "^1.0.5",
+    "highcharts": "^6.0.3",
+    "jq-flash": "^1.0.2",
+    "jquery": "^3.2.1",
+    "spinner-lord": "^0.2.0",
+    "yavljs": "^1.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-babili": "^0.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.2.0",
+    "babili-inplace": "^1.0.3",
+    "expose-loader": "^0.7.4",
+    "script-loader": "^0.7.2",
+    "uglify-es": "^3.2.0",
+    "uglify-inplace": "^1.0.2",
+    "uglify-js": "^3.2.0",
+    "uglify-loader": "^2.0.0",
+    "webpack": "^3.8.1"
+  }
+}

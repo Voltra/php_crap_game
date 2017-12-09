@@ -8,11 +8,17 @@
 
 # Mini-projet en PHP : Développement d'un jeu de solitaire
 
+
+
+[TOC]
+
+
+
 ## Préambule
 
 #### Test en serveur local
 
-Afin de tester le fonctionnement de l'application fournie, il faut au préalable créer un VirtualHost dont la racine pointe vers le dossier `public_html` afin d'assurer le fonctionnement correct de l'application.
+Afin de tester le fonctionnement de l'application fournie, il faut au préalable créer un VirtualHost dont la racine pointe vers le dossier `public_html` afin d'assurer le bon fonctionnementde l'application.
 
 
 
@@ -20,11 +26,21 @@ Afin de tester le fonctionnement de l'application fournie, il faut au préalable
 
 
 
-**N.B.** Par la suite, nous utiliserons `application` comme nom de VirtualHost
+**<u>NB</u>**
+
+Par la suite, nous utiliserons `application` comme nom de VirtualHost.
+
+Afin de faciliter la mise en place d'un VirtualHost, le fichier `VirtualHost.txt` est fourni indiquant les paramètres nécessaires pour le fonctionnement correct du VirtualHost (modifier les chemins pour faire pointer vers le dossier `public_html` de cette application).
+
+**<u>Attention</u>**
+
+Cette application se basant sur `$_SERVER['REQUEST_URI']` pour la répatition des URL, il faut **impérativement** que la racine du serveur soit le dossier `public_html` (via VirtualHost).
+
+
 
 #### Dépendances
 
-Cette application est conçue pour fonctionner sur un serveur Apache (2.0) avec PHP 7.1.* (pseudo-typage de retour (et amélioration du pseudo-typage des paramètres de fonctions/méthodes) et divers correction de problèmes de sécurité) ainsi que MySQL (version >=5.7.14).
+Cette application est conçue pour fonctionner sur un serveur Apache (2.0) avec PHP 7.1.* (pseudo-typage de retour et amélioration du pseudo-typage des paramètres de fonctions/méthodes et divers correction de problèmes de sécurité) ainsi que MySQL (version >=5.7.14, possibles version inférieures).
 
 Il y a également deux dépendances optionnelles, à savoir [NodeJS](https://nodejs.org/en/download/) (pour npm) et [composer](https://getcomposer.org/download/).
 
@@ -33,6 +49,12 @@ Il y a également deux dépendances optionnelles, à savoir [NodeJS](https://nod
 Afin de faciliter la mise en place de ces dépendances, les dernières versions de [WAMP](http://wampserver.aviatechno.net/), [XAMPP](https://www.apachefriends.org/fr/index.html) permettent d'obtenir des versions de PHP, Apache et MySQL suffisantes (sous Linux, les paquets s'installent un par un via apt-get).
 
 De surcroit WAMP propose un utilitaire de création de VirtualHost afin de faciliter la tâche précédente.
+
+
+
+**<u>NB</u>**
+
+Sauf changements de dernière minutes, une version alternative pour PHP>=5.6.25 sera proposée
 
 
 
@@ -48,7 +70,8 @@ Afin de mettre à jour toutes les dépendances de développement (diverses bibli
 * Se rendre dans le dossier `dev`  (et non `dev..`)
 * Exécuter `npm run bulk`, cela mettra à jour les dépendances javascript et CSS
 * Une fois fini, exécuter `cd ..`
-* Enfin exécuter `composer update && composer dump-autoload` ce qui mettra à jour les dépendances PHP et regénérera l'autoloader
+* Enfin exécuter `composer update` puis `composer dump-autoload` ce qui mettra à jour les dépendances PHP et regénérera l'autoloader
+
 
 
 
@@ -56,7 +79,7 @@ Afin de mettre à jour toutes les dépendances de développement (diverses bibli
 
 Afin de bien mettre en place la base de données, il faut se reporter au fichier de configuration correspondant (`dev/config/development_config.php`  ou `dev/config/production_config.php` suivant si l'on souhaite activer le mode debug ou non) et apporter les modifications  souhaitées (nom de DB, nom d'hôte, nom d'utilisateur, mot de passe, etc ...) puis créer la base de données en conséquence.
 
-Un script SQL est à votre disposition pour la création de la base de données et l'insertion de tuples par défaut : `dev/exec.sql` (ces tuples par défaut étant ceux donnés, à savoir toto#toto et titi#titi où username#password)
+Un script SQL est à votre disposition pour la création des tables et l'insertion de tuples par défaut : `dev/exec.sql` (ces tuples par défaut étant ceux donnés, à savoir toto#toto et titi#titi où username#password)
 
 
 
@@ -64,7 +87,7 @@ Des logiciels tels que [SQLyog](https://github.com/webyog/sqlyog-community/wiki/
 
 ## Respect du modèle MVC
 
-Cette application, comme demandé, respecte un architecture suivant le modèle MVC (le fonctionnement type de l'application sera décrit plus tard).
+Cette application, comme demandé, respecte une architecture suivant le modèle MVC (le fonctionnement type de l'application sera décrit plus tard).
 
 
 
@@ -80,6 +103,8 @@ Cette application, comme demandé, respecte un architecture suivant le modèle M
 
 Les **modèles** sont représentés par des classes étant sous-classes de la classe abstraite `Project\Models\A_Model`. Ces derniers, à l'aide d'une connexion à la base de données (établie à la construction de l'objet), proposent des méthodes facilitant le traitement et l'acquisition de données (e.g. savoir si un nom d'utilisateur est déjà pris).
 
+
+
 ### Contrôleurs
 
 > constructeur(
@@ -92,13 +117,15 @@ Les **modèles** sont représentés par des classes étant sous-classes de la cl
 
 Les **contrôleurs** sont représentés par des classes étant sous-classes de la classe abstraite `Project\Controllers\A_Controller`. Ces derniers, à l'aide d'une connexion à la base de données (établie à la construction de l'objet) ainsi que d'un moteur de rendu de vues (également établi à la construction de l'objet) exposent des méthodes publiques qui seront appelées par le routeur afin d'effectuer le traitement des données et le rendu et affichage de la vue.
 
-## Vues
+
+
+### Vues
 
 > constructeur(void)
 
 Le système de **vues** de cette application est fait en deux étapes :
 
-1. Un appel à(aux) méthode(s) de rendu de vue est appelé
+1. Un appel à(aux) méthode(s) de rendu de vue est effectué
 2. La **vue** est rendue puis affichée
 
 
@@ -107,7 +134,7 @@ Un **moteur de rendu de vue** est une classe implémentant l'interface `Project\
 
 
 
-Il est également possible de définir des données globales (qui ne seront pas à préciser à chaque rendu), par exemple le status du drapeau de *debug*.
+Il est également possible de définir des données globales (qui ne seront pas à re-préciser à chaque rendu), par exemple le status du drapeau de *debug*.
 
 
 
@@ -134,16 +161,16 @@ Afin de vulgariser ces propos, voici un exemple:
 Un requête utilisant la méthode GET pour l'URL `http://application/api/stats/toto` va être décomposée de la façon suivante :
 
 1. Récupération du fragment d'URI (ici, `/api/stats/toto`)
-2. * Si le fragment d'URI est `"/"` alors le contrôleur concerné est celui par défaut (ce n'est pas la cas ici)
-   * Sinon, on décompose l'URI en un tableau (ici `["api", "stats", "toto"]`) et on observe le premier élément
-     1. Nous transformons le premier élément de la façon suivante : `"api"` => `"Project\Controllers\ApiController"`
+2. * Si le fragment d'URI est `'/'` alors le contrôleur concerné est celui par défaut (ce n'est pas la cas ici)
+   * Sinon, on décompose l'URI en un tableau (ici `['api', 'stats', 'toto']`) et on observe le premier élément
+     1. Nous transformons le premier élément de la façon suivante : `'api'` => `'Project\Controllers\ApiController'`
      2. * Nous regardons si la classe (cf. ci-dessus) existe et si cette dernière n'est pas sous-classe du contrôleur par défaut, si c'est le cas alors on instancie cette classe (avec une référence au moteur de rendu de vue ainsi qu'une référence à la connexion à la base de données) et ce sera le contrôleur concerné
         * Sinon, le contrôleur concerné est le contrôleur d'erreur 404 (cf. composition du constructeur du routeur)
-3. Nous appelons la méthode `handleRequest` sur le contôleur concerné en lui passant en paramètre un `Project\Helpers\Rendering\I_ViewRenderEngine` ainsi qu'une référence à ce **routeur**
+3. Nous appelons la méthode `handleRequest` sur le contôleur concerné en lui passant en paramètre un `Project\Helpers\Http\Request` ainsi qu'une référence à ce **routeur**
 4. * Si la méthode de la requête est GET, alors la méthode `handleGetRequest` sera appelée sur ce même contrôleur (avec les même paramètres)
    * Si la méthode de la requête est POST, alors la méthode `handlePostRequest` sera appelée sur ce même contrôleur (avec les même paramètres)
    * Sinon un appel à la méthode de rendu de vue du contrôleur d'erreur est effectué (`Project\Controllers\A_ErrorController::renderView`, `Project\Helpers\Routing\Router::getError404Controller`)   **[FIN DE TRAITEMENT]**
-5. * Si il est possible d'appeler la méthode (ici `stats`) est possible (méthode en `public`) alors l'appel est effectué en passant en paramètre, dans l'ordre : le moteur de rendu de vue, la requête, les paramètres additionnels de la requête (un à un) ; (ici `Project\Controllers\ApiController::stats`)
+5. * Si un appel à la méthode (ici `stats`) est possible (méthode en `public`) alors l'appel est effectué en passant en paramètre, dans l'ordre : le moteur de rendu de vue, la requête, les paramètres additionnels de la requête (un à un) ; (ici `Project\Controllers\ApiController::stats`)
    * Sinon un appel à la méthode de rendu de vue du contrôleur d'erreur est effectué (`Project\Controllers\A_ErrorController::renderView`, `Project\Helpers\Routing\Router::getError404Controller`)   **[FIN DE TRAITEMENT]**
 6. Après les divers traitements effectués par la méthode appelée, un rendu de vue sera fait (ou une redirection) **[FIN DE TRAITEMENT]**
 
@@ -160,9 +187,9 @@ Ce **routeur** se base sur la réécriture classique d'une URL (cf. `public_html
 Contrairement à ce qui était indiqué, cette application se décompose en deux grandes parties :
 
 * dev
-* public
+* public_html
 
-Le dossier `public_html` contient tout ce qui est accessible au public (`index.php`, feuilles de styles, scripts, polices de caractères, images, etc...) tandis que le dossier `dev` comporte toutes les composantes non destinées au public (configuration contenant les informations relatives à la base de données, etc...).
+Le dossier `public_html` contient tout ce qui est accessible au public (`index.php`, feuilles de styles, scripts, polices de caractères, images, etc...) tandis que le dossier `dev` comporte tous les composants non destinés au public (configuration contenant les informations relatives à la base de données, données sensibles de configuration, etc...).
 
 
 
@@ -198,6 +225,7 @@ Le répertoire `public_html` est construit de la manière suivante:
 
 
 
+
 ### Bibliothèques externes et technologies
 
 Bien que non contre-indiqué dans les consignes (ou dans les éclaircissements apportés sur ces dernières), nous avons tenté de limiter l'usage de bibliothèques externes à un minimum.
@@ -220,7 +248,7 @@ Pour illustrer ce propos je vous invite à vous rendre, une fois connecté, sur 
 
 
 
-Le résultat visuel est strictement identique, en revanche il n'en va pas de même pour le code :
+Le résultat visuel (page HTML émise) est strictement identique, en revanche il n'en va pas de même pour le code :
 
 * `http://application/nativeRenderEngine/test` utilise `Project\Helpers\Rendering\NativeRenderEngine` qui permet d'écrire ses vues en PHP pur
 * `http://application/game/end`  utilise `Project\Helpers\Rendering\TwigAdapter` qui permet d'utiliser Twig pour les vues
@@ -243,7 +271,7 @@ De surcroît, Twig ne gêne en rien l'accomplissement de la mise en place d'un m
 
 Plus discutable que Twig, Composer n'est utilisé que pour deux finalités précises :
 
-* fournir un fichier `vendor/autoload.php` (cf. [PSR 4](http://www.php-fig.org/psr/psr-4/)) qui permet en un seul `require_once` d'inclure toutes les classes définies (il faut cependant passer par un fichier de configuration pour les classes qui ne viennent pas de bibliothèques, à savoir `composor.json`) et permet d'apporter une plus grande importance à l'utilisation de namespace
+* fournir un fichier `vendor/autoload.php` (cf. [PSR 4](http://www.php-fig.org/psr/psr-4/)) qui permet en un seul `require_once` d'inclure toutes les classes définies (il faut cependant passer par un fichier de configuration pour les classes qui ne viennent pas de bibliothèques, à savoir `composer.json`) et permet d'apporter une plus grande importance à l'utilisation de namespace
 * permettre d'installer des bibliothèques externes PHP très facilement
 
 S'agissant d'un outil général (non spécifique à un design pattern ou paradigme quelconque) et n'étant qu'un outil facilitant le développement d'application PHP, nous nous sommes permis de l'utiliser.
@@ -252,7 +280,7 @@ S'agissant d'un outil général (non spécifique à un design pattern ou paradig
 
 #### Javascript
 
-L'utilisation de javascript (ne portant pas atteinte au déroulement du jeu) n'est là que pour tenter d'améliorer l'expérience utilisateur avec un bandeau de notification et une icône de chargement.
+L'utilisation de javascript (ne portant pas atteinte au déroulement du jeu) n'est là que pour tenter d'améliorer l'expérience utilisateur avec un bandeau de notification et une icône de chargement et de la validation côté client.
 
 
 
@@ -268,9 +296,104 @@ De surcroît cela permet d'adapter la demande tout en respectant les standards e
 
 
 
-Cependant, à moins d'un malencontreux changement de dernière minute, une version compatible PHP&ge;5.6.0 sera proposée en alternative (une traduction directe du code, avec la sécurité du pseudo-typage et du salage généré aléatoirement en moins).
+Cependant, à moins d'un malencontreux changement de dernière minute, une version compatible PHP&ge;5.6.25 sera proposée en alternative (une traduction directe du code, avec la sécurité du pseudo-typage et du salage généré aléatoirement en moins).
+
+
+
+**<u>NB</u>**
+
+Les versions 7.2.* de PHP n'apportant que peu de nouveautés intéressantes, celles-ci sont donc laissées de côté au profit des version 7.1.* .
+
+
+
+### Autres écarts divers
+
+#### Début de partie
+
+Le commencement de la partie (où le joueur était supposé choisir le premier pion à enlever) a été troqué pour un plateau de début classique du solitaire (cf. [wikipedia, plateau 2](https://fr.wikipedia.org/wiki/Solitaire_(casse-t%C3%AAte)#Types_de_plateaux)). À noter que ce changement n'est que peu impactant : la logique, le traitement de données et les vues étant totalement séparées il serait aisé d'implémenter cette fonctionnalité (qui semblait au départ curieuse).
+
+
+
+#### Configuration
+
+Bien que la consigne ait été respectée (divers constantes servant à la configuration), il est important de se rendre compte que l'utilisation d'un tableau de configuration semble plus judicieuse et adaptée (l'est encore plus si l'on ajoute un principe d'accès via [dot-notation](https://github.com/adbario/php-dot-notation#examples)).
+
+En effet, ce système permet de regrouper en unités solidaires et logiques les données de configuration qui interagissent au même niveau (e.g. url de DB, nom de DB, etc...).
+
+
+
+#### Vues d'erreur
+
+Le principe de vue d'erreur proposé par l'énoncé a été troqué pour un principe de messages flash en session qui, en plus d'offrir une expérience utilisateur accrue, semble bien plus cohérent et semble bien moins rompre la logique de l'enchaînement des vues.
 
 
 
 ## Fonctionnement global de l'application
 
+![schéma de fonctionnement global](./ressourcesCompteRendu/diagrammeLogiqueApplication__small.png)
+
+Le schéma ci-dessus représente le fonctionnement global de l'application.
+
+Le schéma ci-dessous représente l'enchaînement des scripts utilisés (et variables, et appels de méthodes) pour traiter la requête HTTP
+
+![enchaînement](./ressourcesCompteRendu/enchainementScripts.png)
+
+
+
+## Techniques Utilisées
+
+### Session
+
+Énormément de paramètres ayant besoin d'être partagés à travers l'application, il semble impossible (sans conteneur/gestionnaire de dépendances) de gérer toutes ces dépendances continuellement.
+
+C'est pour cela que nous avons opté pour la transmission de données clées via session.
+
+### Flash
+
+Les messages flash sont des messages qui ne sont stockés en session que pour une transaction (requête, réponse) HTTP (bien que restent si non utilisés).
+
+Ces messages sont donc particulièrements adaptés pour avertir l'utilisateur d'éventuelles erreurs non prévisibles côté client (e.g. mouvement impossible).
+
+Ainsi nous avons préféré, pour des erreurs non relatives à la validation de formulaires (e.g. nom d'utilisateur déjà pris n'utilise pas de message flash), l'utilisation de messages flash à une vue séparée.
+
+
+
+Il est important de noter que nous avons utilisé [jq-flash](https://www.npmjs.com/package/jq-flash) pour l'affichage des messages flash côté client.
+
+### Messages d'erreur de validation venant de la validation côté serveur
+
+Le rendu des vues étant paramétrique, il nous ait tout à fait possible de passer des messages d'erreur relatifs aux champs de formulaires aux vues.
+
+C'est donc l'approche que nous avons privilégié :
+
+Si il y a une erreur de validation côté serveur, alors les données valides sont renvoyées et des messages d'erreurs sont également envoyés.
+
+Cela permet à l'utilisateur de ne pas avoir à retaper les informations qui étaient au préalable valides tout en l'informant des informations erronées.
+
+### Graphe et statistiques
+
+Nous avons, pour les statistiques du joueur, décidé d'utiliser une bibliothèque javascript [highcharts](https://www.npmjs.com/package/highcharts) car cela nous permet d'avoir un aperçu rapide des statistiques, en plus des statistiques écrites supplémentaires.
+
+### Passage des paramètres de page en page
+
+La plupart des traitements ne nécessitant pas (ou peu) de transitions vers d'autres pages, nous n'avons pas utilisé de méthode précise pour la passage de paramètres de page en page (session, pas d'URL longues, pas de champs cachés) : en effet, la plupart des traitements s'effectuent sur une page, et ceux nécessitant plusieurs pages vont généralement chercher les données nécessaires en infomations de session.
+
+### Système de routing
+
+Afin de faciliter le développement, tout en gardant une cohérence dans le comportement partagé par les contrôleurs, nous avons opté pour un système de routing similaire à celui de CodeIgniter passant donc par la définition préalable de toutes les classes puis répartissant en fonction d'une décomposition algorithmique de l'URI.
+
+Ce système permet de mettre en place rapidement un groupe de fonctionnalités mais a également ses limites :
+
+`/user` est impossible à faire sans rajouter d'autres contraintes de comportement aux contrôleurs
+
+`/user/nom` (méthode, argument) est impossible à distringuer de `user/nom` (contrôleur, méthode).
+
+
+
+En effet, là où il y a une couplage Route[\*-1]Contrôleur, un système dit  *MVRA* (dérivé de MVC : Model View Route Action) aura un couplage Route[1-1]Action ce qui semble bien plus intéressant dans une optique de modularisation de l'application.
+
+### Sécurité des mots de passe
+
+Bien que la fonction `crypt` ait été proposée, nous avons choisi d'utiliser les API de hash les plus récentes (`password_hash` et `password_verify`), car les plus adaptées en terme de sécurité vis-à-vis des besoins en sécurité actuels.
+
+De surcroît, les hash générés sont compatibles avec ceux de `crypt`.

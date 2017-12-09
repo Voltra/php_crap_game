@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "env",
+    [
+      "babili",
+      {
+        "keepFnName": true,
+        "keepClassName": true
+      }
+    ]
+  ]
+}

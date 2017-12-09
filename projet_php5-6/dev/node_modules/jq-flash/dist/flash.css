@@ -1,0 +1,125 @@
+/**@@PROPERTIES@@**/
+:root{
+    --flash-width: 100vw;
+    --flash-height: 10vh;
+    --flash-padding: 1vh;
+    
+    --flash-close-scaleFactor: 0.69;
+    --flash-close-width: calc(var(--flash-close-scaleFactor) * var(--flash-height));
+    --flash-close-height: var(--flash-close-width);
+    --flash-close-marginLeft: calc((var(--flash-height) - var(--flash-close-width)) / 2);
+    --flash-close-marginTop: calc((var(--flash-height) - var(--flash-close-height)) / 2);
+    --flash-close-fontSize: 4vh;
+    
+    --flash-height-transition-duration: 0.5s;
+    --flash-height-transition: height var(--flash-height-transition-duration) ease-in-out;
+}
+
+.flash, .flash > *{
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.flash{
+    top: 0;
+    left: 0;
+    width: var(--flash-width);
+    height: var(--flash-height);
+    position: relative;
+    
+    overflow: hidden;
+    display: block;
+    
+    font-family: robotoMedium, roboto;
+    
+    cursor: pointer;
+    transition: var(--flash-height-transition);
+}
+
+.flash-folded {
+	height: 0;
+    transition: var(--flash-height-transition);
+}
+
+.flash > *{
+	padding: var(--flash-padding);
+}
+
+.flash-close{    
+    width: var(--flash-close-width);
+    height: var(--flash-close-height);
+    border-radius: var(--flash-padding);
+    float: left;
+    cursor: pointer;
+    
+    padding: 0;
+    
+    margin-left: var(--flash-close-marginLeft);
+    margin-top: var(--flash-close-marginTop);
+    
+    font-size: var(--flash-close-fontSize);
+}
+
+.flash p{
+    width: calc(var(--flash-width) - var(--flash-close-width) - (2 * var(--flash-close-marginLeft)));
+    height: auto;
+    max-height: calc(var(--flash-height) - var(--flash-padding));
+    
+    word-wrap: break-word;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/**@@STYLES@@**/
+:root{
+    --flash-hueRotate: -20deg;
+    --flash-button-filter-transition: filter ease-in-out 0.25s;
+    
+    --facebook-white: #e9ebee;
+    --facebook-blue: #3b5998;
+    
+    --inset-bottomToTop: inset 0px 0.4vh 0.2vh rgba(0,0,0, 0.15);
+    
+    --default-niceGreen: #11b281;
+    --default-niceGreen-textColor: #1d2d38;
+    
+    --default-niceRed: #740303;
+    --default-niceRed-textColor: var(--facebook-white);
+    
+    --default: teal;
+    --default-textColor: var(--facebook-white);
+    
+    /*Pulled out from my upcoming CSS shadow library : material-shadows*/
+    --customMaterialShadowInsetNorth: inset 0px -0.25vh 0.5vh 0px rgba(0,0,0, 0.15);
+}
+
+.flash {
+    --flash-bg: var(--default);
+    --flash-textColor: var(--default-textColor);
+    --flash-boxShadow: var(--customMaterialShadowInsetNorth);
+    --flash-textShadow: 0 0 0 transparent;
+	background-color: var(--flash-bg);
+    color: var(--flash-textColor);
+    box-shadow: var(--flash-boxShadow);
+    text-shadow: var(--flash-textShadow);
+}
+
+.flash > p{
+    color: inherit;
+}
+
+.flash-success{
+    --flash-bg: var(--default-niceGreen);
+    --flash-textColor: var(--default-niceGreen-textColor);
+}
+
+.flash-failure{
+    --flash-bg: var(--default-niceRed);
+    --flash-textColor: var(--default-niceRed-textColor);
+}
+
+.flash-close{
+    border: none;
+    background-color: transparent;
+    color: inherit;
+}

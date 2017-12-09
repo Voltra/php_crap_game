@@ -1,0 +1,152 @@
+/**
+@author Ludwig GUERIN
+ */
+
+#game {
+	height: 80vh;
+    width: 80vw;
+    position: relative;
+    
+    margin-left: 5vh;
+}
+
+#game > *{
+    display: block;
+    width: auto;
+    height: 80vh;
+}
+
+#boardTable, #playForm {
+    display: inline-block;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 50%;
+}
+
+
+#boardTable > thead,
+#boardTable > tbody,
+#boardTable > tfoot{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#boardTable > tbody{
+    height: 90%;
+}
+
+#boardTable > thead,
+#boardTable > tfoot{
+	height: 5%;
+}
+
+#boardTable tr{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+    align-self: center;
+    vertical-align: middle;
+    
+    width: 100%;
+}
+
+#boardTable tbody tr{
+	height: calc(100% / 7);
+}
+
+#boardTable tr > td{
+    display: inline;
+	flex: 1;
+    
+    align-self: center;
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    
+    font-size: 3vh;
+    
+    width: calc(100% / 7);
+}
+
+thead tr,
+tfoot tr{
+    height: 100%;
+}
+
+thead td,
+tfoot td{
+    font-size: 0.9em;
+    
+    align-self: center;
+    vertical-align: middle;
+}
+
+
+
+#playForm {
+	right: 0;
+    left: 50%;
+}
+
+#playForm form{
+    position: absolute;
+	top: 50%;
+    left: 50%;
+    
+    transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    -o-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    -moz-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    -ms-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    -webkit-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+}
+
+#playForm label,
+#playForm [type='text']{
+	display: block;
+}
+
+#playForm [type='text']{
+	width: 30vw;
+    
+    font-size: 3vh;
+    height: 6vh;
+    padding: 1vh;
+    margin-bottom: 0.8vh;
+}
+
+#playForm label{
+	font-size: 3.2vh;
+    margin-bottom: 1vh;
+}
+
+p.error{
+    font-size: 2.5vh;
+    margin-bottom: 2.5vh;
+}
+
+#playForm [type='submit']{
+    font-size: 2.5vh;
+    padding: 1vh 2vh;
+    position: absolute;
+    right: 0;
+}
+
+#welcome{
+    margin-top: 1vh;
+    font-size: 3vh;
+}
+
+#actions button{
+    font-size: 2.5vh;
+}
+
+#actions form{
+    width: 10vw;
+}

@@ -1,0 +1,39 @@
+{# Author : Ludwig GUERIN #}
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <!--@@ PAGE INFO @@-->
+        <meta charset="utf-8" data-whatIdo="Adapter le jeu de caractère au maximum"/>
+        <meta lang="fr"/>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="icon" href="" data-whatIdo="Icône de la page"/>
+        <meta name="keywords" content="{% block keywords %}{% endblock %}" data-whatIdo="Mots-clés"/>
+
+        <!--@@ IMPORTANT META @@-->
+        <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, shrink-to-fit=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" data-whatIdo="Adaptation à tous les supports"/>
+
+        <!--@@ STYLESHEETS @@-->
+        {% include "modules/global_components/global_stylesheets.twig" %}
+
+        {% block css %}
+            {% include "modules/global_components/page_specific_stylesheets.twig" %}
+            {% include "modules/global_components/flash-css.twig" %}
+            {% include "modules/global_components/spinner-lord-css.twig" %}
+        {% endblock %}
+
+        <!--@@ CUSTOM SCRIPTS @@-->
+        {% block scripts %}
+            <script src="/assets/js/{{ pageName | replace({'\/': '_'}) }}.bundle.js" type="application/javascript"></script>
+        {% endblock %}
+    </head>
+
+    <body>
+        {% include "modules/global_components/spinner-lord.twig" %}
+        {% include "modules/global_components/flash.twig" %}
+
+        <div id="content">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+/**
+@author Ludwig GUERIN
+ */
+:root{
+    --white: #fff;
+    --borderColor: #e98546;
+}
+
+thead td{
+    text-transform: uppercase;
+}
+
+#bests{
+    border: 1px solid var(--borderColor);
+}
+
+#bests caption{
+    border-bottom: 1px solid var(--borderColor);
+}
+
+#bests thead td{
+    border-bottom: 2px solid var(--borderColor);
+}

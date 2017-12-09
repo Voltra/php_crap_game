@@ -1,0 +1,13 @@
+{# Author : Ludwig GUERIN #}
+{% if pageName %}
+    <link rel="stylesheet" href="/assets/css/{{ pageName }}/common.css" data-whatIdo="Styles commun pour tous les appareils"/>
+    <link rel="stylesheet" href="/assets/css/{{ pageName }}/main.css" media="all and (min-width: 768px)" data-whatIdo="Styles par défaut"/>
+    <link rel="stylesheet" href="/assets/css/{{ pageName }}/mobile.css" media="all and (max-width: 768px)" data-whatIdo="Styles pour les petits écrans"/>
+    <link rel="stylesheet" href="/assets/css/{{ pageName }}/mobile.css" media="(orientation:portrait)" data-whatIdo="Styles pour l'orientation portrait"/>
+
+    {% if debug %}
+        <link rel="stylesheet" href="/assets/css/{{ pageName }}/debug.css" data-whatIdo="Styles de debug pour développeurs"/>
+    {% else %}
+        <link rel="stylesheet" href="/assets/css/{{ pageName }}/definitive_colors.css" data-whatIdo="Styles de debug pour développeurs"/>
+    {% endif %}
+{% endif %}

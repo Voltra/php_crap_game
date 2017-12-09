@@ -1,0 +1,49 @@
+/**
+@author Ludwig GUERIN
+ */
+
+*{
+    box-sizing: border-box;
+}
+
+#content {
+	display: block;
+    position: relative;
+}
+
+#title{
+    text-align: center;
+    text-transform: uppercase;
+    
+    display: block;
+}
+
+table{
+    display: block;
+}
+
+body{
+    height: 100vh;
+    max-height: 100vh;
+    
+    overflow: hidden;
+    
+    line-height: unset;
+}
+
+table *{
+    display: inline-block;
+}
+
+table tr,
+table thead,
+table tbody,
+table caption{
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+thead td{
+    text-align: center;
+}

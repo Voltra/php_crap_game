@@ -1,0 +1,122 @@
+{# Author : Ludwig GUERIN #}
+{% extends "modules/layout.twig" %}
+
+{% block keywords %}{% endblock %}
+
+{% block title %}Play{% endblock %}
+
+{% if not error %}
+    {% set error=[] %}
+{% endif %}
+
+{% block body %}
+    <div id="welcome">
+        Welcome, {{ username }}
+    </div>
+
+    <div id="actions">
+        {% if canUndo %}
+            <form id="resetForm" action="/game/reset" method="POST">
+                <button type="submit" class="fa">Reset &#xf021;</button>
+            </form>
+        {% endif %}
+
+        <form id="logoutForm" action="/auth/logout" method="GET">
+            <button type="submit" class="fa">Logout &#xf08b;</button>
+        </form>
+
+        {% if canUndo %}
+            <form id="undoForm" action="/game/undo" method="POST">
+                <button type="submit" class="fa">Undo &#xf177;</button>
+            </form>
+        {% endif %}
+
+        {% if debug %}
+            <form id="instantLoseForm" action="/game/instant_lose" method="POST">
+                <button type="submit" class="fa">Instant Lose &#xf188;</button>
+            </form>
+
+            <form id="instantWinForm" action="/game/instant_win" method="POST">
+                <button type="submit" class="fa">Instant Win &#xf188;</button>
+            </form>
+
+            <form id="getWinForm" action="/game/get_win" method="POST">
+                <button type="submit" class="fa">Get a winning board &#xf188;</button>
+            </form>
+
+            <form id="getLosingForm" action="/game/get_losing" method="POST">
+                <button type="submit" class="fa">Get a losing board &#xf188;</button>
+            </form>
+        {% endif %}
+    </div>
+
+    <div id="game">
+        <table id="boardTable">
+            <thead>
+                <tr>
+                    <td colspan="1">x(0;0)y</td>
+                    {% for i in 0..5 %}
+                        <td colspan="1"></td>
+                    {% endfor %}
+                    <td colspan="1">x(6;0)y</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for idy, y in board %}
+                    <tr>
+                        {% for idx, x in y %}
+                            {% if invalids[idy][idx] %}
+                                {# &Cross; #}
+                                <td class="invalid">&#x25A0;</td>
+                            {% else %}
+                                {# &smashp; #}
+                                {% if board[idy][idx] %}
+                                    <td class="pawn">&ofcir;</td>
+                                {% else %}
+                                    <td class="empty">&target;</td>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="1">x(0;6)y</td>
+                    {% for i in 0..5 %}
+                        <td colspan="1"></td>
+                    {% endfor %}
+                    <td colspan="1">x(6;6)y</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div id="playForm">
+            <form action="/game/processAction" method="POST">
+                <div>
+                    <label for="curx">Current X: </label>
+                    <input name="curx" id="curx" type="text" placeholder="[0-6]" {% if curx %}value="{{ curx }}"{% endif %}/>
+                    <p class="error">{% if error.curx %}{{ error.curx }}{% endif %}</p>
+
+                    <label for="cury">Current Y:</label>
+                    <input name="cury" id="cury" type="text" placeholder="[0-6]" {% if cury %}value="{{ cury }}"{% endif %}/>
+                    <p class="error">{% if error.cury %}{{ error.cury }}{% endif %}</p>
+                    <br/>
+                </div>
+
+                <div>
+                    <label for="nextx">To X:</label>
+                    <input name="nextx" id="nextx" type="text" placeholder="[0-6]" {% if nextx %}value="{{ nextx }}"{% endif %}/>
+                    <p class="error">{% if error.nextx %}{{ error.nextx }}{% endif %}</p>
+
+                    <label for="nexty">To Y:</label>
+                    <input name="nexty" id="nexty" type="text" placeholder="[0-6]" {% if nexty %}value="{{ nexty }}"{% endif %}/>
+                    <p class="error">{% if error.nexty %}{{ error.nexty }}{% endif %}</p>
+                </div>
+
+                <br/>
+
+                <button type="submit" disabled="disabled">PLAY</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

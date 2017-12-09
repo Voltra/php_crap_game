@@ -1,0 +1,27 @@
+/**
+@author Ludwig GUERIN
+ */
+
+/**@@ <TEMPLATE> @@**/
+/*@font-face{
+    font-family: ;
+    src: url("");
+*/
+/**@@ </TEMPLATE> @@**/
+
+/*///////////////////////////////////////////////////////////////*/
+
+@font-face{
+    font-family: r;
+    src: url("/assets/fonts/ttf/RobotoLight.ttf");
+}
+
+@font-face {
+    font-family: AmericanCaptain;
+    src: url("/assets/fonts/ttf/AmericanCaptain.ttf");
+}
+
+@font-face{
+    font-family: FontAwesome;
+    src: url("/assets/fonts/ttf/FontAwesome.ttf");
+}

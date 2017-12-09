@@ -1,0 +1,43 @@
+/**
+@author Ludwig GUERIN
+ */
+
+#content{
+    cursor: pointer;
+}
+
+#error404{
+    display: block;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+}
+
+a{
+    display: block;
+    position: absolute;
+
+    top: 10%;
+    left: 50%;
+
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#error404, a{
+    text-align: center;
+
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}

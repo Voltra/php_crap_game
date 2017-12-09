@@ -1,0 +1,63 @@
+/**
+@author Ludwig GUERIN
+ */
+
+*{
+    color: #3c3f41;
+}
+
+p.error{
+    color: #d80500;
+    transition: all 0.3s ease-in-out;
+}
+
+form{
+    transition: height 0.3s ease-in-out;
+}
+
+label.valid{
+    color: #2ca02c;
+}
+
+td.pawn{
+    opacity: 1;
+}
+
+td.invalid{
+    opacity: 0.1;
+}
+
+td.empty{
+    opacity: 0.3;
+}
+
+.fa{
+    font-family: FontAwesome, roboto;
+}
+
+[type='text'], [type='submit']{
+    transition-property: opacity, transform, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    
+    box-shadow: 0 0 0.2vh 0.1vh rgba(0,0,0, 0.15);
+    opacity: 1;
+}
+
+[type='text']:hover, [type='text']:focus,
+[type='submit']:hover, [type='submit']:focus{
+    transform: rotateZ(0) scale(1.1);
+}
+
+[disabled]{
+    opacity: 0.2;
+    box-shadow: unset;
+}
+
+[disabled]:hover, [disabled]:focus{
+    transform: none;
+}
+
+button{
+    border: none;
+}

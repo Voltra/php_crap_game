@@ -1,0 +1,32 @@
+{
+  "form": "#registerForm",
+  "fields": {
+    "username": {
+      "required": true,
+      "selector": "#username",
+      "error_selector": "#username + p.error",
+      "rules": {
+        "regex": "^(\\w|-)+$",
+        "minLength": 4,
+        "maxLength": 20
+      }
+    },
+    "password": {
+      "required": true,
+      "selector": "#password",
+      "error_selector": "#password + p.error",
+      "rules": {
+        "minLength": 4
+      }
+    },
+    "confirm password": {
+      "required": true,
+      "selector": "#c_password",
+      "error_selector": "#c_password + p.error",
+      "rules": {
+        "minLength": 4,
+        "match": "password"
+      }
+    }
+  }
+}

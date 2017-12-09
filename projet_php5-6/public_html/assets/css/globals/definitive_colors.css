@@ -1,0 +1,35 @@
+/**
+@author Ludwig GUERIN
+ */
+body{
+    background-color: #e9ebee;
+}
+
+input, button{
+    border: none;
+}
+
+p.error{
+    color: #d80500;
+    transition: height 0.3s ease-in-out;
+}
+
+label.valid{
+    color: #2ca02c;
+}
+
+*{
+    color: #3c3f41;
+}
+
+.fa{
+    font-family: FontAwesome, roboto, sans-serif;
+}
+
+a{
+    color: #3b5998;
+}
+
+a:visited{
+    color: #486cba;
+}

@@ -1,0 +1,72 @@
+/**
+@author Ludwig GUERIN
+ */
+
+*{
+    box-sizing: border-box;
+}
+
+#game{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    -moz-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    -ms-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    -o-transform: rotateZ(0) translateX(-50%) translateY(-50%);
+    transform: rotateZ(0) translateX(-50%) translateY(-50%);
+}
+
+#actions{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    
+    transform: rotateZ(0) translateY(-50%);
+    -o-transform: rotateZ(0) translateY(-50%);
+    -moz-transform: rotateZ(0) translateY(-50%);
+    -ms-transform: rotateZ(0) translateY(-50%);
+    -webkit-transform: rotateZ(0) translateY(-50%);
+}
+
+#welcome{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    
+    transform: rotateZ(0) translateX(-50%);
+    -o-transform: rotateZ(0) translateX(-50%);
+    -moz-transform: rotateZ(0) translateX(-50%);
+    -ms-transform: rotateZ(0) translateX(-50%);
+    -webkit-transform: rotateZ(0) translateX(-50%);
+}
+
+
+#actions {
+	width: 10vw;
+    max-height: 100vh;
+    height: auto;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+#actions form{
+    display: flex;
+    height: auto;
+    position: relative;
+    
+    padding: 1vh;
+    margin-bottom: 2vh;
+}
+
+#actions button{
+    padding: 1vh 1.5vh;
+    flex: 1;
+    flex-grow: 1;
+}
+
+button{
+	cursor: pointer;
+}

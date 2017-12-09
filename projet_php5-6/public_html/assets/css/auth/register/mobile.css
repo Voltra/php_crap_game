@@ -1,0 +1,31 @@
+/**
+@author Ludwig GUERIN
+ */
+input[type="text"],
+input[type="password"]{
+    width: 75vw;
+    height: 6vh;
+
+    font-size: 4vh;
+    padding: 1vh;
+}
+
+p.error{
+    margin-top: 1vh;
+    margin-bottom: 2.5vh;
+
+    font-size: 2.2vh;
+}
+
+label{
+    margin-bottom: 1vh;
+    font-size: 3vh;
+}
+
+[type="submit"]{
+    font-size: 3vh;
+    padding: 1vh;
+
+    margin: auto;
+}
+
