@@ -22,8 +22,16 @@
         {% endblock %}
 
         <!--@@ CUSTOM SCRIPTS @@-->
+        <script>
+            Object.defineProperty(window, "BASE_URL", {
+                value: "{{ baseurl }}",
+                configurable: false,
+                writable: false,
+                enumerable: true
+            });
+        </script>
         {% block scripts %}
-            <script src="/assets/js/{{ pageName | replace({'\/': '_'}) }}.bundle.js" type="application/javascript"></script>
+            <script src="{{ baseurl }}/assets/js/{{ pageName | replace({'\/': '_'}) }}.bundle.js" type="application/javascript"></script>
         {% endblock %}
     </head>
 

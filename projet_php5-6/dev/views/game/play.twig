@@ -16,35 +16,35 @@
 
     <div id="actions">
         {% if canUndo %}
-            <form id="resetForm" action="/game/reset" method="POST">
+            <form id="resetForm" action="{{ baseurl }}/game/reset" method="POST">
                 <button type="submit" class="fa">Reset &#xf021;</button>
             </form>
         {% endif %}
 
-        <form id="logoutForm" action="/auth/logout" method="GET">
+        <form id="logoutForm" action="{{ baseurl }}/auth/logout" method="GET">
             <button type="submit" class="fa">Logout &#xf08b;</button>
         </form>
 
         {% if canUndo %}
-            <form id="undoForm" action="/game/undo" method="POST">
+            <form id="undoForm" action="{{ baseurl }}/game/undo" method="POST">
                 <button type="submit" class="fa">Undo &#xf177;</button>
             </form>
         {% endif %}
 
         {% if debug %}
-            <form id="instantLoseForm" action="/game/instant_lose" method="POST">
+            <form id="instantLoseForm" action="{{ baseurl }}/game/instant_lose" method="POST">
                 <button type="submit" class="fa">Instant Lose &#xf188;</button>
             </form>
 
-            <form id="instantWinForm" action="/game/instant_win" method="POST">
+            <form id="instantWinForm" action="{{ baseurl }}/game/instant_win" method="POST">
                 <button type="submit" class="fa">Instant Win &#xf188;</button>
             </form>
 
-            <form id="getWinForm" action="/game/get_win" method="POST">
+            <form id="getWinForm" action="{{ baseurl }}/game/get_win" method="POST">
                 <button type="submit" class="fa">Get a winning board &#xf188;</button>
             </form>
 
-            <form id="getLosingForm" action="/game/get_losing" method="POST">
+            <form id="getLosingForm" action="{{ baseurl }}/game/get_losing" method="POST">
                 <button type="submit" class="fa">Get a losing board &#xf188;</button>
             </form>
         {% endif %}
@@ -91,7 +91,7 @@
             </tfoot>
         </table>
         <div id="playForm">
-            <form action="/game/processAction" method="POST">
+            <form action="{{ baseurl }}/game/processAction" method="POST">
                 <div>
                     <label for="curx">Current X: </label>
                     <input name="curx" id="curx" type="text" placeholder="[0-6]" {% if curx %}value="{{ curx }}"{% endif %}/>

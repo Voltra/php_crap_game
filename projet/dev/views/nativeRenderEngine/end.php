@@ -14,41 +14,49 @@
 
     <!--@@ STYLESHEETS @@-->
     <!-- Author : Ludwig GUERIN -->
-    <link rel="stylesheet" href="/assets/css/globals/reset.css" data-whatIdo="Élimination des styles par défaut du navigateur"/>
-    <link rel="stylesheet" href="/assets/css/globals/clear_float.css" data-whatIdo="Styles pour élément rétablissant le flot"/>
-    <link rel="stylesheet" href="/assets/css/globals/font-loader.css" data-whatIdo="Préparation des polices de caractères"/>
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/reset.css"; ?>" data-whatIdo="Élimination des styles par défaut du navigateur"/>
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/clear_float.css"; ?>" data-whatIdo="Styles pour élément rétablissant le flot"/>
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/font-loader.css"; ?>" data-whatIdo="Préparation des polices de caractères"/>
 
-    <link rel="stylesheet" href="/assets/css/globals/common.css" data-whatIdo="Styles commun pour tous les appareils"/>
-    <link rel="stylesheet" href="/assets/css/globals/main.css" media="all and (min-width: 768px)" data-whatIdo="Styles par défaut"/>
-    <link rel="stylesheet" href="/assets/css/globals/mobile.css" media="all and (max-width: 768px)" data-whatIdo="Styles pour les petits écrans"/>
-    <link rel="stylesheet" href="/assets/css/globals/mobile.css" media="all and (orientation:portrait)" data-whatIdo="Styles pour l'orientation portrait"/>
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/common.css"; ?>" data-whatIdo="Styles commun pour tous les appareils"/>
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/main.css"; ?>" media="all and (min-width: 768px)" data-whatIdo="Styles par défaut"/>
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/mobile.css"; ?>" media="all and (max-width: 768px)" data-whatIdo="Styles pour les petits écrans"/>
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/mobile.css"; ?>" media="all and (orientation:portrait)" data-whatIdo="Styles pour l'orientation portrait"/>
 
     <?php if($debug): ?>
-        <link rel="stylesheet" href="/assets/css/globals/debug.css" data-whatIdo="Styles de debug pour développeurs"/>
+        <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/debug.css"; ?>" data-whatIdo="Styles de debug pour développeurs"/>
     <?php else: ?>
-        <link rel="stylesheet" href="/assets/css/globals/definitive_colors.css" data-whatIdo="Styles de debug pour développeurs"/>
+        <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/definitive_colors.css"; ?>" data-whatIdo="Styles de debug pour développeurs"/>
     <?php endif; ?>
 
     <!-- Author : Ludwig GUERIN -->
     <?php if($pageName): ?>
-        <link rel="stylesheet" href="<?= "/assets/css/{$pageName}/common.css"; ?>" data-whatIdo="Styles commun pour tous les appareils"/>
-        <link rel="stylesheet" href="<?= "/assets/css/{$pageName}/main.css"; ?>" media="all and (min-width: 768px)" data-whatIdo="Styles par défaut"/>
-        <link rel="stylesheet" href="<?= "/assets/css/{$pageName}/mobile.css"; ?>" media="all and (max-width: 768px)" data-whatIdo="Styles pour les petits écrans"/>
-        <link rel="stylesheet" href="<?= "/assets/css/{$pageName}/mobile.css"; ?>" media="(orientation:portrait)" data-whatIdo="Styles pour l'orientation portrait"/>
+        <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/{$pageName}/common.css"; ?>" data-whatIdo="Styles commun pour tous les appareils"/>
+        <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/{$pageName}/main.css"; ?>" media="all and (min-width: 768px)" data-whatIdo="Styles par défaut"/>
+        <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/{$pageName}/mobile.css"; ?>" media="all and (max-width: 768px)" data-whatIdo="Styles pour les petits écrans"/>
+        <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/{$pageName}/mobile.css"; ?>" media="(orientation:portrait)" data-whatIdo="Styles pour l'orientation portrait"/>
 
         <?php if($debug): ?>
-            <link rel="stylesheet" href="<?= "/assets/css/{$pageName}/debug.css"; ?>" data-whatIdo="Styles de debug pour développeurs"/>
+            <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/{$pageName}/debug.css"; ?>" data-whatIdo="Styles de debug pour développeurs"/>
         <?php else: ?>
-            <link rel="stylesheet" href="<?= "/assets/css/{$pageName}/definitive_colors.css"; ?>" data-whatIdo="Styles de debug pour développeurs"/>
+            <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/{$pageName}/definitive_colors.css"; ?>" data-whatIdo="Styles de debug pour développeurs"/>
         <?php endif; ?>
     <?php endif; ?>
-    <link rel="stylesheet" href="/assets/css/globals/flash.css" data-whatIdo="Styles pour les messages flash"/>
-    <link rel="stylesheet" href="/assets/css/globals/spinner-lord/spinner-lord.css" data-whatIdo="Styles par défaut de l'icône de chargement"/>
-    <link rel="stylesheet" href="/assets/css/globals/spinner-lord/variants/voltra.css" data-whatIdo="Styles par défaut de l'icône de chargement"/>
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/flash.css"; ?>" data-whatIdo="Styles pour les messages flash"/>
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/spinner-lord/spinner-lord.css"; ?>" data-whatIdo="Styles par défaut de l'icône de chargement"/>
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/globals/spinner-lord/variants/voltra.css"; ?>" data-whatIdo="Styles par défaut de l'icône de chargement"/>
 
     <!--@@ CUSTOM SCRIPTS @@-->
     <?php $pageName = str_replace("/", "_", $pageName); ?>
-    <script src="<?= "/assets/js/{$pageName}.bundle.js"; ?>" type="application/javascript"></script>
+    <script>
+        Object.defineProperty(window, "BASE_URL", {
+            value: "<?= BASE_URL; ?>",
+            configurable: false,
+            writable: false,
+            enumerable: true
+        });
+    </script>
+    <script src="<?= BASE_URL . "/assets/js/{$pageName}.bundle.js"; ?>" type="application/javascript"></script>
 </head>
 
 <body>
@@ -87,7 +95,7 @@
 
 <div id="content">
     <!-- TODO: create the view -->
-    <h1 id="title"><?php if($won): ?>You won !<?php else: ?>You lost !<?php endif; ?> <a href="/game/play">Play again</a>, <a href="/auth/logout">Quit</a> </h1>
+    <h1 id="title"><?php if($won): ?>You won !<?php else: ?>You lost !<?php endif; ?> <a href="<?= BASE_URL . "/game/play"; ?>">Play again</a>, <a href="<?= BASE_URL . "/auth/logout"; ?>">Quit</a> </h1>
 
     <div id="chart" data-pie='<?= $chartData; ?>'> <!-- style="width: 80vw; height: 80vh;" -->
     </div>
@@ -107,7 +115,7 @@
             <caption>Best three players</caption>
             <thead>
             <tr>
-                <?php foreach($statsKeys as $key): ?><td>{{ key }}</td><?php endforeach; ?>
+                <?php foreach($statsKeys as $key): ?><td><?= $key; ?></td><?php endforeach; ?>
             </tr>
             </thead>
             <tbody>

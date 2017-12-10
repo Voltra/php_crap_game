@@ -56,6 +56,7 @@ module.exports = {
     },
     "externals": [
         "window",
-        "document"
+        "document",
+        "BASE_URL"
     ]
 };

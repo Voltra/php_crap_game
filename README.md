@@ -18,7 +18,7 @@
 
 #### Test en serveur local
 
-Afin de tester le fonctionnement de l'application fournie, il faut au préalable créer un VirtualHost dont la racine pointe vers le dossier `public_html` afin d'assurer le bon fonctionnementde l'application.
+Afin de tester le fonctionnement de l'application fournie, il est préférable au préalable créer un VirtualHost dont la racine pointe vers le dossier `public_html` afin d'assurer le bon fonctionnementde l'application.
 
 
 
@@ -28,13 +28,17 @@ Afin de tester le fonctionnement de l'application fournie, il faut au préalable
 
 **<u>NB</u>**
 
-Par la suite, nous utiliserons `application` comme nom de VirtualHost.
+Par la suite, nous utiliserons `application` pour représenter le chemin menant au dossier `public_html`.
 
 Afin de faciliter la mise en place d'un VirtualHost, le fichier `VirtualHost.txt` est fourni indiquant les paramètres nécessaires pour le fonctionnement correct du VirtualHost (modifier les chemins pour faire pointer vers le dossier `public_html` de cette application).
 
 **<u>Attention</u>**
 
-Cette application se basant sur `$_SERVER['REQUEST_URI']` pour la répatition des URL, il faut **impérativement** que la racine du serveur soit le dossier `public_html` (via VirtualHost).
+Cette application se basait sur `$_SERVER['REQUEST_URI']` pour la répatition des URL, il fallait **impérativement** que la racine du serveur soit le dossier `public_html` (via VirtualHost).
+
+Étant donnée la présence d'une consigne supplémentaire à l'emplacement de l'envoi des fichiers de ce projet, ce comportement a été modifié pour pouvoir utiliser l'application depuis n'importe quel nom d'hôte.
+
+Il faut cependant bien modifier le fichier `config.php` afin de prendre en compte l'URL de la racine (l'URL menant vers le dossier `public_html`, e.g. `http://localhost/info2s3/projet/public_html`, `http://application`).
 
 
 
@@ -54,7 +58,7 @@ De surcroit WAMP propose un utilitaire de création de VirtualHost afin de facil
 
 **<u>NB</u>**
 
-Sauf changements de dernière minutes, une version alternative pour PHP>=5.6.25 sera proposée
+Sauf changements de dernière minutes, une version alternative pour PHP>=5.6.25 sera proposée (compatibilité inférieure non garanties).
 
 
 
@@ -77,7 +81,7 @@ Afin de mettre à jour toutes les dépendances de développement (diverses bibli
 
 #### Mise en place de la base de données
 
-Afin de bien mettre en place la base de données, il faut se reporter au fichier de configuration correspondant (`dev/config/development_config.php`  ou `dev/config/production_config.php` suivant si l'on souhaite activer le mode debug ou non) et apporter les modifications  souhaitées (nom de DB, nom d'hôte, nom d'utilisateur, mot de passe, etc ...) puis créer la base de données en conséquence.
+Afin de bien mettre en place la base de données, il faut se reporter au fichier de configuration correspondant (`dev/config.php`) et apporter les modifications  souhaitées (nom de DB, nom d'hôte, nom d'utilisateur, mot de passe, etc ...) puis créer la base de données en conséquence.
 
 Un script SQL est à votre disposition pour la création des tables et l'insertion de tuples par défaut : `dev/exec.sql` (ces tuples par défaut étant ceux donnés, à savoir toto#toto et titi#titi où username#password)
 
@@ -197,7 +201,7 @@ Le dossier `public_html` contient tout ce qui est accessible au public (`index.p
 
 Le répertoire `dev` est contruit de la manière suivante:
 
-* **config**  &rarr;  contient les fichiers de configuration de l'application (pour le développement, pour la production)
+* **config**  &rarr;  contient les fichiers de configuration de l'application (pour le développement, pour la production, ce fonctionnement a été abandonné au profit de la mise en place d'un unique `config.php`)
 * **controllers** &rarr;  contient tous les contrôleurs
 * **helpers**  &rarr;  contient énormément de classes subsidiaires facilitant le traitement des divers données
 * **js** &rarr;  contient tous les fichiers javascripts utilisés (validation de formulaires, messages d'erreur "dynamiques", icône de chargement, etc...)
@@ -219,7 +223,7 @@ Le répertoire `dev` est contruit de la manière suivante:
 
 Le répertoire `public_html` est construit de la manière suivante:
 
-* **assets** &rarr;  contient l'ensemble des ressources publiques utilisées par l'application
+* **assets** &rarr;  contient l'ensemble des ressources publiques utilisées par l'application (js, css, images, etc...)
 * *.htaccess* &rarr;  fichier de configuration apache pour la réécriture d'URL
 * *index.php* &rarr;  point d'entrée de l'application (utilise `../dev/bootstrap.php`) démarrant cette dernière
 
@@ -334,11 +338,13 @@ Le principe de vue d'erreur proposé par l'énoncé a été troqué pour un prin
 
 Le schéma ci-dessus représente le fonctionnement global de l'application.
 
-Le schéma ci-dessous représente l'enchaînement des scripts utilisés (et variables, et appels de méthodes) pour traiter la requête HTTP
+Le schéma ci-dessous représente l'enchaînement des scripts utilisés (et variables, et appels de méthodes) pour traiter la requête HTTP (de haut en bas)
+
+
 
 ![enchaînement](./ressourcesCompteRendu/enchainementScripts.png)
 
-
+Pour plus de détails, se reporter à la partie concernant le fonctionnement du routeur.
 
 ## Techniques Utilisées
 
@@ -368,7 +374,7 @@ C'est donc l'approche que nous avons privilégié :
 
 Si il y a une erreur de validation côté serveur, alors les données valides sont renvoyées et des messages d'erreurs sont également envoyés.
 
-Cela permet à l'utilisateur de ne pas avoir à retaper les informations qui étaient au préalable valides tout en l'informant des informations erronées.
+Cela permet à l'utilisateur de ne pas avoir à re-taper les informations qui étaient au préalable valides tout en l'informant des informations erronées.
 
 ### Graphe et statistiques
 
@@ -390,7 +396,7 @@ Ce système permet de mettre en place rapidement un groupe de fonctionnalités m
 
 
 
-En effet, là où il y a une couplage Route[\*-1]Contrôleur, un système dit  *MVRA* (dérivé de MVC : Model View Route Action) aura un couplage Route[1-1]Action ce qui semble bien plus intéressant dans une optique de modularisation de l'application.
+En effet, là où il y a une couplage Route[\*-1]Contrôleur, un système dit  *MVRA* (dérivé de MVC : Model View Route Action) aura un couplage Route[1-1]Action ce qui semble bien plus intéressant dans une optique de modularisation de l'application (chaque unité fait une seule chose, mais elle la fait bien).
 
 ### Sécurité des mots de passe
 

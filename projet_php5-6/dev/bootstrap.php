@@ -25,6 +25,7 @@ $twig = new TwigAdapter($config["app.views_path"], [
     "debug" => $config["debug"]
 ]);
 $twig->addGlobal("debug", $config["debug"]);
+$twig->addGlobal("baseurl", $config["baseurl"]);
 $twig->addExtension(new FlashExtension($flashService));
 
 //Session initial setup
@@ -35,6 +36,7 @@ $session->set("hash", $config["hash"]);
 $session->set("validate", DotNotationArray::makeFrom( $config["form"] ));
 $session->set("sharedFlashService", $flashService);
 $session->set("isDebug", $config["debug"]);
+$session->set("baseurl", $config["baseurl"]);
 
 //Controllers and Router setup
 $error404Controller = new PageNotFoundController($twig, $db);

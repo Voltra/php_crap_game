@@ -3,10 +3,6 @@
  * @author Ludwig GUERIN
  */
 
-
-use Project\Controllers\AuthController;
-use Project\models\UserModel;
-
 $ROOT = dirname(dirname(__DIR__));
 $DEV_ROOT = $ROOT . "/dev/";
 define("ROOT", $ROOT);
@@ -24,8 +20,12 @@ $DB_PASSWORD = "";
 define("DB_USER", $DB_USER);
 define("DB_PASSWORD", $DB_PASSWORD);
 
+$BASE_URL = "http://localhost/info2s3/webserver/miniproj/projet/public_html";
+define("BASE_URL", $BASE_URL);
+
 return [
-    "debug" => false,
+    "debug" => true,
+    "baseurl" => BASE_URL,
     "db" => [
         "user" => DB_USER,
         "password" => DB_PASSWORD,

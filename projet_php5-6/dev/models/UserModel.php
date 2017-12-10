@@ -55,6 +55,11 @@ class UserModel extends A_Model{
         $db_hash = $db_hash[0];
 
         return password_verify($clear_password, $db_hash);
+        //Équivalent avec crypt
+        /**
+         * $hashed = crypt($clear_password);
+         * return $hashed === $db_hash
+         */
     }
 
     /**Insert a pair of username and password in the database
@@ -68,6 +73,10 @@ class UserModel extends A_Model{
             throw new Exception("");
         $config = $session->get("hash");
         $hash = password_hash($password, $config["algorithm"], $config["options"]);
+        //Équivalent avec crypt
+        /**
+         * $hash = crypt($password);
+         */
 
         $rq = $this->db
             ->prepare("INSERT INTO ".$this->tableName." VALUES (:username, :password)");

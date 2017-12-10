@@ -99,7 +99,8 @@ class Router {
      * @return $this
      */
     public function redirect(string $path, int $status=301){
-        header("Location: {$path}", true, $status);
+        $BASE_URL = BASE_URL;
+        header("Location: {$BASE_URL}{$path}", true, $status);
         return $this;
     }
 }

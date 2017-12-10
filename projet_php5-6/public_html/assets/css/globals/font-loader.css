@@ -13,15 +13,15 @@
 
 @font-face{
     font-family: r;
-    src: url("/assets/fonts/ttf/RobotoLight.ttf");
+    src: url("../../fonts/ttf/RobotoLight.ttf");
 }
 
 @font-face {
     font-family: AmericanCaptain;
-    src: url("/assets/fonts/ttf/AmericanCaptain.ttf");
+    src: url("../../fonts/ttf/AmericanCaptain.ttf");
 }
 
 @font-face{
     font-family: FontAwesome;
-    src: url("/assets/fonts/ttf/FontAwesome.ttf");
+    src: url("../../fonts/ttf/FontAwesome.ttf");
 }

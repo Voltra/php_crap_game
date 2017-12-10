@@ -3,6 +3,7 @@ namespace Project\Helpers\Http;
 
 
 use Exception;
+use Project\Helpers\Interactions\Session;
 
 /**A class that represent an HTTP request as an object
  * Class Request
@@ -68,6 +69,8 @@ class Request {
      * @return string
      */
     public function uri() : string{
-        return $_SERVER["REQUEST_URI"];
+        $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://{$_SERVER["HTTP_HOST"]}{$_SERVER["REQUEST_URI"]}";
+        return str_ireplace(BASE_URL, "", $url);
+        //return $_SERVER["REQUEST_URI"];
     }
 }

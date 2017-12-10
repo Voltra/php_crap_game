@@ -20,8 +20,12 @@ $DB_PASSWORD = "";
 define("DB_USER", $DB_USER);
 define("DB_PASSWORD", $DB_PASSWORD);
 
+$BASE_URL = "http://localhost/info2s3/webserver/miniproj/projet_php5-6/public_html";
+define("BASE_URL", $BASE_URL);
+
 return [
     "debug" => true,
+    "baseurl" => BASE_URL,
     "db" => [
         "user" => DB_USER,
         "password" => DB_PASSWORD,
